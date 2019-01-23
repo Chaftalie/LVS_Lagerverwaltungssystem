@@ -14,11 +14,11 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         public static OdbcConnection Connection => connection ?? (connection = new OdbcConnection(Connectionstring));
 
-        private static string Database_IP => "root";
-        private static string Database_Port => "root";
-        private static string Database_Name => "root";
-        private static string Database_Login_Name => "root";
-        private static string Database_Login_Password => "root";
+        private static string Database_Name => Properties.Settings.Default.Database_Name;
+        private static string Database_IP => Properties.Settings.Default.Database_IP;
+        private static string Database_Port => Properties.Settings.Default.Database_Port;
+        private static string Database_Login_Name => Properties.Settings.Default.Database_Login_Name;
+        private static string Database_Login_Password => Properties.Settings.Default.Database_Login_Password;
 
         private static string Connectionstring => $"Driver={"MySQL ODBC 5.3 Unicode Driver"};Server={Database_IP};Port={Database_Port};Database={Database_Name};User={Database_Login_Name};Password={Database_Login_Password};Option=3;";
     }

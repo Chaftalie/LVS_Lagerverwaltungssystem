@@ -23,11 +23,11 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void Fill_Database_tBx_thingys()
         {
-            tBx_DB_Name.Text = Properties.Settings.Default.Database_Name;
-            tBx_IP.Text = Properties.Settings.Default.Database_IP;
-            tBx_Port.Text = Properties.Settings.Default.Database_Port;
-            tBx_Login_Name.Text = Properties.Settings.Default.Database_Login_Name;
-            tBx_Login_Password.Text = Properties.Settings.Default.Database_Login_Password;
+            tBx_DB_Name.Text =          Properties.Settings.Default.Database_Name;
+            tBx_IP.Text =                Properties.Settings.Default.Database_IP;
+            tBx_Port.Text =                 Properties.Settings.Default.Database_Port;
+            tBx_Login_Name.Text =           Properties.Settings.Default.Database_Login_Name;
+            tBx_Login_Password.Text =   Properties.Settings.Default.Database_Login_Password;
         }
 
         private void btn_save_DB_Click(object sender, EventArgs e)
@@ -50,6 +50,18 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                 Properties.Settings.Default.Database_Login_Password = "cola0815";
 
                 Fill_Database_tBx_thingys();
+            }
+        }
+
+        private void btn_check_connection_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SQL_methods.Open();
+            }
+            catch(Exception exception)
+            {
+                MessageBox.Show("Something did not work\nSome informatione (I hope it can help):"+ exception.Message,"Warnung",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
     }
