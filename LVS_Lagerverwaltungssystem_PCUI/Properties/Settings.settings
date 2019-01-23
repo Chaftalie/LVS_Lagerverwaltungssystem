@@ -1,7 +1,21 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LVS_Lagerverwaltungssystem_PCUI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Database_Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">lsv_lagerverwaltungssystem</Value>
+    </Setting>
+    <Setting Name="Database_IP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">81.10.155.134</Value>
+    </Setting>
+    <Setting Name="Database_Port" Type="System.String" Scope="User">
+      <Value Profile="(Default)">1337</Value>
+    </Setting>
+    <Setting Name="Database_Login_Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+    <Setting Name="Database_Login_Password" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cola0815</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

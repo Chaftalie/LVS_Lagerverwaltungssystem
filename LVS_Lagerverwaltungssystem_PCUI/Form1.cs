@@ -16,5 +16,11 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             InitializeComponent();
         }
+
+        private void TSMI_parameter_Click(object sender, EventArgs e)
+        {
+            Form_Parameter form_Parameter = new Form_Parameter();
+            form_Parameter.Show();
+        }
     }
 }
