@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LVS__Library
+namespace LVS_Library
 {
     public class Class1
     {
