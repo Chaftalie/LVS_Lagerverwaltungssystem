@@ -22,5 +22,10 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             Form_Parameter form_Parameter = new Form_Parameter();
             form_Parameter.Show();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }
