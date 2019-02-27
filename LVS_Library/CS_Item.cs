@@ -10,7 +10,7 @@ namespace LVS_Library
 {
     public class Item
     {
-        #region 
+
         private int id;
         private string name;
         private string description;
@@ -72,5 +72,10 @@ namespace LVS_Library
             set { category = value; }
         }
 
+
+        public Item(string _name, string )
+        {
+
+        }
     }
 }
