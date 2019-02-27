@@ -37,5 +37,25 @@ namespace LVS_Library
             Parent = parent;
             Id = id;
         }
+
+        public void Store(Item item, float count)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Remove(Item item, float count)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Truncate( )
+        {
+            throw new NotImplementedException();
+        }
+
+        static public void Move(Storage from, Storage to, Item item, float count)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
