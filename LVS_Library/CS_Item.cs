@@ -10,7 +10,7 @@ namespace LVS_Library
 {
     public class Item
     {
-        #region 
+
         private int id;
         private string name;
         private string description;
@@ -22,6 +22,7 @@ namespace LVS_Library
         private string image;
         private Unit unit;
         private Category category;
+        private Property property;
 
         public string Name
         {
@@ -31,7 +32,7 @@ namespace LVS_Library
 
         public string Description
         {
-            get { return Description; }
+            get { return description; }
             set { description = value; }
         }
 
@@ -72,5 +73,15 @@ namespace LVS_Library
             set { category = value; }
         }
 
+        public Property Property
+        {
+            get { return property; }
+            set { property = value; }
+        }
+
+        public Item(string _name, string _description, float _width, float _length, float _height, Unit unit, Category category)
+        {
+
+        }
     }
 }

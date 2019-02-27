@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LVS_Library
 {
-    class Categories
+    public class Category
     {
         private int id;
         private string name;
@@ -19,7 +19,7 @@ namespace LVS_Library
         /// <param name="ID"></param>
         /// <param name="Name"></param>
         /// <param name="Descritpion"></param>
-        public Categories(string _name, string _descritpion)
+        public Category(string _name, string _descritpion)
         {
             Name = _name;
             Description = _descritpion;
