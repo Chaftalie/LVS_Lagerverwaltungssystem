@@ -17,7 +17,6 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         public Form_Parameter()
         {
             InitializeComponent();
-
             Fill_Database_tBx_thingys();
         }
 
