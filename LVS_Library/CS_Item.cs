@@ -34,7 +34,7 @@ namespace LVS_Library
             get { return Description; }
             set { description = value; }
         }
-        
+
         public float Width
         {
             get { return width; }
