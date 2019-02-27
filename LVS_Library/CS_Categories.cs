@@ -9,6 +9,56 @@ namespace LVS_Library
     class Categories
     {
         private int id;
-        
+        private string name;
+        private string descpription;
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <param name="Name"></param>
+        /// <param name="Descritpion"></param>
+        public Categories(string _name, string _descritpion)
+        {
+            Name = _name;
+            Description = _descritpion;
+        }
+
+        public int ID
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+
+        public string Description
+        {
+            get
+            {
+                return descpription;
+            }
+            set
+            {
+                descpription = value;
+            }
+        }
     }
 }

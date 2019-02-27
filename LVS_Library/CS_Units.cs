@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LVS_Library
 {
-    class Unit
+    public class Unit
     {
         private int id;
         private float si_unit;
