@@ -40,8 +40,10 @@ namespace LVS_Library
 
         public void Store(Item item, float count)
         {
-            
-        }
+   
+                //SQL_methods.SQL_exec(String.Format("INSERT INTO storage_location (storage_location.parent_id,storage_location.storage_name,storage_location.storage_description,storage_location.storage_size_l,storage_location.storage_size_w,storage_location.storage_size_h,storage_location.storage_unit_id,storage_location.storage_element_count)" +
+                 //   "VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7})", Parent.Id,Name,Description,Length,Width,Height,Unit.ID,))
+        } 
 
         public void Remove(Item item, float count)
         {

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LVS_Lagerverwaltungssystem_PCUI
+namespace LVS_Library
 {
     public static class DB
     {
