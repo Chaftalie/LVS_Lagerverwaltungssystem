@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="CS_Categories.cs" />
     <Compile Include="CS_Properties.cs" />
+    <Compile Include="CS_Item.cs" />
     <Compile Include="CS_Storage.cs" />
     <Compile Include="CS_Units.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
