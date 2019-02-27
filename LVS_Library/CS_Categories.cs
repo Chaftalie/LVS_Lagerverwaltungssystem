@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LVS_Library
 {
-    class Category
+    public class Category
     {
         private int id;
         private string name;
