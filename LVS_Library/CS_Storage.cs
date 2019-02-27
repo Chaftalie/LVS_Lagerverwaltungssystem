@@ -40,7 +40,7 @@ namespace LVS_Library
 
         public void Store(Item item, float count)
         {
-            throw new NotImplementedException();
+            
         }
 
         public void Remove(Item item, float count)
