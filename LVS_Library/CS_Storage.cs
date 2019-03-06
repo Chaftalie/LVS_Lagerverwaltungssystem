@@ -68,7 +68,9 @@ namespace LVS_Library
 
 
         }
-
+        /// <summary>
+        /// IS BAD DO NOT USE UNLESS IT REALLY NEEDED!!
+        /// </summary>
         public void Truncate( )
         {
             SQL_methods.SQL_exec("TRUNCATE TABLE storage_location");
