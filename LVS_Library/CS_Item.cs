@@ -112,6 +112,27 @@ namespace LVS_Library
                 item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image));
         }
 
+        public static int Get_DB_ID(Item item)
+        {
+            string sql = string.Format("" +
+                "SELECT ID " +
+                "FROM storage_elements WHERE " +
+                "element_name = '{0}' " +
+                "AND element_description = '{1}' " +
+                "AND element_unit_id = '{2}' " +
+                "AND element_category_id = '{3}' " +
+                "AND element_size_l = '{4}' " +
+                "AND element_size_w = '{5}' " +
+                "AND element_size_h = '{6}' " +
+                "AND element_image = '{7}'", 
+                item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image);
+
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+            return (int)sqlReader[0];
+        }
+
         public static bool Exists_in_DB(Item item)
         {
             string sql = string.Format("" +
