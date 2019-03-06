@@ -180,5 +180,24 @@ namespace LVS_Library
                 return false;
             }
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns>returns List of IDs or if not exists null</returns>
+        public static List<int> Where_is(Item item)
+        {
+            int id = Get_DB_ID(item);
+            string sql = "SELECT * FROM element_location WHERE element_location.element_id = " + item.ID;
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+            List<int> ids = new List<int>();
+            while (sqlReader.Read())
+            {
+                ids.Add((int)sqlReader[0]);
+            }
+            return ids;
+        }
     }
 }
