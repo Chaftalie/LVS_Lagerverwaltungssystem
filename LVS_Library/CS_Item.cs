@@ -111,6 +111,19 @@ namespace LVS_Library
                 "('{0}', '{1}', {2}, {3}, {4}, {5}, {6}, '{7}')",
                 item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image));
         }
+         
+        public static bool Is_active(Item item)
+        {
+            string sql = "SELECT active FROM storage_elements WHERE id = " + item.ID ;
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            return (bool)cmd.ExecuteScalar();
+        }
+
+        public static void Deactivate(Item item)
+        {
+            SQL_methods.SQL_exec("UPDATE storage_elements SET active = false WHERE id = " + item.ID);
+        }
 
         public static int Get_DB_ID(Item item)
         {
