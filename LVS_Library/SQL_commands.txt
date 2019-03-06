@@ -1,0 +1,12 @@
+﻿SELECT COUNT(*)
+FROM storage_elements 
+WHERE element_name = '' AND element_description = '' AND element_unit_id = '' AND element_category_id = '' AND element_size_l = '' AND element_size_w = '' AND element_size_h = '' AND element_image = ''
+
+SELECT ID
+FROM storage_elements 
+WHERE element_name = '' AND element_description = '' AND element_unit_id = '' AND element_category_id = '' AND element_size_l = '' AND element_size_w = '' AND element_size_h = '' AND element_image = ''
+
+INSERT INTO storage_elements 
+(element_name,element_description,element_unit_id,element_category_id,element_size_l,element_size_w,element_size_h,element_image)
+VALUES
+('','','','','','','','') 
