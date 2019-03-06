@@ -94,7 +94,7 @@ namespace LVS_Library
             Length = _length;
             Height = _height;
 
-            id = _id;
+            ID = _id;
             Image = _image;
 
             Unit = _unit;
@@ -102,9 +102,14 @@ namespace LVS_Library
             Properties = _properties;
         }
 
-        public static void Save()
+        public static void Save(Item item)
         {
-           //SQL_methods.SQL_exec(string.Format)
+            SQL_methods.SQL_exec(string.Format(
+                "INSERT INTO storage_elements " +
+                "(element_name, element_description, element_unit_id, element_category_id, element_size_l, element_size_w, element_size_h, element_image) " +
+                "VALUES " +
+                "('{0}', '{1}', {2}, {3}, {4}, {5}, {6}, '{7}')",
+                item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image));
         }
 
         public static bool Exists_in_DB(Item item)
