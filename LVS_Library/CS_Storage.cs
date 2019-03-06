@@ -66,7 +66,7 @@ namespace LVS_Library
 
         public void Truncate( )
         {
-            throw new NotImplementedException();
+            SQL_methods.SQL_exec("TRUNCATE TABLE storage_location");
         }
 
         static public void Move(Storage from, Storage to, Item item, float count)
