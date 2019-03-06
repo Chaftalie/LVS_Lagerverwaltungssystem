@@ -42,22 +42,29 @@ namespace LVS_Library
 
         public void Store(Item item, float count)
         {
-   
+            if (Exist_in_DB(item))
+            {
+
+                SQL_methods.SQL_exec("UPDATE storage_location SET storage_element_count = (storage_element_count + " + count + ") WHERE id = " + Id);
+            }
+            else
+            {
+                SQL_methods.SQL_exec("INSERT INTO element_location (element_id, storage_id) VALUES ("+item.ID+", "+Id);
+                SQL_methods.SQL_exec("UPDATE storage_elements SET storage_element_count = " + count + "WHERE id = " + Id);
+            }
                 //SQL_methods.SQL_exec(String.Format("INSERT INTO storage_location (storage_location.parent_id,storage_location.storage_name,storage_location.storage_description,storage_location.storage_size_l,storage_location.storage_size_w,storage_location.storage_size_h,storage_location.storage_unit_id,storage_location.storage_element_count)" +
                  //   "VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7})", Parent.Id,Name,Description,Length,Width,Height,Unit.ID,))
         }
 
+        private bool Exist_in_DB(Item item)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Remove(Item item, float count)
         {
-            string sql = string.Format("SELECT storage_id FROM element_location WHERE element_id = " + item.ID);
-            int storage_location_id;
-            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
-            OdbcDataReader sqlReader = cmd.ExecuteReader();
-            sqlReader.Read();
-            storage_location_id = Convert.ToInt32(sqlReader[1]);
-            sqlReader.Close();
 
-            SQL_methods.SQL_exec("UPDATE storage_location SET storage_element_count = (storage_element_count - " + count + ") WHERE id = " + storage_location_id);
+            SQL_methods.SQL_exec("UPDATE storage_location SET storage_element_count = (storage_element_count - " + count + ") WHERE id = " + Id);
 
 
         }
