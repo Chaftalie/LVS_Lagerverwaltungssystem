@@ -41,7 +41,7 @@ namespace LVS_Library
             }
         }
 
-        public float SI_Units
+        public float SI_Unit
         {
             get
             {
@@ -75,6 +75,20 @@ namespace LVS_Library
             {
                 name = value;
             }
+        }
+
+        /// <summary>
+        /// Error by Weidlböck der Seidlcöck
+        /// </summary>
+        /// <param name="unit"></param>
+        public static void Save(Unit unit)
+        {
+            SQL_methods.SQL_exec(string.Format(
+                "INSERT INTO properties " +
+                "(unit_si, unit_name, unit_description)" +
+                "VALUES " +
+                "('{0}', '{1}', '{2}')",
+                unit.SI_Unit, unit.Name, unit.Description));
         }
     }
 }

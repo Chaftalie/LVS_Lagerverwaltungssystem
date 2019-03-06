@@ -60,5 +60,16 @@ namespace LVS_Library
                 descpription = value;
             }
         }
+
+        public static void Save(Category category)
+        {
+            SQL_methods.SQL_exec(string.Format(
+                "INSERT INTO categories " +
+                "(category_name, category_description)" +
+                "VALUES " +
+                "('{0}', '{1}')",
+                category.Name, category.Description));
+        }
+
     }
 }

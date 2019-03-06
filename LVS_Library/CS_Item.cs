@@ -149,14 +149,8 @@ namespace LVS_Library
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             SQL_methods.Open();
             OdbcDataReader sqlReader = cmd.ExecuteReader();
-            if (( string ) sqlReader[0] == "1")
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return ((string)sqlReader[0] == "1");
+
         }
     }
 }

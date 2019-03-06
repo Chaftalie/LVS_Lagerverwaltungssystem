@@ -41,5 +41,15 @@ namespace LVS_Library
                 description = value;
             }
         }
+
+        public static void Save(Property property)
+        {
+            SQL_methods.SQL_exec(string.Format(
+                "INSERT INTO properties " +
+                "(property_name, property_description)" +
+                "VALUES " +
+                "('{0}', '{1}')",
+                property.Name, property.Description));
+        }
     }
 }
