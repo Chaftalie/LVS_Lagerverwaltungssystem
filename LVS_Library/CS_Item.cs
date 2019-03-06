@@ -79,9 +79,17 @@ namespace LVS_Library
             set { property = value; }
         }
 
-        public Item(string _name, string _description, float _width, float _length, float _height, Unit unit, Category category)
+        public Item(string name, string description, float width, float height, float length, string image, Unit unit, Category category, Property property)
         {
-
+            Name = name;
+            Description = description;
+            Width = width;
+            Height = height;
+            Length = length;
+            Image = image;
+            Unit = unit;
+            Category = category;
+            Property = property;
         }
     }
 }
