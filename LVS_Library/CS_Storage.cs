@@ -56,11 +56,6 @@ namespace LVS_Library
                  //   "VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7})", Parent.Id,Name,Description,Length,Width,Height,Unit.ID,))
         }
 
-        private bool Exist_in_DB(Item item)
-        {
-            throw new NotImplementedException();
-        }
-
         public void Remove(Item item, float count)
         {
 
