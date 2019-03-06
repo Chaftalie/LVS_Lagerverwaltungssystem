@@ -71,5 +71,13 @@ namespace LVS_Library
                 category.Name, category.Description));
         }
 
+        public static void Remove(Category category)
+        {
+            SQL_methods.SQL_exec(string.Format(
+                "DELETE FROM categories " +
+                "WHERE id = '{0}'",
+                category.ID));
+        }
+
     }
 }
