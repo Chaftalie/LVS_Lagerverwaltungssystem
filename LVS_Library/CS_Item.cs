@@ -79,8 +79,8 @@ namespace LVS_Library
             set { properties = value; }
         }
 
-        public Item(string _name, string _description, float _width, float _length, float _height, Unit _unit, Category _category,List<Property> _properties, string _image, int _id)
-        {
+        public Item(string _name, string _description, float _width, float _length, float _height, Unit _unit, Category _category, List<Property> _properties, string _image, int _id)
+        { 
             Name = _name;
             Description = _description;
             Width = _width;
