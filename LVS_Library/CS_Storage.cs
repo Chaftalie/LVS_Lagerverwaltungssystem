@@ -50,13 +50,15 @@ namespace LVS_Library
         public void Remove(Item item, float count)
         {
             string sql = string.Format("SELECT storage_id FROM element_location WHERE element_id = " + item.ID);
+            int storage_location_id;
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             OdbcDataReader sqlReader = cmd.ExecuteReader();
             sqlReader.Read();
-
-            SQL_methods.SQL_exec("UPDATE storage_location SET storage_element_count = (storage_element_count - " + count + ") WHERE id = " + Convert.ToInt32(sqlReader[1]));
-
+            storage_location_id = Convert.ToInt32(sqlReader[1]);
             sqlReader.Close();
+
+            SQL_methods.SQL_exec("UPDATE storage_location SET storage_element_count = (storage_element_count - " + count + ") WHERE id = " + storage_location_id);
+
 
         }
 
