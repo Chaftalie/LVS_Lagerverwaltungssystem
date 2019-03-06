@@ -47,7 +47,7 @@
     <Compile Include="CS_Properties.cs" />
     <Compile Include="CS_Item.cs" />
     <Compile Include="CS_Storage.cs" />
-    <Compile Include="CS_Units.cs" />
+    <Compile Include="CS_Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
