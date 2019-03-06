@@ -167,19 +167,26 @@ namespace LVS_Library
 
         public static bool Is_Allocated(Item item)
         {
+            return Convert.ToBoolean(In_how_many_storage_spaces_is_this_item_located(item));
+        }
+
+        public static int In_how_many_storage_spaces_is_this_item_located(Item item)
+        {
             if (Exists_in_DB(item))
             {
                 int id = Get_DB_ID(item);
                 string sql = "SELECT Count(*) FROM element_location WHERE element_location.element_id = " + item.ID;
                 OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
                 SQL_methods.Open();
-                return ( bool ) cmd.ExecuteScalar();
+                return (int) cmd.ExecuteScalar();
             }
             else
             {
-                return false;
+                return 0;
             }
         }
+
+
         /// <summary>
         /// 
         /// </summary>
