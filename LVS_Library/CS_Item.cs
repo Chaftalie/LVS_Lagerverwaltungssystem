@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,12 @@ namespace LVS_Library
         private Unit unit;
         private Category category;
         private Property property;
+
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public string Name
         {
@@ -90,6 +97,32 @@ namespace LVS_Library
             Unit = unit;
             Category = category;
             Property = property;
+        }
+
+        public static bool Exists_in_DB(Item item)
+        {
+            string sql = string.Format("" +
+                "SELECT COUNT(*) " +
+                "FROM storage_elements WHERE " +
+                "element_name = '{0}' " +
+                "AND element_description = '{1}' " +
+                "AND element_unit_id = '{2}' " +
+                "AND element_category_id = '{3}' " +
+                "AND element_size_l = '{4}' " +
+                "AND element_size_w = '{5}' " +
+                "AND element_size_h = '{6}' " +
+                "AND element_image = '{7}'", item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image);
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+            if (( string ) sqlReader[0] == "1")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
