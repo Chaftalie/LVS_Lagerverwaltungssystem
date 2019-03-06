@@ -21,7 +21,7 @@ namespace LVS_Library
         /// <param name="Name"></param>
         public Unit(float _si_unit, string _description, string _name)
         {
-            SI_Units = _si_unit;
+            SI_Unit = _si_unit;
             Description = _description;
             Name = _name;
         }
@@ -84,11 +84,19 @@ namespace LVS_Library
         public static void Save(Unit unit)
         {
             SQL_methods.SQL_exec(string.Format(
-                "INSERT INTO properties " +
+                "INSERT INTO units " +
                 "(unit_si, unit_name, unit_description)" +
                 "VALUES " +
                 "('{0}', '{1}', '{2}')",
                 unit.SI_Unit, unit.Name, unit.Description));
+        }
+
+        public static void Remove(Unit unit)
+        {
+            SQL_methods.SQL_exec(string.Format(
+                "DELETE FROM units " +
+                "WHERE id = '{0}'",
+                unit.ID));
         }
     }
 }
