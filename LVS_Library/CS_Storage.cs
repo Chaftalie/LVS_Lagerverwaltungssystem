@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace LVS_Library
 {
@@ -47,7 +49,10 @@ namespace LVS_Library
 
         public void Remove(Item item, float count)
         {
-            throw new NotImplementedException();
+            string sql = string.Format("");
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+
+
         }
 
         public void Truncate( )
@@ -57,7 +62,20 @@ namespace LVS_Library
 
         static public void Move(Storage from, Storage to, Item item, float count)
         {
-            throw new NotImplementedException();
+            using (IDbTransaction tran = DB.Connection.BeginTransaction())
+            {
+                try
+                {
+                    from.Remove(item, count);
+                    to.Store(item, count);
+                    tran.Commit();
+                }
+                catch
+                {
+                    tran.Rollback();
+                    throw;
+                }
+            }
         }
     }
 }

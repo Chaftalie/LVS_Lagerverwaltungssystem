@@ -23,7 +23,7 @@ namespace LVS_Library
         private string image;
         private Unit unit;
         private Category category;
-        private Property property;
+        private List<Property> properties;
 
         public int ID
         {
@@ -80,23 +80,31 @@ namespace LVS_Library
             set { category = value; }
         }
 
-        public Property Property
+        public List<Property> Properties
         {
-            get { return property; }
-            set { property = value; }
+            get { return properties; }
+            set { properties = value; }
         }
 
-        public Item(string name, string description, float width, float height, float length, string image, Unit unit, Category category, Property property)
+        public Item(string _name, string _description, float _width, float _length, float _height, Unit _unit, Category _category, List<Property> _properties, string _image, int _id)
+        { 
+            Name = _name;
+            Description = _description;
+            Width = _width;
+            Length = _length;
+            Height = _height;
+
+            id = _id;
+            Image = _image;
+
+            Unit = _unit;
+            Category = _category;
+            Properties = _properties;
+        }
+
+        public static void Save()
         {
-            Name = name;
-            Description = description;
-            Width = width;
-            Height = height;
-            Length = length;
-            Image = image;
-            Unit = unit;
-            Category = category;
-            Property = property;
+           //SQL_methods.SQL_exec(string.Format)
         }
 
         public static bool Exists_in_DB(Item item)
