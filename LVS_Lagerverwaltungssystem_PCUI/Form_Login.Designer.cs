@@ -94,7 +94,7 @@
             this.panel3.ForeColor = System.Drawing.SystemColors.GrayText;
             this.panel3.Location = new System.Drawing.Point(121, 83);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(309, 53);
+            this.panel3.Size = new System.Drawing.Size(310, 54);
             this.panel3.TabIndex = 5;
             // 
             // panel1
@@ -108,7 +108,7 @@
             this.panel1.ForeColor = System.Drawing.SystemColors.GrayText;
             this.panel1.Location = new System.Drawing.Point(121, 135);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(309, 53);
+            this.panel1.Size = new System.Drawing.Size(310, 54);
             this.panel1.TabIndex = 6;
             // 
             // txt_login_password
@@ -143,7 +143,7 @@
             this.btn_exit.FlatAppearance.BorderColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_exit.FlatAppearance.BorderSize = 0;
             this.btn_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_exit.Location = new System.Drawing.Point(517, -1);
+            this.btn_exit.Location = new System.Drawing.Point(518, -1);
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.Size = new System.Drawing.Size(32, 23);
             this.btn_exit.TabIndex = 8;
@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(549, 279);
+            this.ClientSize = new System.Drawing.Size(550, 280);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_login);

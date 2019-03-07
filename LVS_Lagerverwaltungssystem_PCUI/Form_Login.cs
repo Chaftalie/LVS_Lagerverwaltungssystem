@@ -24,7 +24,8 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void btn_login_Click(object sender, EventArgs e)
         {
-
+            Form form_load = new Form_Load();
+            form_load.Show();
         }
 
         private bool mouseDown;
