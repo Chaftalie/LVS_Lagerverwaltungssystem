@@ -92,9 +92,9 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.txt_login_name);
             this.panel3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel3.Location = new System.Drawing.Point(121, 83);
+            this.panel3.Location = new System.Drawing.Point(122, 310);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(310, 54);
+            this.panel3.Size = new System.Drawing.Size(310, 61);
             this.panel3.TabIndex = 5;
             // 
             // panel1
@@ -106,9 +106,9 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txt_login_password);
             this.panel1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel1.Location = new System.Drawing.Point(121, 135);
+            this.panel1.Location = new System.Drawing.Point(122, 367);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 54);
+            this.panel1.Size = new System.Drawing.Size(310, 61);
             this.panel1.TabIndex = 6;
             // 
             // txt_login_password
@@ -129,9 +129,9 @@
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(121, 203);
+            this.btn_login.Location = new System.Drawing.Point(122, 467);
             this.btn_login.Name = "btn_login";
-            this.btn_login.Size = new System.Drawing.Size(309, 46);
+            this.btn_login.Size = new System.Drawing.Size(310, 46);
             this.btn_login.TabIndex = 7;
             this.btn_login.Text = "Login";
             this.btn_login.UseVisualStyleBackColor = false;
@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(550, 280);
+            this.ClientSize = new System.Drawing.Size(550, 545);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btn_exit);
             this.Controls.Add(this.btn_login);
