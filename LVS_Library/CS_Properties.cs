@@ -13,8 +13,9 @@ namespace LVS_Library
         private string name;
         private string description;
 
-        public Property(string _name, string _description)
+        public Property(int id_, string _name, string _description)
         {
+            ID = id_;
             Name = _name;
             Description = _description;
         }
@@ -43,7 +44,17 @@ namespace LVS_Library
             }
         }
 
-        public int ID { get => id; set => id = value; }
+        public int ID
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
 
         public static void Save(Property property)
         {
@@ -65,7 +76,7 @@ namespace LVS_Library
 
         public static List<Property> All_Properties( )
         {
-            string sql = "SELECT property_name as name, property_description as description FROM properties";
+            string sql = "SELECT id as id, property_name as name, property_description as description FROM properties";
 
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             SQL_methods.Open();
@@ -75,7 +86,7 @@ namespace LVS_Library
 
             while (sqlReader.Read())
             {
-                properties.Add(new Property( ( string ) sqlReader["name"], ( string ) sqlReader["description"]));
+                properties.Add(new Property(( int ) sqlReader["id"], ( string ) sqlReader["name"], ( string ) sqlReader["description"]));
             }
 
             return properties;
