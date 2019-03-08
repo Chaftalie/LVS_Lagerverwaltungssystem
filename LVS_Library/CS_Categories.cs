@@ -80,7 +80,7 @@ namespace LVS_Library
                 category.ID));
         }
 
-        public static List<Category> All_Units( )
+        public static List<Category> All_Categories( )
         {
             string sql = "SELECT category_name as name, category_description as description FROM categories";
 
