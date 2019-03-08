@@ -91,5 +91,39 @@ namespace LVS_Library
 
             return properties;
         }
+
+        /// <summary>
+        /// Loads all storage to property ids 
+        /// </summary>
+        /// <returns>List with all n to n connections</returns>
+        public static List<NtoN> All_sn_to_pn( )
+        {
+            string sql = "SELECT storage_id, property_id FROM storage_properties";
+
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+
+            List<NtoN> sNtopN = new List<NtoN>();
+
+            while (sqlReader.Read())
+            {
+                sNtopN.Add(new NtoN(( int ) sqlReader["storage_id"], ( int ) sqlReader["property_id"]));
+            }
+
+            return sNtopN;
+        }
+    }
+
+    public class NtoN
+    {
+        public int storage =  0;
+        public int property = 0;
+
+        public NtoN(int storage, int property)
+        {
+            this.storage = storage;
+            this.property = property;
+        }
     }
 }
