@@ -178,7 +178,7 @@ namespace LVS_Library
                 string sql = "SELECT Count(*) FROM element_location WHERE element_location.element_id = " + item.ID;
                 OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
                 SQL_methods.Open();
-                return (int) cmd.ExecuteScalar();
+                return ( int ) cmd.ExecuteScalar();
             }
             else
             {
@@ -202,9 +202,102 @@ namespace LVS_Library
             List<int> ids = new List<int>();
             while (sqlReader.Read())
             {
-                ids.Add((int)sqlReader[0]);
+                ids.Add(( int ) sqlReader[0]);
             }
             return ids;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="description"></param>
+        /// <param name="unit">-1 ignores this parameter</param>
+        /// <param name="categorie">-1 ignores this parameter</param>
+        /// <param name="l0">l0 - l1 range</param>
+        /// <param name="w0">w0 - w1 range</param>
+        /// <param name="h0">h0 - h1 range</param>
+        /// <param name="l1">l0 - l1 range</param>
+        /// <param name="w1">w0 - w1 range</param>
+        /// <param name="h1">h0 - h1 range</param>
+        /// <param name="image"></param>
+        /// <returns></returns>
+        public static List<Item> Search(string name, string description, int unit, int category, int l0, int w0, int h0, int l1, int w1, int h1, string image)
+        {
+            List<Unit> units = Unit.All_Units();
+            List<Category> categories = Category.All_Categories();
+            List<Property> properties = Property.All_Properties();
+            List<NtoN> sNtopN = Property.All_sn_to_pn();
+
+            string sql = string.Format(
+                                "SELECT * FROM storage_elements WHERE " +
+                                "(element_name LIKE '{0}' OR " +
+                                "element_description LIKE '{1}' OR " +
+                                "(element_unit_id BETWEEN {2} AND {3}) OR " +
+                                "(element_category_id BETWEEN {4} AND {5}) OR " +
+                                "(element_size_l BETWEEN {6} AND {7}) OR" +
+                                "(element_size_w BETWEEN {8} AND {9}) OR " +
+                                "(element_size_h BETWEEN {10} AND {11}) OR " +
+                                "element_image LIKE '{12}') AND " +
+                                "active = {13}",
+                                Searching_Format(name),
+                                Searching_Format(description),
+                                unit, unit,
+                                category, category,
+                                l0, l1,
+                                w0, w1,
+                                h0, h1,
+                                Searching_Format(image)
+                                );
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+
+            List<Item> items = new List<Item>();
+            while (sqlReader.Read())
+            {
+                List<NtoN> sNtopN_ = ( from x in sNtopN where x.storage == ( int ) sqlReader["id"] select x ).ToList();
+                List<Property> properties_ = ( from x in properties where sNtopN_.Any(y => x.ID == y.property) select x ).ToList();//I hope this functions correctly. I think it is alright.
+
+                Unit unit_ = ( from x in units where x.ID == ( int ) sqlReader["element_unit_id"] select x ).First();
+                //Unit unit_ = (Unit) units.Where(x => x.ID == ( int ) sqlReader["element_unit_id"]);
+                Category category_ = ( from x in categories where x.ID == ( int ) sqlReader["element_category_id"] select x ).First();
+
+
+                items.Add(new Item(
+                    ( string ) sqlReader["element_name"],
+                    ( string ) sqlReader["element_description"],
+                    ( float ) sqlReader["element_size_l"],
+                    ( float ) sqlReader["element_size_w"],
+                    ( float ) sqlReader["element_size_h"],
+                    unit_,
+                    category_,
+                    properties_,
+                    ( string ) sqlReader["element_image"],
+                    ( int ) sqlReader["id"]));
+            }
+
+            return items;
+
+        }
+
+        public static List<Item> All_items( )
+        {
+            return Search("","",-1,-1,0,0,0, int.MaxValue, int.MaxValue, int.MaxValue,"");
+        }
+
+        private static string Searching_Format(string name)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("%");
+            foreach (char c in name)
+            {
+                sb.Append(c);
+                sb.Append("%");
+            }
+            sb.Append("%");
+
+            return sb.ToString();
         }
     }
 }
