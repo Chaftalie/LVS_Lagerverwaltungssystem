@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -77,6 +78,24 @@ namespace LVS_Library
                 "DELETE FROM categories " +
                 "WHERE id = '{0}'",
                 category.ID));
+        }
+
+        public static List<Category> All_Units( )
+        {
+            string sql = "SELECT category_name as name, category_description as description FROM categories";
+
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+
+            List<Category> categories = new List<Category>();
+
+            while (sqlReader.Read())
+            {
+                categories.Add(new Category(( string ) sqlReader["name"], ( string ) sqlReader["description"]));
+            }
+
+            return categories;
         }
 
     }
