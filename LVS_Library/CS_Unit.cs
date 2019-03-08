@@ -20,8 +20,9 @@ namespace LVS_Library
         /// <param name="SI Unit"></param>
         /// <param name="Description"></param>
         /// <param name="Name"></param>
-        public Unit(string _si_unit, string _description, string _name)
+        public Unit(int id_, string _si_unit, string _description, string _name)
         {
+            ID = id_;
             SI_Unit = _si_unit;
             Description = _description;
             Name = _name;
@@ -99,7 +100,7 @@ namespace LVS_Library
 
         public static List<Unit> All_Units( )
         {
-            string sql = "SELECT unit_si as si, unit_name as name, unit_desctiprion as desctiprion FROM units";
+            string sql = "SELECT id as id, unit_si as si, unit_name as name, unit_desctiprion as desctiprion FROM units";
 
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             SQL_methods.Open();
@@ -109,7 +110,7 @@ namespace LVS_Library
 
             while (sqlReader.Read())
             {
-                units.Add(new Unit(( string ) sqlReader["si"], ( string ) sqlReader["name"], (string)sqlReader["description"]));
+                units.Add(new Unit((int)sqlReader["id"],( string ) sqlReader["si"], ( string ) sqlReader["name"], (string)sqlReader["description"]));
             }
 
             return units;
