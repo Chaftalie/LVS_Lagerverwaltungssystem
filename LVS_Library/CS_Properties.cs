@@ -63,7 +63,7 @@ namespace LVS_Library
                 property.ID));
         }
 
-        public static List<Property> All_Units( )
+        public static List<Property> All_Properties( )
         {
             string sql = "SELECT property_name as name, property_description as description FROM properties";
 
