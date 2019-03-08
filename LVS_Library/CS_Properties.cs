@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,24 @@ namespace LVS_Library
                 "DELETE FROM properties " +
                 "WHERE id = '{0}'",
                 property.ID));
+        }
+
+        public static List<Property> All_Units( )
+        {
+            string sql = "SELECT property_name as name, property_description as description FROM properties";
+
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+
+            List<Property> properties = new List<Property>();
+
+            while (sqlReader.Read())
+            {
+                properties.Add(new Property( ( string ) sqlReader["name"], ( string ) sqlReader["description"]));
+            }
+
+            return properties;
         }
     }
 }
