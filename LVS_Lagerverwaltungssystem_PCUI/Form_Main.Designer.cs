@@ -31,15 +31,15 @@
             this.panel_main_title = new System.Windows.Forms.Panel();
             this.btn_main_close = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btn_elements = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.btn_elements = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel_elements = new System.Windows.Forms.Panel();
             this.btn_elements_cat_del = new System.Windows.Forms.Button();
             this.btn_elements_cat_add = new System.Windows.Forms.Button();
@@ -57,16 +57,18 @@
             this.rtx_elements_desc = new System.Windows.Forms.RichTextBox();
             this.txt_element_name = new System.Windows.Forms.TextBox();
             this.panel_categories = new System.Windows.Forms.Panel();
-            this.lbx_cat_all = new System.Windows.Forms.ListBox();
-            this.btn_cat_add = new System.Windows.Forms.Button();
-            this.btn_cat_delete = new System.Windows.Forms.Button();
-            this.btn_cat_edit = new System.Windows.Forms.Button();
-            this.txt_cat_name = new System.Windows.Forms.TextBox();
             this.lbl_cat_name = new System.Windows.Forms.Label();
+            this.txt_cat_name = new System.Windows.Forms.TextBox();
+            this.btn_cat_delete = new System.Windows.Forms.Button();
+            this.btn_cat_add = new System.Windows.Forms.Button();
+            this.lbx_cat_all = new System.Windows.Forms.ListBox();
+            this.panel_storage = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_elements.SuspendLayout();
             this.panel_categories.SuspendLayout();
+            this.panel_storage.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_main_title
@@ -110,106 +112,6 @@
             this.panel1.Size = new System.Drawing.Size(180, 479);
             this.panel1.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "DashBoard";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(12, 150);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 33);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Storage";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(12, 214);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(152, 33);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Items";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // btn_elements
-            // 
-            this.btn_elements.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btn_elements.FlatAppearance.BorderSize = 0;
-            this.btn_elements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_elements.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_elements.ForeColor = System.Drawing.Color.White;
-            this.btn_elements.Location = new System.Drawing.Point(12, 276);
-            this.btn_elements.Name = "btn_elements";
-            this.btn_elements.Size = new System.Drawing.Size(152, 33);
-            this.btn_elements.TabIndex = 3;
-            this.btn_elements.Text = "Elements";
-            this.btn_elements.UseVisualStyleBackColor = false;
-            this.btn_elements.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(12, 339);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(152, 33);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Categories";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(12, 432);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(74, 33);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "User";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(90, 432);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(74, 33);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Settings";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -239,6 +141,109 @@
             this.label1.Size = new System.Drawing.Size(57, 29);
             this.label1.TabIndex = 2;
             this.label1.Text = "LVS";
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Location = new System.Drawing.Point(90, 432);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(74, 33);
+            this.button7.TabIndex = 6;
+            this.button7.Text = "Settings";
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Location = new System.Drawing.Point(12, 432);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(74, 33);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "User";
+            this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(12, 339);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(152, 33);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "Categories";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // btn_elements
+            // 
+            this.btn_elements.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_elements.FlatAppearance.BorderSize = 0;
+            this.btn_elements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_elements.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_elements.ForeColor = System.Drawing.Color.White;
+            this.btn_elements.Location = new System.Drawing.Point(12, 276);
+            this.btn_elements.Name = "btn_elements";
+            this.btn_elements.Size = new System.Drawing.Size(152, 33);
+            this.btn_elements.TabIndex = 3;
+            this.btn_elements.Text = "Elements";
+            this.btn_elements.UseVisualStyleBackColor = false;
+            this.btn_elements.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(12, 214);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(152, 33);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "Items";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(12, 150);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(152, 33);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Storage";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(12, 88);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(152, 33);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "DashBoard";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // panel_elements
             // 
@@ -430,7 +435,6 @@
             this.panel_categories.BackColor = System.Drawing.Color.Transparent;
             this.panel_categories.Controls.Add(this.lbl_cat_name);
             this.panel_categories.Controls.Add(this.txt_cat_name);
-            this.panel_categories.Controls.Add(this.btn_cat_edit);
             this.panel_categories.Controls.Add(this.btn_cat_delete);
             this.panel_categories.Controls.Add(this.btn_cat_add);
             this.panel_categories.Controls.Add(this.lbx_cat_all);
@@ -440,29 +444,24 @@
             this.panel_categories.TabIndex = 3;
             this.panel_categories.Visible = false;
             // 
-            // lbx_cat_all
+            // lbl_cat_name
             // 
-            this.lbx_cat_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbx_cat_all.FormattingEnabled = true;
-            this.lbx_cat_all.ItemHeight = 16;
-            this.lbx_cat_all.Location = new System.Drawing.Point(90, 12);
-            this.lbx_cat_all.Name = "lbx_cat_all";
-            this.lbx_cat_all.Size = new System.Drawing.Size(120, 84);
-            this.lbx_cat_all.TabIndex = 0;
+            this.lbl_cat_name.AutoSize = true;
+            this.lbl_cat_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cat_name.ForeColor = System.Drawing.Color.White;
+            this.lbl_cat_name.Location = new System.Drawing.Point(24, 124);
+            this.lbl_cat_name.Name = "lbl_cat_name";
+            this.lbl_cat_name.Size = new System.Drawing.Size(45, 16);
+            this.lbl_cat_name.TabIndex = 5;
+            this.lbl_cat_name.Text = "Name";
             // 
-            // btn_cat_add
+            // txt_cat_name
             // 
-            this.btn_cat_add.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_cat_add.FlatAppearance.BorderSize = 0;
-            this.btn_cat_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cat_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cat_add.ForeColor = System.Drawing.Color.White;
-            this.btn_cat_add.Location = new System.Drawing.Point(8, 12);
-            this.btn_cat_add.Name = "btn_cat_add";
-            this.btn_cat_add.Size = new System.Drawing.Size(75, 23);
-            this.btn_cat_add.TabIndex = 1;
-            this.btn_cat_add.Text = "Add";
-            this.btn_cat_add.UseVisualStyleBackColor = false;
+            this.txt_cat_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cat_name.Location = new System.Drawing.Point(90, 121);
+            this.txt_cat_name.Name = "txt_cat_name";
+            this.txt_cat_name.Size = new System.Drawing.Size(120, 22);
+            this.txt_cat_name.TabIndex = 4;
             // 
             // btn_cat_delete
             // 
@@ -478,38 +477,47 @@
             this.btn_cat_delete.Text = "Delete";
             this.btn_cat_delete.UseVisualStyleBackColor = false;
             // 
-            // btn_cat_edit
+            // btn_cat_add
             // 
-            this.btn_cat_edit.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_cat_edit.FlatAppearance.BorderSize = 0;
-            this.btn_cat_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cat_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_cat_edit.ForeColor = System.Drawing.Color.White;
-            this.btn_cat_edit.Location = new System.Drawing.Point(9, 70);
-            this.btn_cat_edit.Name = "btn_cat_edit";
-            this.btn_cat_edit.Size = new System.Drawing.Size(75, 26);
-            this.btn_cat_edit.TabIndex = 3;
-            this.btn_cat_edit.Text = "Edit";
-            this.btn_cat_edit.UseVisualStyleBackColor = false;
+            this.btn_cat_add.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_cat_add.FlatAppearance.BorderSize = 0;
+            this.btn_cat_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cat_add.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cat_add.ForeColor = System.Drawing.Color.White;
+            this.btn_cat_add.Location = new System.Drawing.Point(8, 12);
+            this.btn_cat_add.Name = "btn_cat_add";
+            this.btn_cat_add.Size = new System.Drawing.Size(75, 23);
+            this.btn_cat_add.TabIndex = 1;
+            this.btn_cat_add.Text = "Add";
+            this.btn_cat_add.UseVisualStyleBackColor = false;
             // 
-            // txt_cat_name
+            // lbx_cat_all
             // 
-            this.txt_cat_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cat_name.Location = new System.Drawing.Point(90, 121);
-            this.txt_cat_name.Name = "txt_cat_name";
-            this.txt_cat_name.Size = new System.Drawing.Size(120, 22);
-            this.txt_cat_name.TabIndex = 4;
+            this.lbx_cat_all.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbx_cat_all.FormattingEnabled = true;
+            this.lbx_cat_all.ItemHeight = 16;
+            this.lbx_cat_all.Location = new System.Drawing.Point(90, 12);
+            this.lbx_cat_all.Name = "lbx_cat_all";
+            this.lbx_cat_all.Size = new System.Drawing.Size(120, 84);
+            this.lbx_cat_all.TabIndex = 0;
             // 
-            // lbl_cat_name
+            // panel_storage
             // 
-            this.lbl_cat_name.AutoSize = true;
-            this.lbl_cat_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cat_name.ForeColor = System.Drawing.Color.White;
-            this.lbl_cat_name.Location = new System.Drawing.Point(24, 124);
-            this.lbl_cat_name.Name = "lbl_cat_name";
-            this.lbl_cat_name.Size = new System.Drawing.Size(45, 16);
-            this.lbl_cat_name.TabIndex = 5;
-            this.lbl_cat_name.Text = "Name";
+            this.panel_storage.BackColor = System.Drawing.Color.Transparent;
+            this.panel_storage.Controls.Add(this.listBox1);
+            this.panel_storage.Location = new System.Drawing.Point(205, 508);
+            this.panel_storage.Name = "panel_storage";
+            this.panel_storage.Size = new System.Drawing.Size(795, 424);
+            this.panel_storage.TabIndex = 6;
+            this.panel_storage.Visible = false;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(8, 14);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.TabIndex = 0;
             // 
             // Form_Main
             // 
@@ -517,6 +525,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(1695, 994);
+            this.Controls.Add(this.panel_storage);
             this.Controls.Add(this.panel_categories);
             this.Controls.Add(this.panel_elements);
             this.Controls.Add(this.panel1);
@@ -531,6 +540,7 @@
             this.panel_elements.PerformLayout();
             this.panel_categories.ResumeLayout(false);
             this.panel_categories.PerformLayout();
+            this.panel_storage.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -568,9 +578,10 @@
         private System.Windows.Forms.Panel panel_categories;
         private System.Windows.Forms.Label lbl_cat_name;
         private System.Windows.Forms.TextBox txt_cat_name;
-        private System.Windows.Forms.Button btn_cat_edit;
         private System.Windows.Forms.Button btn_cat_delete;
         private System.Windows.Forms.Button btn_cat_add;
         private System.Windows.Forms.ListBox lbx_cat_all;
+        private System.Windows.Forms.Panel panel_storage;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

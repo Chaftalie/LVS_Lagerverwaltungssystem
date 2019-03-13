@@ -17,9 +17,9 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_BarcodesTest());
+            Application.Run(new Form_Main());
         }
-
+        
         public static void Start_Load()
         {
             Thread t = new Thread(Started_Load);

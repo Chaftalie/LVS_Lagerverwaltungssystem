@@ -142,5 +142,23 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
 
         }
+
+        private void btn_reg_Click(object sender, EventArgs e)
+        {
+            string hash;
+            hash = SHA256(txt_login_password.Text);
+        }
+
+        static string SHA256(string randomString)
+        {
+            var crypt = new System.Security.Cryptography.SHA256Managed();
+            var hash = new System.Text.StringBuilder();
+            byte[] crypto = crypt.ComputeHash(Encoding.UTF8.GetBytes(randomString));
+            foreach (byte theByte in crypto)
+            {
+                hash.Append(theByte.ToString("x2"));
+            }
+            return hash.ToString();
+        }
     }
 }
