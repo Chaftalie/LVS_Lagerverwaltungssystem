@@ -81,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+
+    <EmbeddedResource Include="Form_BarcodesTest.resx">
+      <DependentUpon>Form_BarcodesTest.cs</DependentUpon>
     <Compile Include="UC_storage_elements.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -89,9 +92,6 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-
-    <EmbeddedResource Include="Form_BarcodesTest.resx">
-      <DependentUpon>Form_BarcodesTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Load.resx">
       <DependentUpon>Form_Load.cs</DependentUpon>
