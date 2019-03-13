@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LVS_Library;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,10 +40,15 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                 lbx_elements_used_cat.Items.Add(lbx_elements_all_cat.SelectedItem);
             }
         }
+            Load_lbx_cat_all();
+        }
 
         private void btn_elements_cat_del_Click(object sender, EventArgs e)
         {
             lbx_elements_used_cat.Items.Remove(lbx_elements_used_cat.SelectedItem);
+        private void Load_lbx_cat_all()
+        {
+            lbx_cat_all.Items.AddRange(Category.All_Categories().ToArray());
         }
 
         #endregion
