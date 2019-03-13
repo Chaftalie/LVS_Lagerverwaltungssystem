@@ -295,6 +295,7 @@
             this.btn_elements_cat_del.TabIndex = 29;
             this.btn_elements_cat_del.Text = "Delete";
             this.btn_elements_cat_del.UseVisualStyleBackColor = false;
+            this.btn_elements_cat_del.Click += new System.EventHandler(this.btn_elements_cat_del_Click);
             // 
             // btn_elements_cat_add
             // 
@@ -307,6 +308,7 @@
             this.btn_elements_cat_add.TabIndex = 28;
             this.btn_elements_cat_add.Text = "Add";
             this.btn_elements_cat_add.UseVisualStyleBackColor = false;
+            this.btn_elements_cat_add.Click += new System.EventHandler(this.btn_elements_cat_add_Click);
             // 
             // lbl_length
             // 
