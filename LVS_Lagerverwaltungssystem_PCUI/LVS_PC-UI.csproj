@@ -48,12 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CS_DB.cs" />
-    <Compile Include="Form1.cs">
+    
+    <Compile Include="Form_BarcodesTest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Form_BarcodesTest.Designer.cs">
+      <DependentUpon>Form_BarcodesTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Load.cs">
       <SubType>Form</SubType>
@@ -89,6 +89,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+
+    <EmbeddedResource Include="Form_BarcodesTest.resx">
+      <DependentUpon>Form_BarcodesTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Load.resx">
       <DependentUpon>Form_Load.cs</DependentUpon>
@@ -127,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LVS_Library\LVS_Library.csproj">
+      <Project>{9c002acd-1b96-4108-945d-0a634442df44}</Project>
+      <Name>LVS_Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
