@@ -22,7 +22,6 @@ namespace LVS_Library
         /// <param name="Name"></param>
         public Unit(string _si_unit, string _name, string _description, int _id)
         {
-            ID = id_;
             SI_Unit = _si_unit;
             Description = _description;
             Name = _name;
@@ -132,7 +131,7 @@ namespace LVS_Library
 
             while (sqlReader.Read())
             {
-                units.Add(new Unit((int)sqlReader["id"],( string ) sqlReader["si"], ( string ) sqlReader["name"], (string)sqlReader["description"]));
+                units.Add(new Unit(( string ) sqlReader["si"], ( string ) sqlReader["name"], (string)sqlReader["description"], (int)sqlReader["id"]));
             }
 
             return units;
