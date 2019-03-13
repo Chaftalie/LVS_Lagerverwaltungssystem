@@ -20,12 +20,12 @@ namespace LVS_Library
         /// <param name="SI Unit"></param>
         /// <param name="Description"></param>
         /// <param name="Name"></param>
-        public Unit(int id_, string _si_unit, string _description, string _name)
+        public Unit(string _si_unit, string _name, string _description, int _id)
         {
-            ID = id_;
             SI_Unit = _si_unit;
             Description = _description;
             Name = _name;
+            ID = _id;
         }
 
         public int ID
@@ -98,6 +98,27 @@ namespace LVS_Library
                 unit.ID));
         }
 
+        public static List<Unit> Load()
+        {
+            List<Unit> units = new List<Unit>();
+
+            string sql = "SELECT * FROM units";
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+
+            Unit loadedUnit;
+
+            while(sqlReader.Read())
+            {
+                loadedUnit = new Unit((string)sqlReader["unit_si"],(string)sqlReader["unit_name"],(string)sqlReader["unit_description"],(int)sqlReader["id"]);
+
+                units.Add(loadedUnit);
+            }
+
+            return units;
+        }
+
         public static List<Unit> All_Units( )
         {
             string sql = "SELECT id as id, unit_si as si, unit_name as name, unit_desctiprion as desctiprion FROM units";
@@ -110,7 +131,7 @@ namespace LVS_Library
 
             while (sqlReader.Read())
             {
-                units.Add(new Unit((int)sqlReader["id"],( string ) sqlReader["si"], ( string ) sqlReader["name"], (string)sqlReader["description"]));
+                units.Add(new Unit(( string ) sqlReader["si"], ( string ) sqlReader["name"], (string)sqlReader["description"], (int)sqlReader["id"]));
             }
 
             return units;
