@@ -38,7 +38,9 @@
             this.btn_exit = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_login = new System.Windows.Forms.Panel();
+            this.btn_mv_reg = new System.Windows.Forms.Button();
             this.panel_register = new System.Windows.Forms.Panel();
+            this.btn_mv_back = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -51,8 +53,6 @@
             this.bunifuSeparator1 = new System.Windows.Forms.Panel();
             this.bunifuSeparator2 = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btn_mv_reg = new System.Windows.Forms.Button();
-            this.btn_mv_back = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -196,6 +196,21 @@
             this.panel_login.Size = new System.Drawing.Size(550, 419);
             this.panel_login.TabIndex = 10;
             // 
+            // btn_mv_reg
+            // 
+            this.btn_mv_reg.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_mv_reg.FlatAppearance.BorderSize = 0;
+            this.btn_mv_reg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mv_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mv_reg.ForeColor = System.Drawing.Color.White;
+            this.btn_mv_reg.Location = new System.Drawing.Point(101, 357);
+            this.btn_mv_reg.Name = "btn_mv_reg";
+            this.btn_mv_reg.Size = new System.Drawing.Size(310, 46);
+            this.btn_mv_reg.TabIndex = 9;
+            this.btn_mv_reg.Text = "Register";
+            this.btn_mv_reg.UseVisualStyleBackColor = false;
+            this.btn_mv_reg.Click += new System.EventHandler(this.Register);
+            // 
             // panel_register
             // 
             this.panel_register.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -209,6 +224,21 @@
             this.panel_register.Name = "panel_register";
             this.panel_register.Size = new System.Drawing.Size(575, 419);
             this.panel_register.TabIndex = 11;
+            // 
+            // btn_mv_back
+            // 
+            this.btn_mv_back.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_mv_back.FlatAppearance.BorderSize = 0;
+            this.btn_mv_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mv_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mv_back.ForeColor = System.Drawing.Color.White;
+            this.btn_mv_back.Location = new System.Drawing.Point(125, 358);
+            this.btn_mv_back.Name = "btn_mv_back";
+            this.btn_mv_back.Size = new System.Drawing.Size(310, 46);
+            this.btn_mv_back.TabIndex = 10;
+            this.btn_mv_back.Text = "Back";
+            this.btn_mv_back.UseVisualStyleBackColor = false;
+            this.btn_mv_back.Click += new System.EventHandler(this.Register);
             // 
             // panel7
             // 
@@ -340,36 +370,6 @@
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(200, 2);
             this.bunifuSeparator2.TabIndex = 13;
-            // 
-            // btn_mv_reg
-            // 
-            this.btn_mv_reg.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_mv_reg.FlatAppearance.BorderSize = 0;
-            this.btn_mv_reg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mv_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mv_reg.ForeColor = System.Drawing.Color.White;
-            this.btn_mv_reg.Location = new System.Drawing.Point(101, 357);
-            this.btn_mv_reg.Name = "btn_mv_reg";
-            this.btn_mv_reg.Size = new System.Drawing.Size(310, 46);
-            this.btn_mv_reg.TabIndex = 9;
-            this.btn_mv_reg.Text = "Register";
-            this.btn_mv_reg.UseVisualStyleBackColor = false;
-            this.btn_mv_reg.Click += new System.EventHandler(this.Register);
-            // 
-            // btn_mv_back
-            // 
-            this.btn_mv_back.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btn_mv_back.FlatAppearance.BorderSize = 0;
-            this.btn_mv_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mv_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mv_back.ForeColor = System.Drawing.Color.White;
-            this.btn_mv_back.Location = new System.Drawing.Point(125, 358);
-            this.btn_mv_back.Name = "btn_mv_back";
-            this.btn_mv_back.Size = new System.Drawing.Size(310, 46);
-            this.btn_mv_back.TabIndex = 10;
-            this.btn_mv_back.Text = "Back";
-            this.btn_mv_back.UseVisualStyleBackColor = false;
-            this.btn_mv_back.Click += new System.EventHandler(this.Register);
             // 
             // Form_Login
             // 
