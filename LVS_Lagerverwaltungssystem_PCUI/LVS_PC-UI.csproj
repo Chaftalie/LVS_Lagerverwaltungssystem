@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    
     <Compile Include="Form_BarcodesTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,18 +80,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
-    <EmbeddedResource Include="Form_BarcodesTest.resx">
-      <DependentUpon>Form_BarcodesTest.cs</DependentUpon>
-    <Compile Include="UC_storage_elements.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_storage_elements.Designer.cs">
-      <DependentUpon>UC_storage_elements.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_Load.resx">
       <DependentUpon>Form_Load.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,9 +102,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UC_storage_elements.resx">
-      <DependentUpon>UC_storage_elements.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -136,6 +120,9 @@
       <Project>{9c002acd-1b96-4108-945d-0a634442df44}</Project>
       <Name>LVS_Library</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dashboard.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -354,6 +354,7 @@
             this.btn_reg.TabIndex = 7;
             this.btn_reg.Text = "Register";
             this.btn_reg.UseVisualStyleBackColor = false;
+            this.btn_reg.Click += new System.EventHandler(this.btn_reg_Click);
             // 
             // bunifuSeparator1
             // 

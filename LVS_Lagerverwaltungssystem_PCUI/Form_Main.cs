@@ -59,6 +59,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             panel_elements.Visible = false;
             panel_categories.Visible = false;
+            panel_storage.Visible = false;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -68,5 +69,14 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_categories.Visible = true;
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Disable_all_Panels();
+            panel_storage.Top = 64;
+            panel_storage.Visible = true;
+        }
+
+
     }
 }
