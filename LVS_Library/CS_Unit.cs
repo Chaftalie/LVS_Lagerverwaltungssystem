@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace LVS_Library
     public class Unit
     {
         private int id;
-        private float si_unit;
+        private string si_unit;
         private string description;
         private string name;
 
@@ -19,11 +20,12 @@ namespace LVS_Library
         /// <param name="SI Unit"></param>
         /// <param name="Description"></param>
         /// <param name="Name"></param>
-        public Unit(float _si_unit, string _description, string _name)
+        public Unit(string _si_unit, string _name, string _description, int _id)
         {
             SI_Unit = _si_unit;
             Description = _description;
             Name = _name;
+            ID = _id;
         }
 
 
@@ -41,7 +43,7 @@ namespace LVS_Library
             }
         }
 
-        public float SI_Unit
+        public string SI_Unit
         {
             get
             {
@@ -97,6 +99,27 @@ namespace LVS_Library
                 "DELETE FROM units " +
                 "WHERE id = '{0}'",
                 unit.ID));
+        }
+
+        public static List<Unit> Load()
+        {
+            List<Unit> units = new List<Unit>();
+
+            string sql = "SELECT * FROM units";
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+
+            Unit loadedUnit;
+
+            while(sqlReader.Read())
+            {
+                loadedUnit = new Unit((string)sqlReader["unit_si"],(string)sqlReader["unit_name"],(string)sqlReader["unit_description"],(int)sqlReader["id"]);
+
+                units.Add(loadedUnit);
+            }
+
+            return units;
         }
     }
 }
