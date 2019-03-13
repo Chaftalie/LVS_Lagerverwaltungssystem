@@ -14,11 +14,17 @@ namespace LVS_Lagerverwaltungssystem_PCUI
     {
         private Timer time_load = new Timer();
         private Timer time_text = new Timer();
+        private Timer time_exit = new Timer();
+
         public Form_Load()
         {
             InitializeComponent();
 
             panel_load_mover.Left = 0;
+
+            time_exit.Interval = 3000;
+            time_exit.Tick += new EventHandler(Load_Exit);
+            time_exit.Start();
         }
 
         private int panel_plus = 2;
@@ -63,6 +69,13 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                     text_counter = 1;
                     break;
             }
+        }
+
+        void Load_Exit(object sender, EventArgs e)
+        {
+            time_exit.Stop();
+            Program.Start_Main();
+            this.Close();
         }
 
         private void Form_Load_Load(object sender, EventArgs e)
