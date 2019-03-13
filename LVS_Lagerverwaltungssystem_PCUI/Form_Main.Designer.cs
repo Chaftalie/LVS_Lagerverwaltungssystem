@@ -64,6 +64,7 @@
             this.lbx_cat_all = new System.Windows.Forms.ListBox();
             this.panel_storage = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btn_save = new System.Windows.Forms.Button();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_elements.SuspendLayout();
@@ -248,6 +249,7 @@
             // panel_elements
             // 
             this.panel_elements.BackColor = System.Drawing.Color.Transparent;
+            this.panel_elements.Controls.Add(this.btn_save);
             this.panel_elements.Controls.Add(this.btn_elements_cat_del);
             this.panel_elements.Controls.Add(this.btn_elements_cat_add);
             this.panel_elements.Controls.Add(this.lbl_length);
@@ -519,6 +521,18 @@
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 0;
             // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Location = new System.Drawing.Point(350, 396);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(75, 23);
+            this.btn_save.TabIndex = 30;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = false;
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,6 +547,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Main";
             this.Text = "Form_Main";
+            this.Load += new System.EventHandler(this.Form_Main_Load);
             this.panel_main_title.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -583,5 +598,6 @@
         private System.Windows.Forms.ListBox lbx_cat_all;
         private System.Windows.Forms.Panel panel_storage;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btn_save;
     }
 }
