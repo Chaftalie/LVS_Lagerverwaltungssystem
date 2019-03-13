@@ -15,6 +15,8 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         public Form_Main()
         {
             InitializeComponent();
+            this.Width = 1000;
+            this.Height = 500;
         }
 
         private void btn_main_close_Click(object sender, EventArgs e)
@@ -45,6 +47,26 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void panel_main_title_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Disable_all_Panels();
+            panel_elements.Visible = true;
+        }
+
+        private void Disable_all_Panels()
+        {
+            panel_elements.Visible = false;
+            panel_categories.Visible = false;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Disable_all_Panels();
+            panel_categories.Left = 205;
+            panel_categories.Visible = true;
+            
         }
     }
 }

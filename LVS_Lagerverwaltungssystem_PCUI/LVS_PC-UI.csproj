@@ -91,6 +91,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_BarcodesTest.resx">
       <DependentUpon>Form_BarcodesTest.cs</DependentUpon>
+    <Compile Include="UC_storage_elements.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_storage_elements.Designer.cs">
+      <DependentUpon>UC_storage_elements.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Load.resx">
       <DependentUpon>Form_Load.cs</DependentUpon>
@@ -115,6 +123,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
+    <EmbeddedResource Include="UC_storage_elements.resx">
+      <DependentUpon>UC_storage_elements.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
