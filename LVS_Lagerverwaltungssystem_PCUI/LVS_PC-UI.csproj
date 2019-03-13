@@ -91,6 +91,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_BarcodesTest.resx">
       <DependentUpon>Form_BarcodesTest.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="UC_storage_elements.cs">
       <SubType>UserControl</SubType>
     </Compile>
