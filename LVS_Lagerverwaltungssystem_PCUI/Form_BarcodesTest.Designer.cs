@@ -38,6 +38,8 @@
             this.pbxCodeOutputAztec = new System.Windows.Forms.PictureBox();
             this.pbxCodeOutputC128 = new System.Windows.Forms.PictureBox();
             this.pbxCodeOutputPDF417 = new System.Windows.Forms.PictureBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.txbCodeInput = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -48,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxCodeOutputAztec)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCodeOutputC128)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCodeOutputPDF417)).BeginInit();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -145,11 +148,31 @@
             this.pbxCodeOutputPDF417.TabStop = false;
             this.pbxCodeOutputPDF417.Paint += new System.Windows.Forms.PaintEventHandler(this.pbxCodeOutputPDF417_Paint);
             // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.txbCodeInput);
+            this.groupBox6.Location = new System.Drawing.Point(13, 325);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(613, 81);
+            this.groupBox6.TabIndex = 6;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Input";
+            // 
+            // txbCodeInput
+            // 
+            this.txbCodeInput.Location = new System.Drawing.Point(7, 20);
+            this.txbCodeInput.Multiline = true;
+            this.txbCodeInput.Name = "txbCodeInput";
+            this.txbCodeInput.Size = new System.Drawing.Size(599, 55);
+            this.txbCodeInput.TabIndex = 0;
+            this.txbCodeInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbCodeInput_KeyPress);
+            // 
             // Form_BarcodesTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -167,6 +190,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbxCodeOutputAztec)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCodeOutputC128)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCodeOutputPDF417)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -182,5 +207,7 @@
         private System.Windows.Forms.PictureBox pbxCodeOutputPDF417;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.PictureBox pbxCodeOutputC128;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txbCodeInput;
     }
 }
