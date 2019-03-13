@@ -19,6 +19,11 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             this.Height = 500;
         }
 
+        private void Form_Main_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_main_close_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -76,7 +81,5 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_storage.Top = 64;
             panel_storage.Visible = true;
         }
-
-
     }
 }
