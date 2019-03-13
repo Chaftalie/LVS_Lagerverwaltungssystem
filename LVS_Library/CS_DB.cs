@@ -16,7 +16,7 @@ namespace LVS_Library
         {
             get
             {
-                if (!String.IsNullOrEmpty(Database_Name) && !String.IsNullOrEmpty(Database_IP) && !String.IsNullOrEmpty(Database_Port) && !String.IsNullOrEmpty(Database_Login_Name) && !String.IsNullOrEmpty(Database_Login_Password))
+                if (!String.IsNullOrEmpty(Database_Name) && !String.IsNullOrEmpty(Database_IP) && !String.IsNullOrEmpty(Database_Port) && !String.IsNullOrEmpty(Database_Login_Name))
                 {
                     return connection ?? ( connection = new OdbcConnection(Connectionstring) );
                 }
