@@ -99,5 +99,9 @@ namespace LVS_Library
             return categories;
         }
 
+        public override string ToString( )
+        {
+            return Name;
+        }
     }
 }

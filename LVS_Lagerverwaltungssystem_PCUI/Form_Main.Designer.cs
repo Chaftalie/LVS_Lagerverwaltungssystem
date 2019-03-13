@@ -41,6 +41,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel_elements = new System.Windows.Forms.Panel();
+            this.btn_save = new System.Windows.Forms.Button();
             this.btn_elements_cat_del = new System.Windows.Forms.Button();
             this.btn_elements_cat_add = new System.Windows.Forms.Button();
             this.lbl_length = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.lbx_cat_all = new System.Windows.Forms.ListBox();
             this.panel_storage = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btn_save = new System.Windows.Forms.Button();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_elements.SuspendLayout();
@@ -271,6 +271,18 @@
             this.panel_elements.TabIndex = 2;
             this.panel_elements.Visible = false;
             // 
+            // btn_save
+            // 
+            this.btn_save.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save.Location = new System.Drawing.Point(350, 396);
+            this.btn_save.Name = "btn_save";
+            this.btn_save.Size = new System.Drawing.Size(75, 23);
+            this.btn_save.TabIndex = 30;
+            this.btn_save.Text = "Save";
+            this.btn_save.UseVisualStyleBackColor = false;
+            // 
             // btn_elements_cat_del
             // 
             this.btn_elements_cat_del.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -282,6 +294,7 @@
             this.btn_elements_cat_del.TabIndex = 29;
             this.btn_elements_cat_del.Text = "Delete";
             this.btn_elements_cat_del.UseVisualStyleBackColor = false;
+            this.btn_elements_cat_del.Click += new System.EventHandler(this.btn_elements_cat_del_Click);
             // 
             // btn_elements_cat_add
             // 
@@ -294,6 +307,7 @@
             this.btn_elements_cat_add.TabIndex = 28;
             this.btn_elements_cat_add.Text = "Add";
             this.btn_elements_cat_add.UseVisualStyleBackColor = false;
+            this.btn_elements_cat_add.Click += new System.EventHandler(this.btn_elements_cat_add_Click);
             // 
             // lbl_length
             // 
@@ -520,18 +534,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 0;
-            // 
-            // btn_save
-            // 
-            this.btn_save.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_save.FlatAppearance.BorderSize = 0;
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Location = new System.Drawing.Point(350, 396);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(75, 23);
-            this.btn_save.TabIndex = 30;
-            this.btn_save.Text = "Save";
-            this.btn_save.UseVisualStyleBackColor = false;
             // 
             // Form_Main
             // 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LVS_Library;
 
 namespace LVS_Lagerverwaltungssystem_PCUI
 {
@@ -22,13 +23,34 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
+            Load_lbx_elements_all_cat();
+        }
+
+        #region items / elements
+
+        private void Load_lbx_elements_all_cat( )
+        {
+            lbx_elements_all_cat.Items.AddRange(Category.All_Categories().ToArray());
+        }
+
+        private void btn_elements_cat_add_Click(object sender, EventArgs e)
+        {
+            if(lbx_elements_used_cat.Items.Contains(lbx_elements_all_cat.SelectedItem))
+            lbx_elements_used_cat.Items.Add(lbx_elements_all_cat.SelectedItem);
+        }
             Load_lbx_cat_all();
         }
 
+        private void btn_elements_cat_del_Click(object sender, EventArgs e)
+        {
+            lbx_elements_used_cat.Items.Remove(lbx_elements_used_cat.SelectedItem);
         private void Load_lbx_cat_all()
         {
             lbx_cat_all.Items.AddRange(Category.All_Categories().ToArray());
         }
+
+        #endregion
+
 
         private void btn_main_close_Click(object sender, EventArgs e)
         {
@@ -87,5 +109,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_storage.Top = 64;
             panel_storage.Visible = true;
         }
+
+
     }
 }
