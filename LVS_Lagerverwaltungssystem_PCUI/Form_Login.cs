@@ -1,4 +1,5 @@
 ﻿using System;
+using LVS_Library;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -31,8 +32,15 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void btn_login_Click(object sender, EventArgs e)
         {
             //Form form_load = new Form_Load();
-            Program.Start_Load();
-            this.Close();
+            if (Convert.ToBoolean(SQL_methods.SQL_scalar("SELECT CASE WHEN EXISTS(SELECT * FROM users WHERE user = '"+txt_login_name.Text+"' AND password = '"+SHA256(txt_login_password.Text)+"') THEN CAST(1 AS int) ELSE CAST(0 AS int) END"))){
+                Program.Start_Load();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("User/Password not found!");
+            }
+            
         }
 
         private bool mouseDown;
@@ -146,7 +154,10 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void btn_reg_Click(object sender, EventArgs e)
         {
             string hash;
-            hash = SHA256(txt_login_password.Text);
+            hash = SHA256(txt_reg_password.Text);
+
+            SQL_methods.SQL_exec("INSERT INTO users (user, password) VALUES ('"+txt_reg_name.Text+"', '"+hash+"')");
+            
         }
 
         static string SHA256(string randomString)

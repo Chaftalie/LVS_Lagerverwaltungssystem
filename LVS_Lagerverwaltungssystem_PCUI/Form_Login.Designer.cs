@@ -46,9 +46,9 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_reg_name = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_reg_password = new System.Windows.Forms.TextBox();
             this.btn_reg = new System.Windows.Forms.Button();
             this.bunifuSeparator1 = new System.Windows.Forms.Panel();
             this.bunifuSeparator2 = new System.Windows.Forms.Panel();
@@ -297,23 +297,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.textBox1);
+            this.panel5.Controls.Add(this.txt_reg_name);
             this.panel5.ForeColor = System.Drawing.SystemColors.GrayText;
             this.panel5.Location = new System.Drawing.Point(125, 149);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(310, 61);
             this.panel5.TabIndex = 5;
             // 
-            // textBox1
+            // txt_reg_name
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Silver;
-            this.textBox1.Location = new System.Drawing.Point(16, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 15);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "Username";
+            this.txt_reg_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_reg_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reg_name.ForeColor = System.Drawing.Color.Silver;
+            this.txt_reg_name.Location = new System.Drawing.Point(16, 19);
+            this.txt_reg_name.Name = "txt_reg_name";
+            this.txt_reg_name.Size = new System.Drawing.Size(277, 15);
+            this.txt_reg_name.TabIndex = 2;
+            this.txt_reg_name.Text = "Username";
             // 
             // panel6
             // 
@@ -322,7 +322,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.textBox2);
+            this.panel6.Controls.Add(this.txt_reg_password);
             this.panel6.ForeColor = System.Drawing.SystemColors.GrayText;
             this.panel6.Location = new System.Drawing.Point(125, 209);
             this.panel6.Name = "panel6";
@@ -330,16 +330,16 @@
             this.panel6.TabIndex = 6;
             this.panel6.DoubleClick += new System.EventHandler(this.panel6_DoubleClick);
             // 
-            // textBox2
+            // txt_reg_password
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Silver;
-            this.textBox2.Location = new System.Drawing.Point(16, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(277, 15);
-            this.textBox2.TabIndex = 2;
-            this.textBox2.Text = "Password";
+            this.txt_reg_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_reg_password.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reg_password.ForeColor = System.Drawing.Color.Silver;
+            this.txt_reg_password.Location = new System.Drawing.Point(16, 19);
+            this.txt_reg_password.Name = "txt_reg_password";
+            this.txt_reg_password.Size = new System.Drawing.Size(277, 15);
+            this.txt_reg_password.TabIndex = 2;
+            this.txt_reg_password.Text = "Password";
             // 
             // btn_reg
             // 
@@ -429,9 +429,9 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_reg_name;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_reg_password;
         private System.Windows.Forms.Button btn_reg;
         private System.Windows.Forms.Panel bunifuSeparator1;
         private System.Windows.Forms.Panel bunifuSeparator2;
