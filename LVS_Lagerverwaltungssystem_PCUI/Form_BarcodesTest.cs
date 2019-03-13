@@ -85,18 +85,38 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             if (encodeText.Length < 80)
             {
-                Image codeImage = XDCodes.CreateImage(encodeText, XDCodes.CodeTypes.Code128);
+                try
+                {
+                    Image codeImage = XDCodes.CreateImage(encodeText, XDCodes.CodeTypes.Code128);
 
-                float scaleFactorY = (float)pbxCodeOutputC128.Height / (float)codeImage.Height;
-                float scaleFactorX = (float)pbxCodeOutputC128.Width / (float)codeImage.Width;
-                float scaleFactor;
-                if (scaleFactorX > scaleFactorY) scaleFactor = scaleFactorY;
-                else scaleFactor = scaleFactorX;
+                    float scaleFactorY = (float)pbxCodeOutputC128.Height / (float)codeImage.Height;
+                    float scaleFactorX = (float)pbxCodeOutputC128.Width / (float)codeImage.Width;
+                    float scaleFactor;
+                    if (scaleFactorX > scaleFactorY) scaleFactor = scaleFactorY;
+                    else scaleFactor = scaleFactorX;
 
-                e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
-                e.Graphics.ScaleTransform(scaleFactor, scaleFactor);
-                e.Graphics.DrawImage(codeImage, 1, 1);
+                    e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+                    e.Graphics.ScaleTransform(scaleFactor, scaleFactor);
+                    e.Graphics.DrawImage(codeImage, 1, 1);
+                }
+                catch(Exception ex)
+                {
+                    
+                }
             }
+        }
+
+        private void txbCodeInput_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            encodeText = txbCodeInput.Text;
+
+            if (encodeText == "") encodeText = "- Leer -";
+
+            pbxCodeOutputQR.Invalidate();
+            pbcCodeOutputDM.Invalidate();
+            pbxCodeOutputC128.Invalidate();
+            pbxCodeOutputAztec.Invalidate();
+            pbxCodeOutputPDF417.Invalidate();
         }
     }
 }

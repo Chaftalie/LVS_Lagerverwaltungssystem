@@ -37,6 +37,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             Properties.Settings.Default.Database_Port = tBx_Port.Text;
             Properties.Settings.Default.Database_Login_Name = tBx_Login_Name.Text;
             Properties.Settings.Default.Database_Login_Password = tBx_Login_Password.Text;
+            Properties.Settings.Default.Save();
         }
 
         private void btn_resett_Click(object sender, EventArgs e)
@@ -55,6 +56,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void btn_check_connection_Click(object sender, EventArgs e)
         {
+            DB.Give_login_Data_pls_thx(Properties.Settings.Default.Database_Name, Properties.Settings.Default.Database_IP, Properties.Settings.Default.Database_Port, Properties.Settings.Default.Database_Login_Name, Properties.Settings.Default.Database_Login_Password);
             try
             {
                 SQL_methods.Open();

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LVS_PC-UI", "LVS_Lagerverwa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LVS_Library", "LVS_Library\LVS_Library.csproj", "{9C002ACD-1B96-4108-945D-0A634442DF44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LVS_Webtools", "LVS_Webtools\LVS_Webtools.csproj", "{A4078E5B-1BEE-402E-9B88-B3BDF4FF21B8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9C002ACD-1B96-4108-945D-0A634442DF44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C002ACD-1B96-4108-945D-0A634442DF44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C002ACD-1B96-4108-945D-0A634442DF44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4078E5B-1BEE-402E-9B88-B3BDF4FF21B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4078E5B-1BEE-402E-9B88-B3BDF4FF21B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4078E5B-1BEE-402E-9B88-B3BDF4FF21B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4078E5B-1BEE-402E-9B88-B3BDF4FF21B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
