@@ -19,7 +19,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             DB.Give_login_Data_pls_thx(Properties.Settings.Default.Database_Name, Properties.Settings.Default.Database_IP, Properties.Settings.Default.Database_Port, Properties.Settings.Default.Database_Login_Name, Properties.Settings.Default.Database_Login_Password);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Main());
+            Application.Run(new Form_Login());
         }
         
         public static void Start_Load()

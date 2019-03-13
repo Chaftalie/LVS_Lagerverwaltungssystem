@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_login_name = new System.Windows.Forms.TextBox();
@@ -114,7 +115,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.txt_login_name);
             this.panel3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel3.Location = new System.Drawing.Point(101, 30);
+            this.panel3.Location = new System.Drawing.Point(121, 30);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(308, 61);
             this.panel3.TabIndex = 5;
@@ -128,7 +129,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txt_login_password);
             this.panel1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel1.Location = new System.Drawing.Point(101, 90);
+            this.panel1.Location = new System.Drawing.Point(121, 90);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 61);
             this.panel1.TabIndex = 6;
@@ -151,7 +152,7 @@
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(101, 305);
+            this.btn_login.Location = new System.Drawing.Point(121, 305);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(310, 46);
             this.btn_login.TabIndex = 7;
@@ -203,7 +204,7 @@
             this.btn_mv_reg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mv_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mv_reg.ForeColor = System.Drawing.Color.White;
-            this.btn_mv_reg.Location = new System.Drawing.Point(101, 357);
+            this.btn_mv_reg.Location = new System.Drawing.Point(121, 357);
             this.btn_mv_reg.Name = "btn_mv_reg";
             this.btn_mv_reg.Size = new System.Drawing.Size(310, 46);
             this.btn_mv_reg.TabIndex = 9;
@@ -387,6 +388,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form_Login";
