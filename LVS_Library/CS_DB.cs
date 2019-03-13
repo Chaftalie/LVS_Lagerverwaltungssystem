@@ -45,7 +45,7 @@ namespace LVS_Library
         private static string Connectionstring => $"Driver={"MySQL ODBC 5.3 Unicode Driver"};Server={Database_IP};Port={Database_Port};Database={Database_Name};User={Database_Login_Name};Password={Database_Login_Password};Option=3;";
     }
 
-    public class SQL_methods
+    public static class SQL_methods
     {
 
         static private OdbcConnection Connection => DB.Connection;

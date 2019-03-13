@@ -17,7 +17,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_Login());
+            Application.Run(new Form_Parameter());
         }
 
         public static void Start_Load()
