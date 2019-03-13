@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LVS_Library;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,12 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
+            Load_lbx_cat_all();
+        }
 
+        private void Load_lbx_cat_all()
+        {
+            lbx_cat_all.Items.AddRange(Category.All_Categories().ToArray());
         }
 
         private void btn_main_close_Click(object sender, EventArgs e)
