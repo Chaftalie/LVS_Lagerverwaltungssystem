@@ -42,7 +42,7 @@ namespace LVS_Library
 
         public void Store(Item item, float count)
         {
-            if (Exist_in_DB(item))
+            if (Item.Exists_in_DB(item))
             {
 
                 SQL_methods.SQL_exec("UPDATE storage_location SET storage_element_count = (storage_element_count + " + count + ") WHERE id = " + Id);

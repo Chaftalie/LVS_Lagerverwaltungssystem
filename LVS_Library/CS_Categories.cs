@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Odbc;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,8 +20,9 @@ namespace LVS_Library
         /// <param name="ID"></param>
         /// <param name="Name"></param>
         /// <param name="Descritpion"></param>
-        public Category(string _name, string _descritpion)
+        public Category(int id_, string _name, string _descritpion)
         {
+            ID = id_;
             Name = _name;
             Description = _descritpion;
         }
@@ -77,6 +79,24 @@ namespace LVS_Library
                 "DELETE FROM categories " +
                 "WHERE id = '{0}'",
                 category.ID));
+        }
+
+        public static List<Category> All_Categories( )
+        {
+            string sql = "SELECT id as id, category_name as name, category_description as description FROM categories";
+
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+
+            List<Category> categories = new List<Category>();
+
+            while (sqlReader.Read())
+            {
+                categories.Add(new Category(( int ) sqlReader["id"], ( string ) sqlReader["name"], ( string ) sqlReader["description"]));
+            }
+
+            return categories;
         }
 
     }
