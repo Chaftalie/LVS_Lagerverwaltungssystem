@@ -26,10 +26,22 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             t.Start();
         }
 
+        public static void Start_Main()
+        {
+            Thread t_main = new Thread(Started_Main);
+            t_main.Start();
+        }
+
         static void Started_Load()
         {
             
             Application.Run(new Form_Load());
+        }
+
+        static void Started_Main()
+        {
+
+            Application.Run(new Form_Main());
         }
     }
 }
