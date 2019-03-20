@@ -115,6 +115,9 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_storage.Visible = true;
         }
 
-
+        private void panel_categories_Paint(object sender, PaintEventArgs e)
+        {
+              
+        }
     }
 }
