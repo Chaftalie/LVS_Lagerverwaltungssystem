@@ -167,9 +167,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dashboard.png" />
     <Content Include="icon.ico" />
-    <Content Include="License-LGPL.txt" />
+    <Content Include="dashboad.png" />
+    <Content Include="properties.png" />
+    <Content Include="item.png" />
+    <Content Include="storage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets" Condition="Exists('..\packages\EMGU.CV.3.4.3.3016\build\EMGU.CV.targets')" />

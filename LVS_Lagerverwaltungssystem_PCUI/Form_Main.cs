@@ -90,12 +90,12 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void button4_Click(object sender, EventArgs e)
         {
             Disable_all_Panels();
-            panel_elements.Visible = true;
+            panel_items.Visible = true;
         }
 
         private void Disable_all_Panels()
         {
-            panel_elements.Visible = false;
+            panel_items.Visible = false;
             panel_categories.Visible = false;
             panel_storage.Visible = false;
         }
@@ -115,9 +115,67 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_storage.Visible = true;
         }
 
-        private void panel_categories_Paint(object sender, PaintEventArgs e)
+        Color hover_color = Color.FromArgb(106, 122, 137);
+
+        private void button1_MouseEnter(object sender, EventArgs e)
         {
-              
+
+            btn_dash_icon.BackColor = hover_color;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            btn_dash_icon.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_dash_icon_MouseEnter(object sender, EventArgs e)
+        {
+            btn_dash.BackColor = hover_color;
+        }
+
+        private void btn_dash_icon_MouseLeave(object sender, EventArgs e)
+        {
+            btn_dash.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_storage_MouseEnter(object sender, EventArgs e)
+        {
+            btn_storage_icon.BackColor = hover_color;
+        }
+
+        private void btn_storage_MouseLeave(object sender, EventArgs e)
+        {
+            btn_storage_icon.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_storage_icon_MouseEnter(object sender, EventArgs e)
+        {
+            btn_storage.BackColor = hover_color;
+        }
+
+        private void btn_storage_icon_MouseLeave(object sender, EventArgs e)
+        {
+            btn_storage.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_prop_MouseEnter(object sender, EventArgs e)
+        {
+            btn_prop_icon.BackColor = hover_color;
+        }
+
+        private void btn_prop_MouseLeave(object sender, EventArgs e)
+        {
+            btn_prop_icon.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_prop_icon_MouseEnter(object sender, EventArgs e)
+        {
+            btn_prop.BackColor = hover_color;
+        }
+
+        private void btn_prop_icon_MouseLeave(object sender, EventArgs e)
+        {
+            btn_prop.BackColor = Color.LightSlateGray;
         }
     }
 }
