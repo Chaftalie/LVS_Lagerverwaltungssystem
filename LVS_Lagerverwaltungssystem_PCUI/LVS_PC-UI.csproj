@@ -140,8 +140,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dashboard.png" />
     <Content Include="icon.ico" />
+    <Content Include="dashboad.png" />
+    <Content Include="properties.png" />
+    <Content Include="item.png" />
+    <Content Include="storage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
