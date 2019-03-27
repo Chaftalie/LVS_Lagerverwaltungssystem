@@ -79,7 +79,8 @@
             this.btn_cat_add = new System.Windows.Forms.Button();
             this.lbx_cat_all = new System.Windows.Forms.ListBox();
             this.panel_storage = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
@@ -766,20 +767,28 @@
             // panel_storage
             // 
             this.panel_storage.BackColor = System.Drawing.Color.Transparent;
-            this.panel_storage.Controls.Add(this.listBox1);
+            this.panel_storage.Controls.Add(this.richTextBox1);
+            this.panel_storage.Controls.Add(this.textBox1);
             this.panel_storage.Location = new System.Drawing.Point(205, 508);
             this.panel_storage.Name = "panel_storage";
             this.panel_storage.Size = new System.Drawing.Size(795, 424);
             this.panel_storage.TabIndex = 6;
             this.panel_storage.Visible = false;
             // 
-            // listBox1
+            // textBox1
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(292, 68);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 0;
+            this.textBox1.Location = new System.Drawing.Point(111, 55);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(133, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(111, 99);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(133, 96);
+            this.richTextBox1.TabIndex = 1;
+            this.richTextBox1.Text = "";
             // 
             // Form_Main
             // 
@@ -806,6 +815,7 @@
             this.panel_categories.ResumeLayout(false);
             this.panel_categories.PerformLayout();
             this.panel_storage.ResumeLayout(false);
+            this.panel_storage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -847,7 +857,6 @@
         private System.Windows.Forms.Button btn_cat_add;
         private System.Windows.Forms.ListBox lbx_cat_all;
         private System.Windows.Forms.Panel panel_storage;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_dash_icon;
         private System.Windows.Forms.Button btn_storage_icon;
@@ -863,5 +872,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_articel_number;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
