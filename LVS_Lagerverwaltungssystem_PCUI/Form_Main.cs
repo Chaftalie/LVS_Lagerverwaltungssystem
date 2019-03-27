@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LVS_Library;
 
 namespace LVS_Lagerverwaltungssystem_PCUI
 {
@@ -52,6 +51,14 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void Load_lbx_cat_all()
         {
             lbx_cat_all.Items.AddRange(Category.All_Categories().ToArray());
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            float.TryParse(txt_elements_width.Text, out float w);
+            float.TryParse(txt_elements_length.Text, out float l);
+            float.TryParse(txt_elements_height.Text, out float h);
+            Item.Save(new Item(txt_element_name.Text,rtx_elements_desc.Text,w,l,h,null,null,null,"nix bild hier sorry","artikelnummer"));
         }
 
         #endregion
@@ -177,5 +184,26 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             btn_prop.BackColor = Color.LightSlateGray;
         }
+        
+        private void btn_items_MouseEnter(object sender, EventArgs e)
+        {
+            btn_items_icon.BackColor = hover_color;
+        }
+
+        private void btn_items_MouseLeave(object sender, EventArgs e)
+        {
+            btn_items_icon.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_items_icon_MouseEnter(object sender, EventArgs e)
+        {
+            btn_items.BackColor = hover_color;
+        }
+
+        private void btn_items_icon_MouseLeave(object sender, EventArgs e)
+        {
+            btn_items.BackColor = Color.LightSlateGray;
+        }
+        
     }
 }
