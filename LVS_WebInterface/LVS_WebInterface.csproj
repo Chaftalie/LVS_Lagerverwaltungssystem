@@ -82,11 +82,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="frame_camCapture.aspx" />
+    <Content Include="frame_camStream.aspx" />
     <Content Include="index.aspx" />
     <Content Include="License-LGPL.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frame_camCapture.aspx.cs">
+      <DependentUpon>frame_camCapture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frame_camCapture.aspx.designer.cs">
+      <DependentUpon>frame_camCapture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frame_camStream.aspx.cs">
+      <DependentUpon>frame_camStream.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frame_camStream.aspx.designer.cs">
+      <DependentUpon>frame_camStream.aspx</DependentUpon>
+    </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
