@@ -117,7 +117,16 @@
             this.txt_storage_id = new System.Windows.Forms.TextBox();
             this.rtx_storage_desc = new System.Windows.Forms.RichTextBox();
             this.txt_storage_name = new System.Windows.Forms.TextBox();
-            this.oFD_element_Image = new System.Windows.Forms.OpenFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel_user = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
@@ -125,6 +134,8 @@
             this.panel_categories.SuspendLayout();
             this.panel_storage.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel_user.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main_title
@@ -205,6 +216,7 @@
             this.btn_icon_user.Size = new System.Drawing.Size(34, 33);
             this.btn_icon_user.TabIndex = 12;
             this.btn_icon_user.UseVisualStyleBackColor = false;
+            this.btn_icon_user.Click += new System.EventHandler(this.btn_user_Click);
             this.btn_icon_user.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_icon_user_MouseDown);
             this.btn_icon_user.MouseEnter += new System.EventHandler(this.btn_icon_user_MouseEnter);
             this.btn_icon_user.MouseLeave += new System.EventHandler(this.btn_icon_user_MouseLeave);
@@ -358,6 +370,7 @@
             this.btn_user.TabIndex = 5;
             this.btn_user.Text = "User";
             this.btn_user.UseVisualStyleBackColor = false;
+            this.btn_user.Click += new System.EventHandler(this.btn_user_Click);
             this.btn_user.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_user_MouseDown);
             this.btn_user.MouseEnter += new System.EventHandler(this.btn_user_MouseEnter);
             this.btn_user.MouseLeave += new System.EventHandler(this.btn_user_MouseLeave);
@@ -822,6 +835,7 @@
             // panel_storage
             // 
             this.panel_storage.BackColor = System.Drawing.Color.Transparent;
+            this.panel_storage.Controls.Add(this.button1);
             this.panel_storage.Controls.Add(this.label17);
             this.panel_storage.Controls.Add(this.label16);
             this.panel_storage.Controls.Add(this.label15);
@@ -1212,16 +1226,214 @@
             this.txt_storage_name.Size = new System.Drawing.Size(133, 20);
             this.txt_storage_name.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(492, 289);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 23);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // panel_user
+            // 
+            this.panel_user.BackColor = System.Drawing.Color.Transparent;
+            this.panel_user.Controls.Add(this.label18);
+            this.panel_user.Controls.Add(this.label19);
+            this.panel_user.Controls.Add(this.button2);
+            this.panel_user.Controls.Add(this.pictureBox1);
+            this.panel_user.Controls.Add(this.textBox4);
+            this.panel_user.Controls.Add(this.textBox3);
+            this.panel_user.Controls.Add(this.textBox2);
+            this.panel_user.Controls.Add(this.textBox1);
+            this.panel_user.Location = new System.Drawing.Point(1094, 64);
+            this.panel_user.Name = "panel_user";
+            this.panel_user.Size = new System.Drawing.Size(433, 424);
+            this.panel_user.TabIndex = 6;
+            this.panel_user.Visible = false;
+            this.panel_user.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // txt_storage_width
+            // 
+            this.txt_storage_width.Location = new System.Drawing.Point(119, 207);
+            this.txt_storage_width.Name = "txt_storage_width";
+            this.txt_storage_width.Size = new System.Drawing.Size(133, 20);
+            this.txt_storage_width.TabIndex = 5;
+            // 
+            // cbx_storage_cat
+            // 
+            this.cbx_storage_cat.FormattingEnabled = true;
+            this.cbx_storage_cat.Location = new System.Drawing.Point(311, 193);
+            this.cbx_storage_cat.Name = "cbx_storage_cat";
+            this.cbx_storage_cat.Size = new System.Drawing.Size(133, 21);
+            this.cbx_storage_cat.TabIndex = 41;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(308, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(69, 16);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Unit Type:";
+            // 
+            // btn_storage_add_prop
+            // 
+            this.btn_storage_add_prop.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_storage_add_prop.FlatAppearance.BorderSize = 0;
+            this.btn_storage_add_prop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_storage_add_prop.Location = new System.Drawing.Point(450, 42);
+            this.btn_storage_add_prop.Name = "btn_storage_add_prop";
+            this.btn_storage_add_prop.Size = new System.Drawing.Size(31, 23);
+            this.btn_storage_add_prop.TabIndex = 42;
+            this.btn_storage_add_prop.Text = "-->";
+            this.btn_storage_add_prop.UseVisualStyleBackColor = false;
+            // 
+            // txt_storage_height
+            // 
+            this.txt_storage_height.Location = new System.Drawing.Point(119, 250);
+            this.txt_storage_height.Name = "txt_storage_height";
+            this.txt_storage_height.Size = new System.Drawing.Size(133, 20);
+            this.txt_storage_height.TabIndex = 4;
+            // 
+            // cbx_storage_unit
+            // 
+            this.cbx_storage_unit.FormattingEnabled = true;
+            this.cbx_storage_unit.Location = new System.Drawing.Point(311, 150);
+            this.cbx_storage_unit.Name = "cbx_storage_unit";
+            this.cbx_storage_unit.Size = new System.Drawing.Size(133, 21);
+            this.cbx_storage_unit.TabIndex = 39;
+            // 
+            // textBox1
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(308, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(73, 16);
+            this.label6.TabIndex = 41;
+            this.label6.Text = "Properties:";
+            // 
+            // txt_storage_length
+            // 
+            this.txt_storage_length.Location = new System.Drawing.Point(119, 292);
+            this.txt_storage_length.Name = "txt_storage_length";
+            this.txt_storage_length.Size = new System.Drawing.Size(133, 20);
+            this.txt_storage_length.TabIndex = 3;
+            // 
+            // lbx_storage_used_prop
+            // 
+            this.lbx_storage_used_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbx_storage_used_prop.FormattingEnabled = true;
+            this.lbx_storage_used_prop.ItemHeight = 16;
+            this.lbx_storage_used_prop.Location = new System.Drawing.Point(492, 35);
+            this.lbx_storage_used_prop.Name = "lbx_storage_used_prop";
+            this.lbx_storage_used_prop.Size = new System.Drawing.Size(133, 84);
+            this.lbx_storage_used_prop.TabIndex = 40;
+            // 
+            // lbx_storage_all_prop
+            // 
+            this.lbx_storage_all_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbx_storage_all_prop.FormattingEnabled = true;
+            this.lbx_storage_all_prop.ItemHeight = 16;
+            this.lbx_storage_all_prop.Location = new System.Drawing.Point(311, 35);
+            this.lbx_storage_all_prop.Name = "lbx_storage_all_prop";
+            this.lbx_storage_all_prop.Size = new System.Drawing.Size(133, 84);
+            this.lbx_storage_all_prop.TabIndex = 39;
+            // 
+            // txt_storage_id
+            // 
+            this.txt_storage_id.Location = new System.Drawing.Point(119, 51);
+            this.txt_storage_id.Name = "txt_storage_id";
+            this.txt_storage_id.Size = new System.Drawing.Size(133, 20);
+            this.txt_storage_id.TabIndex = 2;
+            // 
+            this.textBox1.Location = new System.Drawing.Point(111, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(111, 67);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(111, 107);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 2;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(111, 160);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Lime;
+            this.pictureBox1.Location = new System.Drawing.Point(276, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 71);
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(276, 389);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(133, 23);
+            this.button2.TabIndex = 39;
+            this.button2.Text = "Save";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(4, 71);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(79, 16);
+            this.label18.TabIndex = 41;
+            this.label18.Text = "Descirption:";
+            // 
             // oFD_element_Image
+
             // 
             this.oFD_element_Image.Title = "Image";
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.White;
+            this.label19.Location = new System.Drawing.Point(3, 23);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(80, 16);
+            this.label19.TabIndex = 40;
+            this.label19.Text = "User Name:";
             // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(1386, 1100);
+            this.ClientSize = new System.Drawing.Size(1940, 1100);
+            this.Controls.Add(this.panel_user);
             this.Controls.Add(this.panel_storage);
             this.Controls.Add(this.panel_categories);
             this.Controls.Add(this.panel_items);
@@ -1244,6 +1456,9 @@
             this.panel_storage.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel_user.ResumeLayout(false);
+            this.panel_user.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1338,6 +1553,16 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel_user;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.OpenFileDialog oFD_element_Image;
     }
 }

@@ -143,6 +143,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_items.Visible = false;
             panel_categories.Visible = false;
             panel_storage.Visible = false;
+            panel_user.Visible = false;
         }
 
         private void btn_cat_Click(object sender, EventArgs e)
@@ -464,6 +465,18 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void pBx_elements_image_DragDrop(object sender, DragEventArgs e)
         {
             pBx_elements_image.Image = Image.FromFile(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_user_Click(object sender, EventArgs e)
+        {
+            Disable_all_Panels();
+            panel_user.Left = 205;
+            panel_user.Visible = true;
         }
     }
 }
