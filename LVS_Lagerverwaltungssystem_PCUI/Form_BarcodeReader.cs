@@ -15,6 +15,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
     public partial class Form_BarcodeReader : Form
     {
         VideoCapture capture = new VideoCapture();
+        BarcodeReader barcodeReader = new BarcodeReader();
 
         public Form_BarcodeReader()
         {
@@ -26,6 +27,8 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
             pbxCamOutput.Image = image;
 
+            pbxCamOutput.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
+
         }
 
         private void tmr_16ms_Tick(object sender, EventArgs e)
@@ -34,31 +37,16 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             {
                 Bitmap image = capture.QueryFrame().Bitmap;
                 pbxCamOutput.Image.Dispose();
-
                 pbxCamOutput.Image = image;
+                pbxCamOutput.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
-
-                // create a barcode reader instance
-                var barcodeReader = new BarcodeReader();
-
-                // create an in memory bitmap
-                var barcodeBitmap = image;
-
-                // decode the barcode from the in memory bitmap
-                var barcodeResult = barcodeReader.Decode(barcodeBitmap);
-
-                // output results to console
-
-                txbBarcodeOutput.Text = barcodeResult?.Text;
-                txbBarcodeType.Text = Convert.ToString(barcodeResult?.BarcodeFormat);
-
-                //Console.WriteLine($"Decoded barcode text: {barcodeResult?.Text}");
-                //Console.WriteLine($"Barcode format: {barcodeResult?.BarcodeFormat}");
+                txbBarcodeOutput.Text = barcodeReader.Decode(image)?.Text;
+                txbBarcodeType.Text = Convert.ToString(barcodeReader.Decode(image)?.BarcodeFormat);
 
                 if (txbBarcodeOutput.Text != "")
                 {
-                    Console.Beep(1800, 100);
-                    Console.Beep(1500, 200);
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\airhorn.wav");
+                    player.Play();
                     tmr_16ms.Stop();
                 }
             }

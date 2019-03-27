@@ -42,7 +42,8 @@
             // 
             this.pbxCamOutput.Location = new System.Drawing.Point(12, 12);
             this.pbxCamOutput.Name = "pbxCamOutput";
-            this.pbxCamOutput.Size = new System.Drawing.Size(776, 353);
+            this.pbxCamOutput.Size = new System.Drawing.Size(659, 353);
+            this.pbxCamOutput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pbxCamOutput.TabIndex = 0;
             this.pbxCamOutput.TabStop = false;
             // 
@@ -80,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(683, 439);
             this.Controls.Add(this.btnResetCapture);
             this.Controls.Add(this.txbBarcodeType);
             this.Controls.Add(this.txbBarcodeOutput);
