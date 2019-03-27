@@ -86,6 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBx_elements_image)).BeginInit();
             this.panel_categories.SuspendLayout();
             this.panel_storage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main_title
@@ -148,8 +149,11 @@
             this.btn_icon_cat.Size = new System.Drawing.Size(34, 33);
             this.btn_icon_cat.TabIndex = 13;
             this.btn_icon_cat.UseVisualStyleBackColor = false;
+            this.btn_icon_cat.Click += new System.EventHandler(this.btn_cat_Click);
+            this.btn_icon_cat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_icon_cat_MouseDown);
             this.btn_icon_cat.MouseEnter += new System.EventHandler(this.btn_icon_cat_MouseEnter);
             this.btn_icon_cat.MouseLeave += new System.EventHandler(this.btn_icon_cat_MouseLeave);
+            this.btn_icon_cat.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_icon_cat_MouseUp);
             // 
             // btn_icon_user
             // 
@@ -163,8 +167,10 @@
             this.btn_icon_user.Size = new System.Drawing.Size(34, 33);
             this.btn_icon_user.TabIndex = 12;
             this.btn_icon_user.UseVisualStyleBackColor = false;
+            this.btn_icon_user.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_icon_user_MouseDown);
             this.btn_icon_user.MouseEnter += new System.EventHandler(this.btn_icon_user_MouseEnter);
             this.btn_icon_user.MouseLeave += new System.EventHandler(this.btn_icon_user_MouseLeave);
+            this.btn_icon_user.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_icon_user_MouseUp);
             // 
             // btn_icon_setting
             // 
@@ -178,8 +184,10 @@
             this.btn_icon_setting.Size = new System.Drawing.Size(34, 33);
             this.btn_icon_setting.TabIndex = 11;
             this.btn_icon_setting.UseVisualStyleBackColor = false;
+            this.btn_icon_setting.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_icon_setting_MouseDown);
             this.btn_icon_setting.MouseEnter += new System.EventHandler(this.btn_icon_setting_MouseEnter);
             this.btn_icon_setting.MouseLeave += new System.EventHandler(this.btn_icon_setting_MouseLeave);
+            this.btn_icon_setting.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_icon_setting_MouseUp);
             // 
             // btn_items_icon
             // 
@@ -193,8 +201,11 @@
             this.btn_items_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_items_icon.TabIndex = 10;
             this.btn_items_icon.UseVisualStyleBackColor = false;
+            this.btn_items_icon.Click += new System.EventHandler(this.btn_items_Click);
+            this.btn_items_icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_items_icon_MouseDown);
             this.btn_items_icon.MouseEnter += new System.EventHandler(this.btn_items_icon_MouseEnter);
             this.btn_items_icon.MouseLeave += new System.EventHandler(this.btn_items_icon_MouseLeave);
+            this.btn_items_icon.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_items_icon_MouseUp);
             // 
             // btn_prop_icon
             // 
@@ -208,8 +219,10 @@
             this.btn_prop_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_prop_icon.TabIndex = 9;
             this.btn_prop_icon.UseVisualStyleBackColor = false;
+            this.btn_prop_icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_prop_icon_MouseDown);
             this.btn_prop_icon.MouseEnter += new System.EventHandler(this.btn_prop_icon_MouseEnter);
             this.btn_prop_icon.MouseLeave += new System.EventHandler(this.btn_prop_icon_MouseLeave);
+            this.btn_prop_icon.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_prop_icon_MouseUp);
             // 
             // btn_storage_icon
             // 
@@ -223,8 +236,11 @@
             this.btn_storage_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_storage_icon.TabIndex = 8;
             this.btn_storage_icon.UseVisualStyleBackColor = false;
+            this.btn_storage_icon.Click += new System.EventHandler(this.btn_storage_Click);
+            this.btn_storage_icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_storage_icon_MouseDown);
             this.btn_storage_icon.MouseEnter += new System.EventHandler(this.btn_storage_icon_MouseEnter);
             this.btn_storage_icon.MouseLeave += new System.EventHandler(this.btn_storage_icon_MouseLeave);
+            this.btn_storage_icon.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_storage_icon_MouseUp);
             // 
             // btn_dash_icon
             // 
@@ -238,8 +254,10 @@
             this.btn_dash_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_dash_icon.TabIndex = 7;
             this.btn_dash_icon.UseVisualStyleBackColor = false;
+            this.btn_dash_icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_dash_icon_MouseDown);
             this.btn_dash_icon.MouseEnter += new System.EventHandler(this.btn_dash_icon_MouseEnter);
             this.btn_dash_icon.MouseLeave += new System.EventHandler(this.btn_dash_icon_MouseLeave);
+            this.btn_dash_icon.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_dash_icon_MouseUp);
             // 
             // label2
             // 
@@ -284,8 +302,10 @@
             this.btn_settings.TabIndex = 6;
             this.btn_settings.Text = "Settings";
             this.btn_settings.UseVisualStyleBackColor = false;
+            this.btn_settings.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_settings_MouseDown);
             this.btn_settings.MouseEnter += new System.EventHandler(this.btn_settings_MouseEnter);
             this.btn_settings.MouseLeave += new System.EventHandler(this.btn_settings_MouseLeave);
+            this.btn_settings.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_settings_MouseUp);
             // 
             // btn_user
             // 
@@ -300,9 +320,11 @@
             this.btn_user.TabIndex = 5;
             this.btn_user.Text = "User";
             this.btn_user.UseVisualStyleBackColor = false;
+            this.btn_user.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_user_MouseDown);
             this.btn_user.MouseEnter += new System.EventHandler(this.btn_user_MouseEnter);
             this.btn_user.MouseLeave += new System.EventHandler(this.btn_user_MouseLeave);
             this.btn_user.MouseHover += new System.EventHandler(this.btn_user_MouseHover);
+            this.btn_user.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_user_MouseUp);
             // 
             // btn_cat
             // 
@@ -317,9 +339,11 @@
             this.btn_cat.TabIndex = 4;
             this.btn_cat.Text = "Categories";
             this.btn_cat.UseVisualStyleBackColor = false;
-            this.btn_cat.Click += new System.EventHandler(this.button5_Click);
+            this.btn_cat.Click += new System.EventHandler(this.btn_cat_Click);
+            this.btn_cat.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_cat_MouseDown);
             this.btn_cat.MouseEnter += new System.EventHandler(this.button5_MouseEnter);
             this.btn_cat.MouseLeave += new System.EventHandler(this.btn_cat_MouseLeave);
+            this.btn_cat.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_cat_MouseUp);
             // 
             // btn_items
             // 
@@ -334,9 +358,11 @@
             this.btn_items.TabIndex = 3;
             this.btn_items.Text = "Items";
             this.btn_items.UseVisualStyleBackColor = false;
-            this.btn_items.Click += new System.EventHandler(this.button4_Click);
+            this.btn_items.Click += new System.EventHandler(this.btn_items_Click);
+            this.btn_items.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_items_MouseDown);
             this.btn_items.MouseEnter += new System.EventHandler(this.btn_items_MouseEnter_1);
             this.btn_items.MouseLeave += new System.EventHandler(this.btn_items_MouseLeave);
+            this.btn_items.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_items_MouseUp);
             // 
             // btn_prop
             // 
@@ -351,8 +377,10 @@
             this.btn_prop.TabIndex = 2;
             this.btn_prop.Text = "Properties";
             this.btn_prop.UseVisualStyleBackColor = false;
+            this.btn_prop.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_prop_MouseDown);
             this.btn_prop.MouseEnter += new System.EventHandler(this.btn_prop_MouseEnter);
             this.btn_prop.MouseLeave += new System.EventHandler(this.btn_prop_MouseLeave);
+            this.btn_prop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_prop_MouseUp);
             // 
             // btn_storage
             // 
@@ -367,9 +395,11 @@
             this.btn_storage.TabIndex = 1;
             this.btn_storage.Text = "Storage";
             this.btn_storage.UseVisualStyleBackColor = false;
-            this.btn_storage.Click += new System.EventHandler(this.button2_Click);
+            this.btn_storage.Click += new System.EventHandler(this.btn_storage_Click);
+            this.btn_storage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_storage_MouseDown);
             this.btn_storage.MouseEnter += new System.EventHandler(this.btn_storage_MouseEnter);
             this.btn_storage.MouseLeave += new System.EventHandler(this.btn_storage_MouseLeave);
+            this.btn_storage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_storage_MouseUp);
             // 
             // btn_dash
             // 
@@ -386,8 +416,10 @@
             this.btn_dash.TabIndex = 0;
             this.btn_dash.Text = "DashBoard";
             this.btn_dash.UseVisualStyleBackColor = false;
-            this.btn_dash.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
-            this.btn_dash.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.btn_dash.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_dash_MouseDown);
+            this.btn_dash.MouseEnter += new System.EventHandler(this.btn_dash_MouseEnter);
+            this.btn_dash.MouseLeave += new System.EventHandler(this.btn_dash_MouseLeave);
+            this.btn_dash.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btn_dash_MouseUp);
             // 
             // panel_items
             // 
@@ -748,7 +780,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(8, 14);
+            this.listBox1.Location = new System.Drawing.Point(292, 68);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 0;

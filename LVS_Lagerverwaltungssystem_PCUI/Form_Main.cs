@@ -113,7 +113,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             mouseDown = false;
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btn_items_Click(object sender, EventArgs e)
         {
             Disable_all_Panels();
             panel_items.Visible = true;
@@ -127,14 +127,14 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_storage.Visible = false;
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btn_cat_Click(object sender, EventArgs e)
         {
             Disable_all_Panels();
             panel_categories.Left = 205;
             panel_categories.Visible = true;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_storage_Click(object sender, EventArgs e)
         {
             Disable_all_Panels();
             panel_storage.Top = 64;
@@ -142,14 +142,15 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         }
 
         Color hover_color = Color.FromArgb(106, 122, 137);
+        Color click_color = Color.FromArgb(171, 175, 182);
 
-        private void button1_MouseEnter(object sender, EventArgs e)
+        private void btn_dash_MouseEnter(object sender, EventArgs e)
         {
 
             btn_dash_icon.BackColor = hover_color;
         }
 
-        private void button1_MouseLeave(object sender, EventArgs e)
+        private void btn_dash_MouseLeave(object sender, EventArgs e)
         {
             btn_dash_icon.BackColor = Color.LightSlateGray;
         }
@@ -286,6 +287,146 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         }
 
         private void btn_icon_setting_MouseLeave(object sender, EventArgs e)
+        {
+            btn_settings.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_dash_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_dash_icon.BackColor = click_color;
+        }
+
+        private void btn_dash_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_dash_icon.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_dash_icon_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_dash.BackColor = click_color;
+        }
+
+        private void btn_dash_icon_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_dash.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_storage_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_storage_icon.BackColor = click_color;
+        }
+
+        private void btn_storage_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_storage_icon.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_storage_icon_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_storage.BackColor = click_color;
+        }
+
+        private void btn_storage_icon_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_storage.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_prop_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_prop_icon.BackColor = click_color;
+        }
+
+        private void btn_prop_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_prop_icon.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_prop_icon_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_prop.BackColor = click_color;
+        }
+
+        private void btn_prop_icon_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_prop.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_items_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_items_icon.BackColor = click_color;
+        }
+
+        private void btn_items_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_items_icon.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_items_icon_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_items.BackColor = click_color;
+        }
+
+        private void btn_items_icon_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_items.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_cat_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_icon_cat.BackColor = click_color;
+        }
+
+        private void btn_cat_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_icon_cat.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_icon_cat_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_cat.BackColor = click_color;
+        }
+
+        private void btn_icon_cat_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_cat.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_user_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_icon_user.BackColor = click_color;
+        }
+
+        private void btn_user_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_icon_user.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_icon_user_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_user.BackColor = click_color;
+        }
+
+        private void btn_icon_user_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_user.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_settings_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_icon_setting.BackColor = click_color;
+        }
+
+        private void btn_settings_MouseUp(object sender, MouseEventArgs e)
+        {
+            btn_icon_setting.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_icon_setting_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_settings.BackColor = click_color;
+        }
+
+        private void btn_icon_setting_MouseUp(object sender, MouseEventArgs e)
         {
             btn_settings.BackColor = Color.LightSlateGray;
         }
