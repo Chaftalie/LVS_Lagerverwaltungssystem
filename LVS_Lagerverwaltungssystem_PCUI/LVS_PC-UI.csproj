@@ -169,10 +169,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="category.png" />
+    <Content Include="user.png" />
     <Content Include="icon.ico" />
     <Content Include="dashboad.png" />
     <Content Include="properties.png" />
     <Content Include="item.png" />
+    <Content Include="settings.png" />
     <Content Include="storage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -32,15 +32,11 @@
             this.panel_main_title = new System.Windows.Forms.Panel();
             this.btn_main_close = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btn_items_icon = new System.Windows.Forms.Button();
-            this.btn_prop_icon = new System.Windows.Forms.Button();
-            this.btn_storage_icon = new System.Windows.Forms.Button();
-            this.btn_dash_icon = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_settings = new System.Windows.Forms.Button();
+            this.btn_user = new System.Windows.Forms.Button();
+            this.btn_cat = new System.Windows.Forms.Button();
             this.btn_items = new System.Windows.Forms.Button();
             this.btn_prop = new System.Windows.Forms.Button();
             this.btn_storage = new System.Windows.Forms.Button();
@@ -74,11 +70,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cbx_elements_cat = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_icon_cat = new System.Windows.Forms.Button();
+            this.btn_icon_user = new System.Windows.Forms.Button();
+            this.btn_icon_setting = new System.Windows.Forms.Button();
+            this.btn_items_icon = new System.Windows.Forms.Button();
+            this.btn_prop_icon = new System.Windows.Forms.Button();
+            this.btn_storage_icon = new System.Windows.Forms.Button();
+            this.btn_dash_icon = new System.Windows.Forms.Button();
+            this.txt_articel_number = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
             this.panel_categories.SuspendLayout();
             this.panel_storage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main_title
@@ -108,15 +115,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.btn_icon_cat);
+            this.panel1.Controls.Add(this.btn_icon_user);
+            this.panel1.Controls.Add(this.btn_icon_setting);
             this.panel1.Controls.Add(this.btn_items_icon);
             this.panel1.Controls.Add(this.btn_prop_icon);
             this.panel1.Controls.Add(this.btn_storage_icon);
             this.panel1.Controls.Add(this.btn_dash_icon);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btn_settings);
+            this.panel1.Controls.Add(this.btn_user);
+            this.panel1.Controls.Add(this.btn_cat);
             this.panel1.Controls.Add(this.btn_items);
             this.panel1.Controls.Add(this.btn_prop);
             this.panel1.Controls.Add(this.btn_storage);
@@ -125,64 +135,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(180, 479);
             this.panel1.TabIndex = 1;
-            // 
-            // btn_items_icon
-            // 
-            this.btn_items_icon.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btn_items_icon.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.item;
-            this.btn_items_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_items_icon.FlatAppearance.BorderSize = 0;
-            this.btn_items_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_items_icon.Location = new System.Drawing.Point(130, 246);
-            this.btn_items_icon.Name = "btn_items_icon";
-            this.btn_items_icon.Size = new System.Drawing.Size(34, 33);
-            this.btn_items_icon.TabIndex = 10;
-            this.btn_items_icon.UseVisualStyleBackColor = false;
-            // 
-            // btn_prop_icon
-            // 
-            this.btn_prop_icon.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btn_prop_icon.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.properties;
-            this.btn_prop_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_prop_icon.FlatAppearance.BorderSize = 0;
-            this.btn_prop_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prop_icon.Location = new System.Drawing.Point(130, 188);
-            this.btn_prop_icon.Name = "btn_prop_icon";
-            this.btn_prop_icon.Size = new System.Drawing.Size(34, 33);
-            this.btn_prop_icon.TabIndex = 9;
-            this.btn_prop_icon.UseVisualStyleBackColor = false;
-            this.btn_prop_icon.MouseEnter += new System.EventHandler(this.btn_prop_icon_MouseEnter);
-            this.btn_prop_icon.MouseLeave += new System.EventHandler(this.btn_prop_icon_MouseLeave);
-            // 
-            // btn_storage_icon
-            // 
-            this.btn_storage_icon.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btn_storage_icon.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.storage;
-            this.btn_storage_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_storage_icon.FlatAppearance.BorderSize = 0;
-            this.btn_storage_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_storage_icon.Location = new System.Drawing.Point(130, 130);
-            this.btn_storage_icon.Name = "btn_storage_icon";
-            this.btn_storage_icon.Size = new System.Drawing.Size(34, 33);
-            this.btn_storage_icon.TabIndex = 8;
-            this.btn_storage_icon.UseVisualStyleBackColor = false;
-            this.btn_storage_icon.MouseEnter += new System.EventHandler(this.btn_storage_icon_MouseEnter);
-            this.btn_storage_icon.MouseLeave += new System.EventHandler(this.btn_storage_icon_MouseLeave);
-            // 
-            // btn_dash_icon
-            // 
-            this.btn_dash_icon.BackColor = System.Drawing.Color.LightSlateGray;
-            this.btn_dash_icon.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.dashboad;
-            this.btn_dash_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_dash_icon.FlatAppearance.BorderSize = 0;
-            this.btn_dash_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dash_icon.Location = new System.Drawing.Point(130, 72);
-            this.btn_dash_icon.Name = "btn_dash_icon";
-            this.btn_dash_icon.Size = new System.Drawing.Size(34, 33);
-            this.btn_dash_icon.TabIndex = 7;
-            this.btn_dash_icon.UseVisualStyleBackColor = false;
-            this.btn_dash_icon.MouseEnter += new System.EventHandler(this.btn_dash_icon_MouseEnter);
-            this.btn_dash_icon.MouseLeave += new System.EventHandler(this.btn_dash_icon_MouseLeave);
             // 
             // label2
             // 
@@ -214,48 +166,55 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "LVS";
             // 
-            // button7
+            // btn_settings
             // 
-            this.button7.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(10, 420);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(154, 33);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "Settings";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btn_settings.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_settings.FlatAppearance.BorderSize = 0;
+            this.btn_settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_settings.ForeColor = System.Drawing.Color.White;
+            this.btn_settings.Location = new System.Drawing.Point(10, 420);
+            this.btn_settings.Name = "btn_settings";
+            this.btn_settings.Size = new System.Drawing.Size(154, 33);
+            this.btn_settings.TabIndex = 6;
+            this.btn_settings.Text = "Settings";
+            this.btn_settings.UseVisualStyleBackColor = false;
+            this.btn_settings.MouseEnter += new System.EventHandler(this.btn_settings_MouseEnter);
+            this.btn_settings.MouseLeave += new System.EventHandler(this.btn_settings_MouseLeave);
             // 
-            // button6
+            // btn_user
             // 
-            this.button6.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(12, 362);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(152, 33);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "User";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btn_user.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_user.FlatAppearance.BorderSize = 0;
+            this.btn_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_user.ForeColor = System.Drawing.Color.White;
+            this.btn_user.Location = new System.Drawing.Point(12, 362);
+            this.btn_user.Name = "btn_user";
+            this.btn_user.Size = new System.Drawing.Size(152, 33);
+            this.btn_user.TabIndex = 5;
+            this.btn_user.Text = "User";
+            this.btn_user.UseVisualStyleBackColor = false;
+            this.btn_user.MouseEnter += new System.EventHandler(this.btn_user_MouseEnter);
+            this.btn_user.MouseLeave += new System.EventHandler(this.btn_user_MouseLeave);
+            this.btn_user.MouseHover += new System.EventHandler(this.btn_user_MouseHover);
             // 
-            // button5
+            // btn_cat
             // 
-            this.button5.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(12, 304);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(152, 33);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Categories";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btn_cat.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_cat.FlatAppearance.BorderSize = 0;
+            this.btn_cat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cat.ForeColor = System.Drawing.Color.White;
+            this.btn_cat.Location = new System.Drawing.Point(12, 304);
+            this.btn_cat.Name = "btn_cat";
+            this.btn_cat.Size = new System.Drawing.Size(152, 33);
+            this.btn_cat.TabIndex = 4;
+            this.btn_cat.Text = "Categories";
+            this.btn_cat.UseVisualStyleBackColor = false;
+            this.btn_cat.Click += new System.EventHandler(this.button5_Click);
+            this.btn_cat.MouseEnter += new System.EventHandler(this.button5_MouseEnter);
+            this.btn_cat.MouseLeave += new System.EventHandler(this.btn_cat_MouseLeave);
             // 
             // btn_items
             // 
@@ -271,6 +230,8 @@
             this.btn_items.Text = "Items";
             this.btn_items.UseVisualStyleBackColor = false;
             this.btn_items.Click += new System.EventHandler(this.button4_Click);
+            this.btn_items.MouseEnter += new System.EventHandler(this.btn_items_MouseEnter_1);
+            this.btn_items.MouseLeave += new System.EventHandler(this.btn_items_MouseLeave);
             // 
             // btn_prop
             // 
@@ -326,6 +287,9 @@
             // panel_items
             // 
             this.panel_items.BackColor = System.Drawing.Color.Transparent;
+            this.panel_items.Controls.Add(this.pictureBox1);
+            this.panel_items.Controls.Add(this.label5);
+            this.panel_items.Controls.Add(this.txt_articel_number);
             this.panel_items.Controls.Add(this.label4);
             this.panel_items.Controls.Add(this.cbx_elements_cat);
             this.panel_items.Controls.Add(this.label3);
@@ -536,7 +500,7 @@
             this.panel_categories.Controls.Add(this.btn_cat_delete);
             this.panel_categories.Controls.Add(this.btn_cat_add);
             this.panel_categories.Controls.Add(this.lbx_cat_all);
-            this.panel_categories.Location = new System.Drawing.Point(653, 64);
+            this.panel_categories.Location = new System.Drawing.Point(655, 64);
             this.panel_categories.Name = "panel_categories";
             this.panel_categories.Size = new System.Drawing.Size(433, 424);
             this.panel_categories.TabIndex = 3;
@@ -568,7 +532,7 @@
             this.btn_cat_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cat_delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cat_delete.ForeColor = System.Drawing.Color.White;
-            this.btn_cat_delete.Location = new System.Drawing.Point(9, 41);
+            this.btn_cat_delete.Location = new System.Drawing.Point(8, 41);
             this.btn_cat_delete.Name = "btn_cat_delete";
             this.btn_cat_delete.Size = new System.Drawing.Size(75, 23);
             this.btn_cat_delete.TabIndex = 2;
@@ -620,7 +584,7 @@
             // cbx_elements_unit
             // 
             this.cbx_elements_unit.FormattingEnabled = true;
-            this.cbx_elements_unit.Location = new System.Drawing.Point(292, 55);
+            this.cbx_elements_unit.Location = new System.Drawing.Point(292, 87);
             this.cbx_elements_unit.Name = "cbx_elements_unit";
             this.cbx_elements_unit.Size = new System.Drawing.Size(133, 21);
             this.cbx_elements_unit.TabIndex = 31;
@@ -630,7 +594,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(289, 36);
+            this.label3.Location = new System.Drawing.Point(289, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 16);
             this.label3.TabIndex = 32;
@@ -639,7 +603,7 @@
             // cbx_elements_cat
             // 
             this.cbx_elements_cat.FormattingEnabled = true;
-            this.cbx_elements_cat.Location = new System.Drawing.Point(292, 116);
+            this.cbx_elements_cat.Location = new System.Drawing.Point(292, 130);
             this.cbx_elements_cat.Name = "cbx_elements_cat";
             this.cbx_elements_cat.Size = new System.Drawing.Size(133, 21);
             this.cbx_elements_cat.TabIndex = 33;
@@ -649,18 +613,149 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(289, 97);
+            this.label4.Location = new System.Drawing.Point(289, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 16);
             this.label4.TabIndex = 34;
             this.label4.Text = "Category:";
+            // 
+            // btn_icon_cat
+            // 
+            this.btn_icon_cat.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_icon_cat.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.category;
+            this.btn_icon_cat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_icon_cat.FlatAppearance.BorderSize = 0;
+            this.btn_icon_cat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_icon_cat.Location = new System.Drawing.Point(130, 304);
+            this.btn_icon_cat.Name = "btn_icon_cat";
+            this.btn_icon_cat.Size = new System.Drawing.Size(34, 33);
+            this.btn_icon_cat.TabIndex = 13;
+            this.btn_icon_cat.UseVisualStyleBackColor = false;
+            this.btn_icon_cat.MouseEnter += new System.EventHandler(this.btn_icon_cat_MouseEnter);
+            this.btn_icon_cat.MouseLeave += new System.EventHandler(this.btn_icon_cat_MouseLeave);
+            // 
+            // btn_icon_user
+            // 
+            this.btn_icon_user.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_icon_user.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.user;
+            this.btn_icon_user.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_icon_user.FlatAppearance.BorderSize = 0;
+            this.btn_icon_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_icon_user.Location = new System.Drawing.Point(130, 362);
+            this.btn_icon_user.Name = "btn_icon_user";
+            this.btn_icon_user.Size = new System.Drawing.Size(34, 33);
+            this.btn_icon_user.TabIndex = 12;
+            this.btn_icon_user.UseVisualStyleBackColor = false;
+            this.btn_icon_user.MouseEnter += new System.EventHandler(this.btn_icon_user_MouseEnter);
+            this.btn_icon_user.MouseLeave += new System.EventHandler(this.btn_icon_user_MouseLeave);
+            // 
+            // btn_icon_setting
+            // 
+            this.btn_icon_setting.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_icon_setting.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.settings;
+            this.btn_icon_setting.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_icon_setting.FlatAppearance.BorderSize = 0;
+            this.btn_icon_setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_icon_setting.Location = new System.Drawing.Point(130, 420);
+            this.btn_icon_setting.Name = "btn_icon_setting";
+            this.btn_icon_setting.Size = new System.Drawing.Size(34, 33);
+            this.btn_icon_setting.TabIndex = 11;
+            this.btn_icon_setting.UseVisualStyleBackColor = false;
+            this.btn_icon_setting.MouseEnter += new System.EventHandler(this.btn_icon_setting_MouseEnter);
+            this.btn_icon_setting.MouseLeave += new System.EventHandler(this.btn_icon_setting_MouseLeave);
+            // 
+            // btn_items_icon
+            // 
+            this.btn_items_icon.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_items_icon.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.item;
+            this.btn_items_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_items_icon.FlatAppearance.BorderSize = 0;
+            this.btn_items_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_items_icon.Location = new System.Drawing.Point(130, 246);
+            this.btn_items_icon.Name = "btn_items_icon";
+            this.btn_items_icon.Size = new System.Drawing.Size(34, 33);
+            this.btn_items_icon.TabIndex = 10;
+            this.btn_items_icon.UseVisualStyleBackColor = false;
+            this.btn_items_icon.MouseEnter += new System.EventHandler(this.btn_items_icon_MouseEnter);
+            this.btn_items_icon.MouseLeave += new System.EventHandler(this.btn_items_icon_MouseLeave);
+            // 
+            // btn_prop_icon
+            // 
+            this.btn_prop_icon.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_prop_icon.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.properties;
+            this.btn_prop_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_prop_icon.FlatAppearance.BorderSize = 0;
+            this.btn_prop_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_prop_icon.Location = new System.Drawing.Point(130, 188);
+            this.btn_prop_icon.Name = "btn_prop_icon";
+            this.btn_prop_icon.Size = new System.Drawing.Size(34, 33);
+            this.btn_prop_icon.TabIndex = 9;
+            this.btn_prop_icon.UseVisualStyleBackColor = false;
+            this.btn_prop_icon.MouseEnter += new System.EventHandler(this.btn_prop_icon_MouseEnter);
+            this.btn_prop_icon.MouseLeave += new System.EventHandler(this.btn_prop_icon_MouseLeave);
+            // 
+            // btn_storage_icon
+            // 
+            this.btn_storage_icon.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_storage_icon.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.storage;
+            this.btn_storage_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_storage_icon.FlatAppearance.BorderSize = 0;
+            this.btn_storage_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_storage_icon.Location = new System.Drawing.Point(130, 130);
+            this.btn_storage_icon.Name = "btn_storage_icon";
+            this.btn_storage_icon.Size = new System.Drawing.Size(34, 33);
+            this.btn_storage_icon.TabIndex = 8;
+            this.btn_storage_icon.UseVisualStyleBackColor = false;
+            this.btn_storage_icon.MouseEnter += new System.EventHandler(this.btn_storage_icon_MouseEnter);
+            this.btn_storage_icon.MouseLeave += new System.EventHandler(this.btn_storage_icon_MouseLeave);
+            // 
+            // btn_dash_icon
+            // 
+            this.btn_dash_icon.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btn_dash_icon.BackgroundImage = global::LVS_Lagerverwaltungssystem_PCUI.Properties.Resources.dashboad;
+            this.btn_dash_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_dash_icon.FlatAppearance.BorderSize = 0;
+            this.btn_dash_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dash_icon.Location = new System.Drawing.Point(130, 72);
+            this.btn_dash_icon.Name = "btn_dash_icon";
+            this.btn_dash_icon.Size = new System.Drawing.Size(34, 33);
+            this.btn_dash_icon.TabIndex = 7;
+            this.btn_dash_icon.UseVisualStyleBackColor = false;
+            this.btn_dash_icon.MouseEnter += new System.EventHandler(this.btn_dash_icon_MouseEnter);
+            this.btn_dash_icon.MouseLeave += new System.EventHandler(this.btn_dash_icon_MouseLeave);
+            // 
+            // txt_articel_number
+            // 
+            this.txt_articel_number.Location = new System.Drawing.Point(292, 45);
+            this.txt_articel_number.Name = "txt_articel_number";
+            this.txt_articel_number.Size = new System.Drawing.Size(133, 20);
+            this.txt_articel_number.TabIndex = 35;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(289, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 16);
+            this.label5.TabIndex = 36;
+            this.label5.Text = "Articel Number:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(292, 283);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 100);
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
             // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.ClientSize = new System.Drawing.Size(1386, 1100);
             this.Controls.Add(this.panel_storage);
             this.Controls.Add(this.panel_categories);
             this.Controls.Add(this.panel_items);
@@ -679,6 +774,7 @@
             this.panel_categories.ResumeLayout(false);
             this.panel_categories.PerformLayout();
             this.panel_storage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -688,9 +784,9 @@
         private System.Windows.Forms.Panel panel_main_title;
         private System.Windows.Forms.Button btn_main_close;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_settings;
+        private System.Windows.Forms.Button btn_user;
+        private System.Windows.Forms.Button btn_cat;
         private System.Windows.Forms.Button btn_items;
         private System.Windows.Forms.Button btn_prop;
         private System.Windows.Forms.Button btn_storage;
@@ -730,5 +826,11 @@
         private System.Windows.Forms.ComboBox cbx_elements_cat;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbx_elements_unit;
+        private System.Windows.Forms.Button btn_icon_setting;
+        private System.Windows.Forms.Button btn_icon_user;
+        private System.Windows.Forms.Button btn_icon_cat;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_articel_number;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

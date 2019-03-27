@@ -201,8 +201,9 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             btn_prop.BackColor = Color.LightSlateGray;
         }
+        
 
-        private void btn_items_MouseEnter(object sender, EventArgs e)
+        private void btn_items_MouseEnter_1(object sender, EventArgs e)
         {
             btn_items_icon.BackColor = hover_color;
         }
@@ -222,5 +223,69 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             btn_items.BackColor = Color.LightSlateGray;
         }
 
+        private void button5_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_cat.BackColor = hover_color;
+        }
+
+        private void btn_cat_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_cat.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_icon_cat_MouseEnter(object sender, EventArgs e)
+        {
+            btn_cat.BackColor = hover_color;
+        }
+
+        private void btn_icon_cat_MouseLeave(object sender, EventArgs e)
+        {
+            btn_cat.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_user_MouseHover(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_user_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_user.BackColor = hover_color;
+        }
+
+        private void btn_user_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_user.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_icon_user_MouseEnter(object sender, EventArgs e)
+        {
+            btn_user.BackColor = hover_color;
+        }
+
+        private void btn_icon_user_MouseLeave(object sender, EventArgs e)
+        {
+            btn_user.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_settings_MouseEnter(object sender, EventArgs e)
+        {
+            btn_icon_setting.BackColor = hover_color;
+        }
+
+        private void btn_settings_MouseLeave(object sender, EventArgs e)
+        {
+            btn_icon_setting.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_icon_setting_MouseEnter(object sender, EventArgs e)
+        {
+            btn_settings.BackColor = hover_color;
+        }
+
+        private void btn_icon_setting_MouseLeave(object sender, EventArgs e)
+        {
+            btn_settings.BackColor = Color.LightSlateGray;
+        }
     }
 }
