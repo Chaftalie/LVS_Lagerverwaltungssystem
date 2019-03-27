@@ -45,9 +45,14 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
                 if (txbBarcodeOutput.Text != "")
                 {
+                    Console.Beep(1800, 100);
+                    Console.Beep(1500, 200);
+                    tmr_16ms.Stop();
+                    /*
                     System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"c:\airhorn.wav");
                     player.Play();
                     tmr_16ms.Stop();
+                    */
                 }
             }
             catch(Exception ex)

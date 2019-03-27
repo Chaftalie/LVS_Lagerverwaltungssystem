@@ -19,7 +19,7 @@
 
     <iframe src="frame_camCapture.aspx" frameborder="1" style="height: 465px; width: 478px"></iframe>
 
-    <textarea id="imageOutput"></textarea>
+    <textarea id="imageOutput" hidden></textarea>
 
     <form id="frmWebCam" runat="server">
         

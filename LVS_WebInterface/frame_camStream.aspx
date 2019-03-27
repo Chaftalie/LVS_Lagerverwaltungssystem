@@ -34,12 +34,7 @@
 </head>
 <body>
     <form id="frmWebCam" runat="server">
-        <div id="results">
-            <h2>Here is your image:</h2>
-            <asp:Image ID="imgCapture" runat="server" />
-        </div>
-        <h1>WebcamJS Test Page</h1>
-        <h3>Demonstrates 640x480 cropped capture &amp; display</h3>
+
         <div id="my_camera"></div>
         <!-- First, include the Webcam.js JavaScript Library -->
         <script type="text/javascript" src="webcam.js"></script>
@@ -64,26 +59,17 @@
             });
             Webcam.attach('#my_camera');
 	</script>
-        <!-- A button for taking snaps -->
-        <asp:Button ID="btnTakeSnapshot" runat="server" Text="Take Snapshot" OnClientClick="take_snapshot(); return false;" />
-        <!-- Code to handle taking the snapshot and displaying it locally -->
+
         <script language="JavaScript">
-            function take_snapshot() {
-                // take snapshot and get image data
-                Webcam.snap(function (data_uri) {
-                    // display results in page
-                    document.getElementById('<%= imgCapture.ClientID %>').src = data_uri;
-                });
-            }
 
             setTimeout(function () {
                 window.setInterval(function () {
                     Webcam.snap(function (data_uri) {
                         // display results in page
-                        document.getElementById('<%= imgCapture.ClientID %>').src = data_uri;
-                        window.parent.document.getElementById('imageOutput').value = data_uri; 
+                        var base64String = data_uri.replace("data:image/jpeg;base64,","")
+                        window.parent.document.getElementById('imageOutput').value = base64String; 
                     });
-                }, 1000);
+                }, 50);
             }, 5000);
 
             
