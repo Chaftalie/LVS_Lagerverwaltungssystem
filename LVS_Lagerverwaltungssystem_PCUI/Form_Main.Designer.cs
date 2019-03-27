@@ -79,11 +79,13 @@
             this.btn_dash_icon = new System.Windows.Forms.Button();
             this.txt_articel_number = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
             this.panel_categories.SuspendLayout();
             this.panel_storage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main_title
@@ -285,6 +287,7 @@
             // panel_items
             // 
             this.panel_items.BackColor = System.Drawing.Color.Transparent;
+            this.panel_items.Controls.Add(this.pictureBox1);
             this.panel_items.Controls.Add(this.label5);
             this.panel_items.Controls.Add(this.txt_articel_number);
             this.panel_items.Controls.Add(this.label4);
@@ -739,6 +742,14 @@
             this.label5.TabIndex = 36;
             this.label5.Text = "Articel Number:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(292, 283);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(133, 100);
+            this.pictureBox1.TabIndex = 37;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -763,6 +774,7 @@
             this.panel_categories.ResumeLayout(false);
             this.panel_categories.PerformLayout();
             this.panel_storage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -819,5 +831,6 @@
         private System.Windows.Forms.Button btn_icon_cat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_articel_number;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
