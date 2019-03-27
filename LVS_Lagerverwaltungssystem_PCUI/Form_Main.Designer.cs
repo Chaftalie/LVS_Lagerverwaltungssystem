@@ -532,6 +532,7 @@
             this.panel_categories.Size = new System.Drawing.Size(433, 424);
             this.panel_categories.TabIndex = 3;
             this.panel_categories.Visible = false;
+            this.panel_categories.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_categories_Paint);
             // 
             // lbl_cat_name
             // 
@@ -613,7 +614,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSlateGray;
-            this.ClientSize = new System.Drawing.Size(1695, 994);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.panel_storage);
             this.Controls.Add(this.panel_categories);
             this.Controls.Add(this.panel_items);
