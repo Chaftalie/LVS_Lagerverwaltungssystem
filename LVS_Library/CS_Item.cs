@@ -280,7 +280,8 @@ namespace LVS_Library
                     category_,
                     properties_,
                     ( string ) sqlReader["element_image"],
-                    ( int ) sqlReader["id"]));
+                    ( string ) sqlReader["id"]
+                    ));
             }
 
             return items;
