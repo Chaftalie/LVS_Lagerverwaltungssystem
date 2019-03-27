@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LVS_Library
 {
-    class ImageStuff
+    public class ImageStuff
     {
         public static Image GetImageFromString(string base64String)
         {
