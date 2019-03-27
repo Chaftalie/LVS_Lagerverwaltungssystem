@@ -15,6 +15,7 @@ namespace LVS_Library
         private int id;
         private string name;
         private string description;
+        private string artikelnummer;
         private float width;
         private float length;
         private float height;
@@ -61,7 +62,12 @@ namespace LVS_Library
             set { length = value; }
         }
 
-        // TODO
+        public string Artikelnummer
+        {
+            get { return artikelnummer; }
+            set { artikelnummer = value; }
+        }
+
         public string Image
         {
             get { return image; }
@@ -86,7 +92,7 @@ namespace LVS_Library
             set { properties = value; }
         }
 
-        public Item(string _name, string _description, float _width, float _length, float _height, Unit _unit, Category _category, List<Property> _properties, string _image, int _id)
+        public Item(string _name, string _description, float _width, float _length, float _height, Unit _unit, Category _category, List<Property> _properties, string _image, string _artikelnummer)
         {
             Name = _name;
             Description = _description;
@@ -94,7 +100,7 @@ namespace LVS_Library
             Length = _length;
             Height = _height;
 
-            ID = _id;
+            Artikelnummer = _artikelnummer;
             Image = _image;
 
             Unit = _unit;
