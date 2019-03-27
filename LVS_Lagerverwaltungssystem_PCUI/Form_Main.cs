@@ -25,7 +25,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Load_lbx_elements_all_cat();
             Load_lbx_cat_all();
-            ( ( Control ) pBx_elements_image ).AllowDrop = true;
+            //( ( Control ) pBx_elements_image ).AllowDrop = true;
         }
 
         #region items / elements

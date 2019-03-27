@@ -86,7 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pBx_elements_image)).BeginInit();
             this.panel_categories.SuspendLayout();
             this.panel_storage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBx_elements_image)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main_title
