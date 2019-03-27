@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LVS_Library;
 
 namespace LVS_Lagerverwaltungssystem_PCUI
 {
@@ -177,5 +176,26 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             btn_prop.BackColor = Color.LightSlateGray;
         }
+        
+        private void btn_items_MouseEnter(object sender, EventArgs e)
+        {
+            btn_items_icon.BackColor = hover_color;
+        }
+
+        private void btn_items_MouseLeave(object sender, EventArgs e)
+        {
+            btn_items_icon.BackColor = Color.LightSlateGray;
+        }
+
+        private void btn_items_icon_MouseEnter(object sender, EventArgs e)
+        {
+            btn_items.BackColor = hover_color;
+        }
+
+        private void btn_items_icon_MouseLeave(object sender, EventArgs e)
+        {
+            btn_items.BackColor = Color.LightSlateGray;
+        }
+        
     }
 }
