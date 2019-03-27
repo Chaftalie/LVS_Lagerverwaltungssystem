@@ -533,7 +533,6 @@
             this.panel_categories.Size = new System.Drawing.Size(433, 424);
             this.panel_categories.TabIndex = 3;
             this.panel_categories.Visible = false;
-            this.panel_categories.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_categories_Paint);
             // 
             // lbl_cat_name
             // 
