@@ -30,14 +30,14 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void Load_lbx_elements_all_cat( )
         {
-            lbx_elements_all_cat.Items.AddRange(Category.All_Categories().ToArray());
+            lbx_elements_all_prop.Items.AddRange(Category.All_Categories().ToArray());
         }
 
         private void btn_elements_cat_add_Click(object sender, EventArgs e)
         {
-            if (!lbx_elements_used_cat.Items.Contains(lbx_elements_all_cat.SelectedItem))
+            if (!lbx_elements_used_prop.Items.Contains(lbx_elements_all_prop.SelectedItem))
             {
-                lbx_elements_used_cat.Items.Add(lbx_elements_all_cat.SelectedItem);
+                lbx_elements_used_prop.Items.Add(lbx_elements_all_prop.SelectedItem);
             }
         }
 
@@ -45,7 +45,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void btn_elements_cat_del_Click(object sender, EventArgs e)
         {
-            lbx_elements_used_cat.Items.Remove(lbx_elements_used_cat.SelectedItem);
+            lbx_elements_used_prop.Items.Remove(lbx_elements_used_prop.SelectedItem);
         }
 
         private void Load_lbx_cat_all()

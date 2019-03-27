@@ -58,8 +58,8 @@
             this.lbl_name = new System.Windows.Forms.Label();
             this.txt_elements_width = new System.Windows.Forms.TextBox();
             this.txt_elements_height = new System.Windows.Forms.TextBox();
-            this.lbx_elements_used_cat = new System.Windows.Forms.ListBox();
-            this.lbx_elements_all_cat = new System.Windows.Forms.ListBox();
+            this.lbx_elements_used_prop = new System.Windows.Forms.ListBox();
+            this.lbx_elements_all_prop = new System.Windows.Forms.ListBox();
             this.rtx_elements_desc = new System.Windows.Forms.RichTextBox();
             this.txt_element_name = new System.Windows.Forms.TextBox();
             this.panel_categories = new System.Windows.Forms.Panel();
@@ -70,6 +70,10 @@
             this.lbx_cat_all = new System.Windows.Forms.ListBox();
             this.panel_storage = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.cbx_elements_unit = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbx_elements_cat = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
@@ -129,7 +133,7 @@
             this.btn_items_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_items_icon.FlatAppearance.BorderSize = 0;
             this.btn_items_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_items_icon.Location = new System.Drawing.Point(130, 276);
+            this.btn_items_icon.Location = new System.Drawing.Point(130, 246);
             this.btn_items_icon.Name = "btn_items_icon";
             this.btn_items_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_items_icon.TabIndex = 10;
@@ -142,7 +146,7 @@
             this.btn_prop_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_prop_icon.FlatAppearance.BorderSize = 0;
             this.btn_prop_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_prop_icon.Location = new System.Drawing.Point(130, 214);
+            this.btn_prop_icon.Location = new System.Drawing.Point(130, 188);
             this.btn_prop_icon.Name = "btn_prop_icon";
             this.btn_prop_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_prop_icon.TabIndex = 9;
@@ -157,7 +161,7 @@
             this.btn_storage_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_storage_icon.FlatAppearance.BorderSize = 0;
             this.btn_storage_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_storage_icon.Location = new System.Drawing.Point(130, 150);
+            this.btn_storage_icon.Location = new System.Drawing.Point(130, 130);
             this.btn_storage_icon.Name = "btn_storage_icon";
             this.btn_storage_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_storage_icon.TabIndex = 8;
@@ -172,7 +176,7 @@
             this.btn_dash_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_dash_icon.FlatAppearance.BorderSize = 0;
             this.btn_dash_icon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_dash_icon.Location = new System.Drawing.Point(130, 88);
+            this.btn_dash_icon.Location = new System.Drawing.Point(130, 72);
             this.btn_dash_icon.Name = "btn_dash_icon";
             this.btn_dash_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_dash_icon.TabIndex = 7;
@@ -217,9 +221,9 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(90, 432);
+            this.button7.Location = new System.Drawing.Point(10, 420);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(74, 33);
+            this.button7.Size = new System.Drawing.Size(154, 33);
             this.button7.TabIndex = 6;
             this.button7.Text = "Settings";
             this.button7.UseVisualStyleBackColor = false;
@@ -231,9 +235,9 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(12, 432);
+            this.button6.Location = new System.Drawing.Point(12, 362);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(74, 33);
+            this.button6.Size = new System.Drawing.Size(152, 33);
             this.button6.TabIndex = 5;
             this.button6.Text = "User";
             this.button6.UseVisualStyleBackColor = false;
@@ -245,7 +249,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(12, 339);
+            this.button5.Location = new System.Drawing.Point(12, 304);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(152, 33);
             this.button5.TabIndex = 4;
@@ -260,7 +264,7 @@
             this.btn_items.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_items.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_items.ForeColor = System.Drawing.Color.White;
-            this.btn_items.Location = new System.Drawing.Point(12, 276);
+            this.btn_items.Location = new System.Drawing.Point(12, 246);
             this.btn_items.Name = "btn_items";
             this.btn_items.Size = new System.Drawing.Size(152, 33);
             this.btn_items.TabIndex = 3;
@@ -275,7 +279,7 @@
             this.btn_prop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_prop.ForeColor = System.Drawing.Color.White;
-            this.btn_prop.Location = new System.Drawing.Point(12, 214);
+            this.btn_prop.Location = new System.Drawing.Point(12, 188);
             this.btn_prop.Name = "btn_prop";
             this.btn_prop.Size = new System.Drawing.Size(152, 33);
             this.btn_prop.TabIndex = 2;
@@ -291,7 +295,7 @@
             this.btn_storage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_storage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_storage.ForeColor = System.Drawing.Color.White;
-            this.btn_storage.Location = new System.Drawing.Point(12, 150);
+            this.btn_storage.Location = new System.Drawing.Point(12, 130);
             this.btn_storage.Name = "btn_storage";
             this.btn_storage.Size = new System.Drawing.Size(152, 33);
             this.btn_storage.TabIndex = 1;
@@ -310,7 +314,7 @@
             this.btn_dash.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_dash.ForeColor = System.Drawing.Color.White;
             this.btn_dash.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_dash.Location = new System.Drawing.Point(12, 88);
+            this.btn_dash.Location = new System.Drawing.Point(12, 72);
             this.btn_dash.Name = "btn_dash";
             this.btn_dash.Size = new System.Drawing.Size(152, 33);
             this.btn_dash.TabIndex = 0;
@@ -322,6 +326,10 @@
             // panel_items
             // 
             this.panel_items.BackColor = System.Drawing.Color.Transparent;
+            this.panel_items.Controls.Add(this.label4);
+            this.panel_items.Controls.Add(this.cbx_elements_cat);
+            this.panel_items.Controls.Add(this.label3);
+            this.panel_items.Controls.Add(this.cbx_elements_unit);
             this.panel_items.Controls.Add(this.btn_save);
             this.panel_items.Controls.Add(this.btn_elements_cat_del);
             this.panel_items.Controls.Add(this.btn_elements_cat_add);
@@ -334,8 +342,8 @@
             this.panel_items.Controls.Add(this.lbl_name);
             this.panel_items.Controls.Add(this.txt_elements_width);
             this.panel_items.Controls.Add(this.txt_elements_height);
-            this.panel_items.Controls.Add(this.lbx_elements_used_cat);
-            this.panel_items.Controls.Add(this.lbx_elements_all_cat);
+            this.panel_items.Controls.Add(this.lbx_elements_used_prop);
+            this.panel_items.Controls.Add(this.lbx_elements_all_prop);
             this.panel_items.Controls.Add(this.rtx_elements_desc);
             this.panel_items.Controls.Add(this.txt_element_name);
             this.panel_items.Location = new System.Drawing.Point(205, 64);
@@ -479,25 +487,25 @@
             this.txt_elements_height.Size = new System.Drawing.Size(133, 23);
             this.txt_elements_height.TabIndex = 19;
             // 
-            // lbx_elements_used_cat
+            // lbx_elements_used_prop
             // 
-            this.lbx_elements_used_cat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbx_elements_used_cat.FormattingEnabled = true;
-            this.lbx_elements_used_cat.ItemHeight = 16;
-            this.lbx_elements_used_cat.Location = new System.Drawing.Point(292, 176);
-            this.lbx_elements_used_cat.Name = "lbx_elements_used_cat";
-            this.lbx_elements_used_cat.Size = new System.Drawing.Size(133, 84);
-            this.lbx_elements_used_cat.TabIndex = 18;
+            this.lbx_elements_used_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbx_elements_used_prop.FormattingEnabled = true;
+            this.lbx_elements_used_prop.ItemHeight = 16;
+            this.lbx_elements_used_prop.Location = new System.Drawing.Point(292, 176);
+            this.lbx_elements_used_prop.Name = "lbx_elements_used_prop";
+            this.lbx_elements_used_prop.Size = new System.Drawing.Size(133, 84);
+            this.lbx_elements_used_prop.TabIndex = 18;
             // 
-            // lbx_elements_all_cat
+            // lbx_elements_all_prop
             // 
-            this.lbx_elements_all_cat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbx_elements_all_cat.FormattingEnabled = true;
-            this.lbx_elements_all_cat.ItemHeight = 16;
-            this.lbx_elements_all_cat.Location = new System.Drawing.Point(111, 176);
-            this.lbx_elements_all_cat.Name = "lbx_elements_all_cat";
-            this.lbx_elements_all_cat.Size = new System.Drawing.Size(133, 84);
-            this.lbx_elements_all_cat.TabIndex = 17;
+            this.lbx_elements_all_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbx_elements_all_prop.FormattingEnabled = true;
+            this.lbx_elements_all_prop.ItemHeight = 16;
+            this.lbx_elements_all_prop.Location = new System.Drawing.Point(111, 176);
+            this.lbx_elements_all_prop.Name = "lbx_elements_all_prop";
+            this.lbx_elements_all_prop.Size = new System.Drawing.Size(133, 84);
+            this.lbx_elements_all_prop.TabIndex = 17;
             // 
             // rtx_elements_desc
             // 
@@ -609,6 +617,44 @@
             this.listBox1.Size = new System.Drawing.Size(120, 95);
             this.listBox1.TabIndex = 0;
             // 
+            // cbx_elements_unit
+            // 
+            this.cbx_elements_unit.FormattingEnabled = true;
+            this.cbx_elements_unit.Location = new System.Drawing.Point(292, 55);
+            this.cbx_elements_unit.Name = "cbx_elements_unit";
+            this.cbx_elements_unit.Size = new System.Drawing.Size(133, 21);
+            this.cbx_elements_unit.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(289, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 16);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Unit Type:";
+            // 
+            // cbx_elements_cat
+            // 
+            this.cbx_elements_cat.FormattingEnabled = true;
+            this.cbx_elements_cat.Location = new System.Drawing.Point(292, 116);
+            this.cbx_elements_cat.Name = "cbx_elements_cat";
+            this.cbx_elements_cat.Size = new System.Drawing.Size(133, 21);
+            this.cbx_elements_cat.TabIndex = 33;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(289, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(66, 16);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Category:";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -663,8 +709,8 @@
         private System.Windows.Forms.Label lbl_name;
         private System.Windows.Forms.TextBox txt_elements_width;
         private System.Windows.Forms.TextBox txt_elements_height;
-        private System.Windows.Forms.ListBox lbx_elements_used_cat;
-        private System.Windows.Forms.ListBox lbx_elements_all_cat;
+        private System.Windows.Forms.ListBox lbx_elements_used_prop;
+        private System.Windows.Forms.ListBox lbx_elements_all_prop;
         private System.Windows.Forms.RichTextBox rtx_elements_desc;
         private System.Windows.Forms.TextBox txt_element_name;
         private System.Windows.Forms.Panel panel_categories;
@@ -680,5 +726,9 @@
         private System.Windows.Forms.Button btn_storage_icon;
         private System.Windows.Forms.Button btn_prop_icon;
         private System.Windows.Forms.Button btn_items_icon;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbx_elements_cat;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cbx_elements_unit;
     }
 }
