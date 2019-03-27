@@ -25,7 +25,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Load_lbx_elements_all_cat();
             Load_lbx_cat_all();
-            //( ( Control ) pBx_elements_image ).AllowDrop = true;
+            ( ( Control ) pBx_elements_image ).AllowDrop = true;
         }
 
         #region items / elements
@@ -77,7 +77,25 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
             Unit unit = ( Unit ) cbx_elements_unit.SelectedItem;
 
-            Item.Save(new Item(txt_element_name.Text, rtx_elements_desc.Text, w, l, h, unit, category, properties, "nix bild hier sorry", "artikelnummer"));
+            string imagebase64 = ImageStuff.GetStringFromImage(pBx_elements_image.Image);
+
+            Item.Save(new Item(txt_element_name.Text, rtx_elements_desc.Text, w, l, h, unit, category, properties, imagebase64, txt_articel_number.Text));
+        }
+
+        private void btn_image_upload_Click(object sender, EventArgs e)
+        {
+            if (oFD_element_Image.ShowDialog() == DialogResult.OK)
+            {
+                pBx_elements_image.Image = Image.FromFile(oFD_element_Image.FileName);
+            }
+        }
+
+        private void openfiledialogtest( )
+        {
+            if (oFD_element_Image.ShowDialog() == DialogResult.OK)
+            {
+                pBx_elements_image.Image = Image.FromFile(oFD_element_Image.FileName);
+            }
         }
 
         #endregion
@@ -125,6 +143,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_items.Visible = false;
             panel_categories.Visible = false;
             panel_storage.Visible = false;
+            panel_user.Visible = false;
         }
 
         private void btn_cat_Click(object sender, EventArgs e)
@@ -433,7 +452,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void pBx_elements_image_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.Bitmap))
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {
                 e.Effect = DragDropEffects.Copy;
             }
@@ -445,7 +464,19 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void pBx_elements_image_DragDrop(object sender, DragEventArgs e)
         {
-            pBx_elements_image.Image = ( Bitmap ) e.Data.GetData(DataFormats.Bitmap);
+            pBx_elements_image.Image = Image.FromFile(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_user_Click(object sender, EventArgs e)
+        {
+            Disable_all_Panels();
+            panel_user.Left = 205;
+            panel_user.Visible = true;
         }
     }
 }

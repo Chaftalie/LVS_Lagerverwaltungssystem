@@ -26,12 +26,14 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         public static void Start_Load()
         {
             Thread t = new Thread(Started_Load);
+            t.SetApartmentState(ApartmentState.STA);
             t.Start();
         }
 
         public static void Start_Main()
         {
             Thread t_main = new Thread(Started_Main);
+            t_main.SetApartmentState(ApartmentState.STA);
             t_main.Start();
         }
 
