@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,6 +25,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Load_lbx_elements_all_cat();
             Load_lbx_cat_all();
+            ( ( Control ) pBx_elements_image ).AllowDrop = true;
         }
 
         #region items / elements
@@ -66,7 +68,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             float.TryParse(txt_elements_height.Text, out float h);
 
             List<Property> properties = new List<Property>();
-            foreach(Property property in lbx_elements_used_prop.Items)
+            foreach (Property property in lbx_elements_used_prop.Items)
             {
                 properties.Add(property);
             }
@@ -115,6 +117,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Disable_all_Panels();
             panel_items.Visible = true;
+
         }
 
         private void Disable_all_Panels( )
@@ -129,7 +132,6 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             Disable_all_Panels();
             panel_categories.Left = 205;
             panel_categories.Visible = true;
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -201,7 +203,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             btn_prop.BackColor = Color.LightSlateGray;
         }
-        
+
 
         private void btn_items_MouseEnter_1(object sender, EventArgs e)
         {
@@ -245,7 +247,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void btn_user_MouseHover(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_user_MouseEnter(object sender, EventArgs e)
@@ -286,6 +288,23 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void btn_icon_setting_MouseLeave(object sender, EventArgs e)
         {
             btn_settings.BackColor = Color.LightSlateGray;
+        }
+
+        private void pBx_elements_image_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Bitmap))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void pBx_elements_image_DragDrop(object sender, DragEventArgs e)
+        {
+            pBx_elements_image.Image = ( Bitmap ) e.Data.GetData(DataFormats.Bitmap);
         }
     }
 }
