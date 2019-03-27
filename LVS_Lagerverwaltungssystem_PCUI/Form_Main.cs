@@ -54,6 +54,14 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             lbx_cat_all.Items.AddRange(Category.All_Categories().ToArray());
         }
 
+        private void btn_save_Click(object sender, EventArgs e)
+        {
+            float.TryParse(txt_elements_width.Text, out float w);
+            float.TryParse(txt_elements_length.Text, out float l);
+            float.TryParse(txt_elements_height.Text, out float h);
+            Item.Save(new Item(txt_element_name.Text,rtx_elements_desc.Text,w,l,h,null,null,null,"nix bild hier sorry","artikelnummer"));
+        }
+
         #endregion
 
 
@@ -114,7 +122,5 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_storage.Top = 64;
             panel_storage.Visible = true;
         }
-
-
     }
 }
