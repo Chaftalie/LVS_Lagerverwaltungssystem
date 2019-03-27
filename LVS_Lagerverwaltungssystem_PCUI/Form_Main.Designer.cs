@@ -49,7 +49,7 @@
             this.btn_storage = new System.Windows.Forms.Button();
             this.btn_dash = new System.Windows.Forms.Button();
             this.panel_items = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pBx_elements_image = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_articel_number = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -84,9 +84,10 @@
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBx_elements_image)).BeginInit();
             this.panel_categories.SuspendLayout();
             this.panel_storage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pBx_elements_image)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main_title
@@ -424,7 +425,7 @@
             // panel_items
             // 
             this.panel_items.BackColor = System.Drawing.Color.Transparent;
-            this.panel_items.Controls.Add(this.pictureBox1);
+            this.panel_items.Controls.Add(this.pBx_elements_image);
             this.panel_items.Controls.Add(this.label5);
             this.panel_items.Controls.Add(this.txt_articel_number);
             this.panel_items.Controls.Add(this.label4);
@@ -453,13 +454,16 @@
             this.panel_items.TabIndex = 2;
             this.panel_items.Visible = false;
             // 
-            // pictureBox1
+            // pBx_elements_image
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(292, 283);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 100);
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
+            this.pBx_elements_image.BackColor = System.Drawing.Color.Lime;
+            this.pBx_elements_image.Location = new System.Drawing.Point(292, 283);
+            this.pBx_elements_image.Name = "pBx_elements_image";
+            this.pBx_elements_image.Size = new System.Drawing.Size(133, 100);
+            this.pBx_elements_image.TabIndex = 37;
+            this.pBx_elements_image.TabStop = false;
+            this.pBx_elements_image.DragDrop += new System.Windows.Forms.DragEventHandler(this.pBx_elements_image_DragDrop);
+            this.pBx_elements_image.DragEnter += new System.Windows.Forms.DragEventHandler(this.pBx_elements_image_DragEnter);
             // 
             // label5
             // 
@@ -811,7 +815,7 @@
             this.panel1.PerformLayout();
             this.panel_items.ResumeLayout(false);
             this.panel_items.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pBx_elements_image)).EndInit();
             this.panel_categories.ResumeLayout(false);
             this.panel_categories.PerformLayout();
             this.panel_storage.ResumeLayout(false);
@@ -871,7 +875,7 @@
         private System.Windows.Forms.Button btn_icon_cat;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_articel_number;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pBx_elements_image;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox1;
     }
