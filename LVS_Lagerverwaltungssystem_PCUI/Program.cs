@@ -20,7 +20,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_BarcodeReader());
+            Application.Run(new Form_Login());
         }
         
         public static void Start_Load()
@@ -35,15 +35,15 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             t_main.Start();
         }
 
+        [STAThread]
         static void Started_Load()
-        {
-            
+        {   
             Application.Run(new Form_Load());
         }
 
+        [STAThread]
         static void Started_Main()
         {
-
             Application.Run(new Form_Main());
         }
     }
