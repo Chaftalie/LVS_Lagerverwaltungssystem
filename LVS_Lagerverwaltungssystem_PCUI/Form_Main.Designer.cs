@@ -52,6 +52,7 @@
             this.btn_storage = new System.Windows.Forms.Button();
             this.btn_dash = new System.Windows.Forms.Button();
             this.panel_items = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.btn_image_upload = new System.Windows.Forms.Button();
             this.pBx_elements_image = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -83,7 +84,9 @@
             this.btn_cat_add = new System.Windows.Forms.Button();
             this.lbx_cat_all = new System.Windows.Forms.ListBox();
             this.panel_storage = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txt_storage_max_cap = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.btn_storage_save = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -136,6 +139,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.oFD_element_Image = new System.Windows.Forms.OpenFileDialog();
             this.panel_dashboard = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.label24 = new System.Windows.Forms.Label();
+            this.lbl_usage = new System.Windows.Forms.Label();
             this.chart_use_all = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_properties = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
@@ -144,13 +151,6 @@
             this.btn_add_prop = new System.Windows.Forms.Button();
             this.lbx_prop = new System.Windows.Forms.ListBox();
             this.panel_settings = new System.Windows.Forms.Panel();
-            this.lbl_usage = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.txt_storage_max_cap = new System.Windows.Forms.TextBox();
-            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
@@ -536,6 +536,16 @@
             this.panel_items.TabIndex = 2;
             this.panel_items.Visible = false;
             // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(477, 45);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(179, 84);
+            this.listBox1.TabIndex = 39;
+            // 
             // btn_image_upload
             // 
             this.btn_image_upload.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -868,7 +878,7 @@
             this.panel_storage.BackColor = System.Drawing.Color.Transparent;
             this.panel_storage.Controls.Add(this.txt_storage_max_cap);
             this.panel_storage.Controls.Add(this.label23);
-            this.panel_storage.Controls.Add(this.button1);
+            this.panel_storage.Controls.Add(this.btn_storage_save);
             this.panel_storage.Controls.Add(this.label17);
             this.panel_storage.Controls.Add(this.label16);
             this.panel_storage.Controls.Add(this.label15);
@@ -897,17 +907,40 @@
             this.panel_storage.TabIndex = 6;
             this.panel_storage.Visible = false;
             // 
-            // button1
+            // txt_storage_max_cap
             // 
-            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(500, 296);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 23);
-            this.button1.TabIndex = 51;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.txt_storage_max_cap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_storage_max_cap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_storage_max_cap.Location = new System.Drawing.Point(127, 173);
+            this.txt_storage_max_cap.Multiline = true;
+            this.txt_storage_max_cap.Name = "txt_storage_max_cap";
+            this.txt_storage_max_cap.Size = new System.Drawing.Size(133, 23);
+            this.txt_storage_max_cap.TabIndex = 41;
+            this.txt_storage_max_cap.Text = "Name";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(13, 174);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(92, 16);
+            this.label23.TabIndex = 40;
+            this.label23.Text = "Max Capacity:";
+            // 
+            // btn_storage_save
+            // 
+            this.btn_storage_save.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_storage_save.FlatAppearance.BorderSize = 0;
+            this.btn_storage_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_storage_save.Location = new System.Drawing.Point(500, 296);
+            this.btn_storage_save.Name = "btn_storage_save";
+            this.btn_storage_save.Size = new System.Drawing.Size(133, 23);
+            this.btn_storage_save.TabIndex = 51;
+            this.btn_storage_save.Text = "Save";
+            this.btn_storage_save.UseVisualStyleBackColor = false;
+            this.btn_storage_save.Click += new System.EventHandler(this.Btn_storage_save_Click);
             // 
             // label17
             // 
@@ -997,6 +1030,7 @@
             this.btn_storage_del_prop.TabIndex = 43;
             this.btn_storage_del_prop.Text = "<--";
             this.btn_storage_del_prop.UseVisualStyleBackColor = false;
+            this.btn_storage_del_prop.Click += new System.EventHandler(this.Btn_storage_del_prop_Click);
             // 
             // panel2
             // 
@@ -1195,6 +1229,7 @@
             this.btn_storage_add_prop.TabIndex = 42;
             this.btn_storage_add_prop.Text = "-->";
             this.btn_storage_add_prop.UseVisualStyleBackColor = false;
+            this.btn_storage_add_prop.Click += new System.EventHandler(this.Btn_storage_add_prop_Click);
             // 
             // txt_storage_height
             // 
@@ -1425,6 +1460,65 @@
             this.panel_dashboard.Name = "panel_dashboard";
             this.panel_dashboard.Size = new System.Drawing.Size(1256, 418);
             this.panel_dashboard.TabIndex = 7;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(445, 373);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // circularProgressBar1
+            // 
+            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar1.AnimationSpeed = 500;
+            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.circularProgressBar1.InnerMargin = 2;
+            this.circularProgressBar1.InnerWidth = -1;
+            this.circularProgressBar1.Location = new System.Drawing.Point(408, 31);
+            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar1.Maximum = 10;
+            this.circularProgressBar1.Name = "circularProgressBar1";
+            this.circularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.circularProgressBar1.OuterMargin = -25;
+            this.circularProgressBar1.OuterWidth = 26;
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.DeepSkyBlue;
+            this.circularProgressBar1.ProgressWidth = 25;
+            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.circularProgressBar1.Size = new System.Drawing.Size(320, 320);
+            this.circularProgressBar1.StartAngle = 270;
+            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar1.SubscriptText = "";
+            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.circularProgressBar1.SuperscriptText = "";
+            this.circularProgressBar1.TabIndex = 4;
+            this.circularProgressBar1.Text = "Capacity";
+            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.circularProgressBar1.Value = 5;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(441, 11);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(111, 13);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Capacity per Storages";
+            // 
+            // lbl_usage
+            // 
+            this.lbl_usage.AutoSize = true;
+            this.lbl_usage.Location = new System.Drawing.Point(10, 11);
+            this.lbl_usage.Name = "lbl_usage";
+            this.lbl_usage.Size = new System.Drawing.Size(76, 13);
+            this.lbl_usage.TabIndex = 2;
+            this.lbl_usage.Text = "Whole Outake";
             // 
             // chart_use_all
             // 
@@ -1749,7 +1843,7 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_storage_save;
         private System.Windows.Forms.Panel panel_user;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pbx_profile_pic;

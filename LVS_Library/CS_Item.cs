@@ -112,10 +112,10 @@ namespace LVS_Library
         {
             SQL_methods.SQL_exec(string.Format(
                 "INSERT INTO storage_elements " +
-                "(element_name, element_description, element_unit_id, element_category_id, element_size_l, element_size_w, element_size_h, element_image) " +
+                "(element_name, element_description, element_unit_id, element_category_id, element_size_l, element_size_w, element_size_h, element_image, element_dataID) " +
                 "VALUES " +
-                "('{0}', '{1}', {2}, {3}, {4}, {5}, {6}, '{7}')",
-                item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image));
+                "('{0}', '{1}', {2}, {3}, {4}, {5}, {6}, '{7}', '{8}')",
+                item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image, item.Artikelnummer));
         }
 
         public static bool Is_active(Item item)
@@ -123,7 +123,7 @@ namespace LVS_Library
             string sql = "SELECT active FROM storage_elements WHERE id = " + item.ID;
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             SQL_methods.Open();
-            return ( bool ) cmd.ExecuteScalar();
+            return (bool)cmd.ExecuteScalar();
         }
 
         public static void Deactivate(Item item)
@@ -149,7 +149,7 @@ namespace LVS_Library
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             SQL_methods.Open();
             OdbcDataReader sqlReader = cmd.ExecuteReader();
-            return ( int ) sqlReader[0];
+            return (int)sqlReader[0];
         }
 
         public static bool Exists_in_DB(Item item)
@@ -165,11 +165,12 @@ namespace LVS_Library
                 "AND element_size_w = '{5}' " +
                 "AND element_size_h = '{6}' " +
                 //"AND element_image = '{7}' " +
-                "AND element_dataID = '{8}'", item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, /*item.Image,*/ item.Artikelnummer);
+                "AND element_dataID = '{7}'", item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, /*item.Image,*/ item.Artikelnummer);
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             SQL_methods.Open();
             OdbcDataReader sqlReader = cmd.ExecuteReader();
-            return ( ( string ) sqlReader[0] == "1" );
+            sqlReader.Read();
+            return (long)sqlReader[0] != 0;
         }
 
         public static bool Is_Allocated(Item item)
@@ -185,7 +186,7 @@ namespace LVS_Library
                 string sql = "SELECT Count(*) FROM element_location WHERE element_location.element_id = " + item.ID;
                 OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
                 SQL_methods.Open();
-                return ( int ) cmd.ExecuteScalar();
+                return (int)cmd.ExecuteScalar();
             }
             else
             {
@@ -209,7 +210,7 @@ namespace LVS_Library
             List<int> ids = new List<int>();
             while (sqlReader.Read())
             {
-                ids.Add(( int ) sqlReader[0]);
+                ids.Add((int)sqlReader[0]);
             }
             return ids;
         }
@@ -263,25 +264,25 @@ namespace LVS_Library
             List<Item> items = new List<Item>();
             while (sqlReader.Read())
             {
-                List<NtoN> sNtopN_ = ( from x in sNtopN where x.storage == ( int ) sqlReader["id"] select x ).ToList();
-                List<Property> properties_ = ( from x in properties where sNtopN_.Any(y => x.ID == y.property) select x ).ToList();//I hope this functions correctly. I think it is alright.
+                List<NtoN> sNtopN_ = (from x in sNtopN where x.storage == (int)sqlReader["id"] select x).ToList();
+                List<Property> properties_ = (from x in properties where sNtopN_.Any(y => x.ID == y.property) select x).ToList();//I hope this functions correctly. I think it is alright.
 
-                Unit unit_ = ( from x in units where x.ID == ( int ) sqlReader["element_unit_id"] select x ).First();
+                Unit unit_ = (from x in units where x.ID == (int)sqlReader["element_unit_id"] select x).First();
                 //Unit unit_ = (Unit) units.Where(x => x.ID == ( int ) sqlReader["element_unit_id"]);
-                Category category_ = ( from x in categories where x.ID == ( int ) sqlReader["element_category_id"] select x ).First();
+                Category category_ = (from x in categories where x.ID == (int)sqlReader["element_category_id"] select x).First();
 
 
                 items.Add(new Item(
-                    ( string ) sqlReader["element_name"],
-                    ( string ) sqlReader["element_description"],
-                    ( float ) sqlReader["element_size_l"],
-                    ( float ) sqlReader["element_size_w"],
-                    ( float ) sqlReader["element_size_h"],
+                    (string)sqlReader["element_name"],
+                    (string)sqlReader["element_description"],
+                    (float)sqlReader["element_size_l"],
+                    (float)sqlReader["element_size_w"],
+                    (float)sqlReader["element_size_h"],
                     unit_,
                     category_,
                     properties_,
-                    ( string ) sqlReader["element_image"],
-                    ( string ) sqlReader["id"]
+                    (string)sqlReader["element_image"],
+                    (string)sqlReader["id"]
                     ));
             }
 
@@ -289,9 +290,9 @@ namespace LVS_Library
 
         }
 
-        public static List<Item> All_items( )
+        public static List<Item> All_items()
         {
-            return Search("","",-1,-1,0,0,0, int.MaxValue, int.MaxValue, int.MaxValue,"");
+            return Search("", "", -1, -1, 0, 0, 0, int.MaxValue, int.MaxValue, int.MaxValue, "");
         }
 
         private static string Searching_Format(string name)
