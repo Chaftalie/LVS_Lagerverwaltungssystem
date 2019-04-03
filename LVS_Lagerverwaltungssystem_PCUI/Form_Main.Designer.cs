@@ -139,7 +139,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.oFD_element_Image = new System.Windows.Forms.OpenFileDialog();
             this.panel_dashboard = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbx_dash_storage = new System.Windows.Forms.ComboBox();
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.label24 = new System.Windows.Forms.Label();
             this.lbl_usage = new System.Windows.Forms.Label();
@@ -151,6 +151,9 @@
             this.btn_add_prop = new System.Windows.Forms.Button();
             this.lbx_prop = new System.Windows.Forms.ListBox();
             this.panel_settings = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.cbx_storage_parent = new System.Windows.Forms.ComboBox();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
@@ -876,6 +879,8 @@
             // panel_storage
             // 
             this.panel_storage.BackColor = System.Drawing.Color.Transparent;
+            this.panel_storage.Controls.Add(this.label26);
+            this.panel_storage.Controls.Add(this.cbx_storage_parent);
             this.panel_storage.Controls.Add(this.txt_storage_max_cap);
             this.panel_storage.Controls.Add(this.label23);
             this.panel_storage.Controls.Add(this.btn_storage_save);
@@ -1451,7 +1456,8 @@
             // 
             // panel_dashboard
             // 
-            this.panel_dashboard.Controls.Add(this.comboBox1);
+            this.panel_dashboard.Controls.Add(this.label25);
+            this.panel_dashboard.Controls.Add(this.cbx_dash_storage);
             this.panel_dashboard.Controls.Add(this.circularProgressBar1);
             this.panel_dashboard.Controls.Add(this.label24);
             this.panel_dashboard.Controls.Add(this.lbl_usage);
@@ -1461,13 +1467,14 @@
             this.panel_dashboard.Size = new System.Drawing.Size(1256, 418);
             this.panel_dashboard.TabIndex = 7;
             // 
-            // comboBox1
+            // cbx_dash_storage
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(445, 373);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 5;
+            this.cbx_dash_storage.FormattingEnabled = true;
+            this.cbx_dash_storage.Location = new System.Drawing.Point(542, 310);
+            this.cbx_dash_storage.Name = "cbx_dash_storage";
+            this.cbx_dash_storage.Size = new System.Drawing.Size(139, 21);
+            this.cbx_dash_storage.TabIndex = 5;
+            this.cbx_dash_storage.SelectedIndexChanged += new System.EventHandler(this.cbx_dash_storage_SelectedIndexChanged);
             // 
             // circularProgressBar1
             // 
@@ -1479,7 +1486,7 @@
             this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.circularProgressBar1.InnerMargin = 2;
             this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(408, 31);
+            this.circularProgressBar1.Location = new System.Drawing.Point(403, 27);
             this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
             this.circularProgressBar1.Maximum = 10;
             this.circularProgressBar1.Name = "circularProgressBar1";
@@ -1489,7 +1496,7 @@
             this.circularProgressBar1.ProgressColor = System.Drawing.Color.DeepSkyBlue;
             this.circularProgressBar1.ProgressWidth = 25;
             this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar1.Size = new System.Drawing.Size(320, 320);
+            this.circularProgressBar1.Size = new System.Drawing.Size(278, 272);
             this.circularProgressBar1.StartAngle = 270;
             this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
@@ -1617,6 +1624,34 @@
             this.panel_settings.Name = "panel_settings";
             this.panel_settings.Size = new System.Drawing.Size(387, 607);
             this.panel_settings.TabIndex = 9;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(484, 313);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(49, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Storages";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(316, 242);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(101, 16);
+            this.label26.TabIndex = 53;
+            this.label26.Text = "Parent Sotrage:";
+            // 
+            // cbx_storage_parent
+            // 
+            this.cbx_storage_parent.FormattingEnabled = true;
+            this.cbx_storage_parent.Location = new System.Drawing.Point(319, 261);
+            this.cbx_storage_parent.Name = "cbx_storage_parent";
+            this.cbx_storage_parent.Size = new System.Drawing.Size(133, 21);
+            this.cbx_storage_parent.TabIndex = 52;
             // 
             // Form_Main
             // 
@@ -1782,6 +1817,9 @@
         private System.Windows.Forms.TextBox txt_storage_max_cap;
         private System.Windows.Forms.Label label23;
         private CircularProgressBar.CircularProgressBar circularProgressBar1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbx_dash_storage;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.ComboBox cbx_storage_parent;
     }
 }
