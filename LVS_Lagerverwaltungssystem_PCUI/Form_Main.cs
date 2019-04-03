@@ -564,7 +564,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void cbx_dash_storage_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
     }
 }
