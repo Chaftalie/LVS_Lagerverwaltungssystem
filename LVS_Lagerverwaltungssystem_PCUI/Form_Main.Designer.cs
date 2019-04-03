@@ -31,9 +31,6 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Main));
             this.panel_main_title = new System.Windows.Forms.Panel();
             this.btn_main_close = new System.Windows.Forms.Button();
@@ -139,8 +136,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.oFD_element_Image = new System.Windows.Forms.OpenFileDialog();
             this.panel_dashboard = new System.Windows.Forms.Panel();
-            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chart_use_all = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel_properties = new System.Windows.Forms.Panel();
             this.label22 = new System.Windows.Forms.Label();
             this.txt_prop_name = new System.Windows.Forms.TextBox();
@@ -148,8 +144,13 @@
             this.btn_add_prop = new System.Windows.Forms.Button();
             this.lbx_prop = new System.Windows.Forms.ListBox();
             this.panel_settings = new System.Windows.Forms.Panel();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lbl_usage = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txt_storage_max_cap = new System.Windows.Forms.TextBox();
+            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
@@ -160,8 +161,7 @@
             this.panel_user.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbx_profile_pic)).BeginInit();
             this.panel_dashboard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_use_all)).BeginInit();
             this.panel_properties.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -505,6 +505,7 @@
             // panel_items
             // 
             this.panel_items.BackColor = System.Drawing.Color.Transparent;
+            this.panel_items.Controls.Add(this.listBox1);
             this.panel_items.Controls.Add(this.btn_image_upload);
             this.panel_items.Controls.Add(this.pBx_elements_image);
             this.panel_items.Controls.Add(this.label5);
@@ -865,6 +866,8 @@
             // panel_storage
             // 
             this.panel_storage.BackColor = System.Drawing.Color.Transparent;
+            this.panel_storage.Controls.Add(this.txt_storage_max_cap);
+            this.panel_storage.Controls.Add(this.label23);
             this.panel_storage.Controls.Add(this.button1);
             this.panel_storage.Controls.Add(this.label17);
             this.panel_storage.Controls.Add(this.label16);
@@ -977,7 +980,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(316, 181);
+            this.label7.Location = new System.Drawing.Point(316, 198);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(66, 16);
             this.label7.TabIndex = 42;
@@ -988,7 +991,7 @@
             this.btn_storage_del_prop.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_storage_del_prop.FlatAppearance.BorderSize = 0;
             this.btn_storage_del_prop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_storage_del_prop.Location = new System.Drawing.Point(458, 91);
+            this.btn_storage_del_prop.Location = new System.Drawing.Point(458, 109);
             this.btn_storage_del_prop.Name = "btn_storage_del_prop";
             this.btn_storage_del_prop.Size = new System.Drawing.Size(31, 23);
             this.btn_storage_del_prop.TabIndex = 43;
@@ -1165,7 +1168,7 @@
             // cbx_storage_cat
             // 
             this.cbx_storage_cat.FormattingEnabled = true;
-            this.cbx_storage_cat.Location = new System.Drawing.Point(319, 200);
+            this.cbx_storage_cat.Location = new System.Drawing.Point(319, 217);
             this.cbx_storage_cat.Name = "cbx_storage_cat";
             this.cbx_storage_cat.Size = new System.Drawing.Size(133, 21);
             this.cbx_storage_cat.TabIndex = 41;
@@ -1175,7 +1178,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(316, 138);
+            this.label8.Location = new System.Drawing.Point(316, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 16);
             this.label8.TabIndex = 40;
@@ -1186,7 +1189,7 @@
             this.btn_storage_add_prop.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btn_storage_add_prop.FlatAppearance.BorderSize = 0;
             this.btn_storage_add_prop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_storage_add_prop.Location = new System.Drawing.Point(458, 49);
+            this.btn_storage_add_prop.Location = new System.Drawing.Point(458, 67);
             this.btn_storage_add_prop.Name = "btn_storage_add_prop";
             this.btn_storage_add_prop.Size = new System.Drawing.Size(31, 23);
             this.btn_storage_add_prop.TabIndex = 42;
@@ -1203,7 +1206,7 @@
             // cbx_storage_unit
             // 
             this.cbx_storage_unit.FormattingEnabled = true;
-            this.cbx_storage_unit.Location = new System.Drawing.Point(319, 157);
+            this.cbx_storage_unit.Location = new System.Drawing.Point(319, 174);
             this.cbx_storage_unit.Name = "cbx_storage_unit";
             this.cbx_storage_unit.Size = new System.Drawing.Size(133, 21);
             this.cbx_storage_unit.TabIndex = 39;
@@ -1213,7 +1216,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(316, 23);
+            this.label6.Location = new System.Drawing.Point(313, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 16);
             this.label6.TabIndex = 41;
@@ -1231,7 +1234,7 @@
             this.lbx_storage_used_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbx_storage_used_prop.FormattingEnabled = true;
             this.lbx_storage_used_prop.ItemHeight = 16;
-            this.lbx_storage_used_prop.Location = new System.Drawing.Point(500, 42);
+            this.lbx_storage_used_prop.Location = new System.Drawing.Point(500, 60);
             this.lbx_storage_used_prop.Name = "lbx_storage_used_prop";
             this.lbx_storage_used_prop.Size = new System.Drawing.Size(133, 84);
             this.lbx_storage_used_prop.TabIndex = 40;
@@ -1241,7 +1244,7 @@
             this.lbx_storage_all_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbx_storage_all_prop.FormattingEnabled = true;
             this.lbx_storage_all_prop.ItemHeight = 16;
-            this.lbx_storage_all_prop.Location = new System.Drawing.Point(319, 42);
+            this.lbx_storage_all_prop.Location = new System.Drawing.Point(316, 60);
             this.lbx_storage_all_prop.Name = "lbx_storage_all_prop";
             this.lbx_storage_all_prop.Size = new System.Drawing.Size(133, 84);
             this.lbx_storage_all_prop.TabIndex = 39;
@@ -1257,7 +1260,7 @@
             // 
             this.rtx_storage_desc.Location = new System.Drawing.Point(127, 96);
             this.rtx_storage_desc.Name = "rtx_storage_desc";
-            this.rtx_storage_desc.Size = new System.Drawing.Size(133, 96);
+            this.rtx_storage_desc.Size = new System.Drawing.Size(133, 58);
             this.rtx_storage_desc.TabIndex = 1;
             this.rtx_storage_desc.Text = "";
             // 
@@ -1413,58 +1416,37 @@
             // 
             // panel_dashboard
             // 
+            this.panel_dashboard.Controls.Add(this.comboBox1);
+            this.panel_dashboard.Controls.Add(this.circularProgressBar1);
             this.panel_dashboard.Controls.Add(this.label24);
-            this.panel_dashboard.Controls.Add(this.label23);
-            this.panel_dashboard.Controls.Add(this.chart2);
-            this.panel_dashboard.Controls.Add(this.chart1);
+            this.panel_dashboard.Controls.Add(this.lbl_usage);
+            this.panel_dashboard.Controls.Add(this.chart_use_all);
             this.panel_dashboard.Location = new System.Drawing.Point(10, 677);
             this.panel_dashboard.Name = "panel_dashboard";
-            this.panel_dashboard.Size = new System.Drawing.Size(1113, 418);
+            this.panel_dashboard.Size = new System.Drawing.Size(1256, 418);
             this.panel_dashboard.TabIndex = 7;
             // 
-            // chart2
+            // chart_use_all
             // 
-            this.chart2.BackColor = System.Drawing.Color.LightSlateGray;
-            this.chart2.BorderlineColor = System.Drawing.Color.LightSlateGray;
+            this.chart_use_all.BackColor = System.Drawing.Color.LightSlateGray;
+            this.chart_use_all.BorderlineColor = System.Drawing.Color.LightSlateGray;
             chartArea1.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea1);
+            this.chart_use_all.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart2.Legends.Add(legend1);
-            this.chart2.Location = new System.Drawing.Point(418, 50);
-            this.chart2.Name = "chart2";
-            this.chart2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.chart_use_all.Legends.Add(legend1);
+            this.chart_use_all.Location = new System.Drawing.Point(11, 27);
+            this.chart_use_all.Name = "chart_use_all";
+            this.chart_use_all.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
             series1.LabelBackColor = System.Drawing.Color.LightSlateGray;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             series1.YValuesPerPoint = 4;
-            this.chart2.Series.Add(series1);
-            this.chart2.Size = new System.Drawing.Size(300, 300);
-            this.chart2.TabIndex = 1;
-            this.chart2.Text = "chart2";
-            // 
-            // chart1
-            // 
-            this.chart1.BackColor = System.Drawing.Color.LightSlateGray;
-            this.chart1.BorderlineColor = System.Drawing.Color.LightSlateGray;
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
-            this.chart1.Location = new System.Drawing.Point(30, 50);
-            this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.LabelBackColor = System.Drawing.Color.LightSlateGray;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            series2.YValuesPerPoint = 4;
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(300, 300);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            this.chart_use_all.Series.Add(series1);
+            this.chart_use_all.Size = new System.Drawing.Size(409, 300);
+            this.chart_use_all.TabIndex = 0;
+            this.chart_use_all.Text = "chart1";
             // 
             // panel_properties
             // 
@@ -1473,7 +1455,7 @@
             this.panel_properties.Controls.Add(this.btn_del_prop);
             this.panel_properties.Controls.Add(this.btn_add_prop);
             this.panel_properties.Controls.Add(this.lbx_prop);
-            this.panel_properties.Location = new System.Drawing.Point(1136, 677);
+            this.panel_properties.Location = new System.Drawing.Point(1272, 683);
             this.panel_properties.Name = "panel_properties";
             this.panel_properties.Size = new System.Drawing.Size(666, 418);
             this.panel_properties.TabIndex = 8;
@@ -1542,23 +1524,96 @@
             this.panel_settings.Size = new System.Drawing.Size(387, 607);
             this.panel_settings.TabIndex = 9;
             // 
-            // label23
+            // lbl_usage
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(56, 34);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(41, 13);
-            this.label23.TabIndex = 2;
-            this.label23.Text = "label23";
+            this.lbl_usage.AutoSize = true;
+            this.lbl_usage.Location = new System.Drawing.Point(10, 11);
+            this.lbl_usage.Name = "lbl_usage";
+            this.lbl_usage.Size = new System.Drawing.Size(76, 13);
+            this.lbl_usage.TabIndex = 2;
+            this.lbl_usage.Text = "Whole Outake";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(460, 34);
+            this.label24.Location = new System.Drawing.Point(441, 11);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(41, 13);
+            this.label24.Size = new System.Drawing.Size(111, 13);
             this.label24.TabIndex = 3;
-            this.label24.Text = "label24";
+            this.label24.Text = "Capacity per Storages";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(477, 45);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(179, 84);
+            this.listBox1.TabIndex = 39;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.White;
+            this.label23.Location = new System.Drawing.Point(13, 174);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(92, 16);
+            this.label23.TabIndex = 40;
+            this.label23.Text = "Max Capacity:";
+            // 
+            // txt_storage_max_cap
+            // 
+            this.txt_storage_max_cap.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_storage_max_cap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_storage_max_cap.Location = new System.Drawing.Point(127, 173);
+            this.txt_storage_max_cap.Multiline = true;
+            this.txt_storage_max_cap.Name = "txt_storage_max_cap";
+            this.txt_storage_max_cap.Size = new System.Drawing.Size(133, 23);
+            this.txt_storage_max_cap.TabIndex = 41;
+            this.txt_storage_max_cap.Text = "Name";
+            // 
+            // circularProgressBar1
+            // 
+            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.circularProgressBar1.AnimationSpeed = 500;
+            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.circularProgressBar1.InnerMargin = 2;
+            this.circularProgressBar1.InnerWidth = -1;
+            this.circularProgressBar1.Location = new System.Drawing.Point(408, 31);
+            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
+            this.circularProgressBar1.Maximum = 10;
+            this.circularProgressBar1.Name = "circularProgressBar1";
+            this.circularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.circularProgressBar1.OuterMargin = -25;
+            this.circularProgressBar1.OuterWidth = 26;
+            this.circularProgressBar1.ProgressColor = System.Drawing.Color.DeepSkyBlue;
+            this.circularProgressBar1.ProgressWidth = 25;
+            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.circularProgressBar1.Size = new System.Drawing.Size(320, 320);
+            this.circularProgressBar1.StartAngle = 270;
+            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.circularProgressBar1.SubscriptText = "";
+            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.circularProgressBar1.SuperscriptText = "";
+            this.circularProgressBar1.TabIndex = 4;
+            this.circularProgressBar1.Text = "Capacity";
+            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.circularProgressBar1.Value = 5;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(445, 373);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 5;
             // 
             // Form_Main
             // 
@@ -1597,8 +1652,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbx_profile_pic)).EndInit();
             this.panel_dashboard.ResumeLayout(false);
             this.panel_dashboard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart_use_all)).EndInit();
             this.panel_properties.ResumeLayout(false);
             this.panel_properties.PerformLayout();
             this.ResumeLayout(false);
@@ -1711,8 +1765,7 @@
         private System.Windows.Forms.Button btn_del_profile_img;
         private System.Windows.Forms.Button btn_upload_profile_img;
         private System.Windows.Forms.Panel panel_dashboard;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_use_all;
         private System.Windows.Forms.Panel panel_properties;
         private System.Windows.Forms.Panel panel_settings;
         private System.Windows.Forms.Label label22;
@@ -1721,6 +1774,11 @@
         private System.Windows.Forms.Button btn_add_prop;
         private System.Windows.Forms.ListBox lbx_prop;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lbl_usage;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox txt_storage_max_cap;
         private System.Windows.Forms.Label label23;
+        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
