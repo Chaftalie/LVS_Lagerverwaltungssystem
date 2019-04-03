@@ -127,6 +127,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.oFD_element_Image = new System.Windows.Forms.OpenFileDialog();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();

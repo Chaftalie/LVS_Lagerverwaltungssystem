@@ -14,7 +14,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 {
     public partial class Form_Main : Form
     {
-        public Form_Main( )
+        public Form_Main()
         {
             InitializeComponent();
             this.Width = 1000;
@@ -23,16 +23,18 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void Form_Main_Load(object sender, EventArgs e)
         {
-            Load_lbx_elements_all_cat();
+            Load_all_for_element();
             Load_lbx_cat_all();
-            ( ( Control ) pBx_elements_image ).AllowDrop = true;
+            ((Control)pBx_elements_image).AllowDrop = true;
         }
 
         #region items / elements
 
-        private void Load_lbx_elements_all_cat( )
+        private void Load_all_for_element()
         {
-            lbx_elements_all_prop.Items.AddRange(Category.All_Categories().ToArray());
+            lbx_elements_all_prop.Items.AddRange(Property.All_Properties().ToArray());
+            cbx_elements_cat.Items.AddRange(Category.All_Categories().ToArray());
+            cbx_elements_unit.Items.AddRange(Unit.All_Units().ToArray());
         }
 
         private void btn_elements_cat_add_Click(object sender, EventArgs e)
@@ -46,8 +48,6 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
-
-
         private void btn_elements_cat_del_Click(object sender, EventArgs e)
         {
             if (lbx_elements_used_prop.SelectedItem != null)
@@ -56,30 +56,59 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
-        private void Load_lbx_cat_all( )
+        private void Load_lbx_cat_all()
         {
             lbx_cat_all.Items.AddRange(Category.All_Categories().ToArray());
         }
 
+        //TODO add method to check if element is already 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            float.TryParse(txt_elements_width.Text, out float w);
-            float.TryParse(txt_elements_length.Text, out float l);
-            float.TryParse(txt_elements_height.Text, out float h);
-
-            List<Property> properties = new List<Property>();
-            foreach (Property property in lbx_elements_used_prop.Items)
+            if (!Elements_misses_parts_get_num(out float w, out float l, out float h))
             {
-                properties.Add(property);
+                List<Property> properties = new List<Property>();
+                foreach (Property property in lbx_elements_used_prop.Items)
+                {
+                    properties.Add(property);
+                }
+
+                Category category = (Category)cbx_elements_cat.SelectedItem;
+
+                Unit unit = (Unit)cbx_elements_unit.SelectedItem;
+
+                string imagebase64 = "";
+                if (pBx_elements_image.Image != null)
+                {
+                    imagebase64 = ImageStuff.GetStringFromImage(pBx_elements_image.Image);
+                }
+
+                Item.Save(new Item(txt_element_name.Text, rtx_elements_desc.Text, w, l, h, unit, category, properties, imagebase64, txt_articel_number.Text));
             }
+            else
+            {
+                MessageBox.Show("Bitte alle Felder ausfüllen\n we know taht we have to add something more here");
+            }
+        }
 
-            Category category = ( Category ) cbx_elements_cat.SelectedItem;
+        private bool Elements_misses_parts_get_num(out float w, out float l, out float h)
+        {
+            List<bool> missing_parts_list = new List<bool>();
+            missing_parts_list.Add(float.TryParse(txt_elements_width.Text, out w));
+            missing_parts_list.Add(float.TryParse(txt_elements_length.Text, out l));
+            missing_parts_list.Add(float.TryParse(txt_elements_height.Text, out h));
+            missing_parts_list.Add(txt_element_name.Text != "");
+            missing_parts_list.Add(rtx_elements_desc.Text != "");
+            missing_parts_list.Add(cbx_elements_unit.Text != "");
+            missing_parts_list.Add(cbx_elements_cat.Text != "");
+            missing_parts_list.Add(lbx_elements_used_prop.Items.Count > 0);
 
-            Unit unit = ( Unit ) cbx_elements_unit.SelectedItem;
-
-            string imagebase64 = ImageStuff.GetStringFromImage(pBx_elements_image.Image);
-
-            Item.Save(new Item(txt_element_name.Text, rtx_elements_desc.Text, w, l, h, unit, category, properties, imagebase64, txt_articel_number.Text));
+            foreach (var _ in from bool result in missing_parts_list
+                              where !result
+                              select new { })
+            {
+                return true;
+            }
+            return false;
         }
 
         private void btn_image_upload_Click(object sender, EventArgs e)
@@ -90,7 +119,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
-        private void openfiledialogtest( )
+        private void openfiledialogtest()
         {
             if (oFD_element_Image.ShowDialog() == DialogResult.OK)
             {
@@ -120,7 +149,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             if (mouseDown)
             {
                 this.Location = new Point(
-                    ( this.Location.X - lastLocation.X ) + e.X, ( this.Location.Y - lastLocation.Y ) + e.Y);
+                    (this.Location.X - lastLocation.X) + e.X, (this.Location.Y - lastLocation.Y) + e.Y);
 
                 this.Update();
             }
@@ -138,7 +167,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         }
 
-        private void Disable_all_Panels( )
+        private void Disable_all_Panels()
         {
             panel_items.Visible = false;
             panel_categories.Visible = false;
