@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace LVS_Lagerverwaltungssystem_PCUI
 {
     public partial class Form_Main : Form
@@ -541,6 +542,21 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Form form_set = new Form_Parameter();
             form_set.Show();
+        }
+
+        private void Btn_storage_add_prop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_storage_del_prop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btn_storage_save_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
