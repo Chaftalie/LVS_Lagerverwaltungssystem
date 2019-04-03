@@ -19,6 +19,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             InitializeComponent();
             this.Width = 1000;
             this.Height = 500;
+            chart_use_all.ChartAreas[0].BackColor = Color.Transparent;
         }
 
         private void Form_Main_Load(object sender, EventArgs e)
@@ -188,6 +189,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Disable_all_Panels();
             panel_categories.Left = 205;
+            panel_categories.Top = 64;
             panel_categories.Visible = true;
         }
 
