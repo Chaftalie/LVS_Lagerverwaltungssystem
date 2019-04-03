@@ -121,7 +121,7 @@ namespace LVS_Library
 
         public static List<Unit> All_Units( )
         {
-            string sql = "SELECT id as id, unit_si as si, unit_name as name, unit_desctiprion as desctiprion FROM units";
+            string sql = "SELECT id as id, unit_si as si, unit_name as name, unit_description as description FROM units";
 
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             SQL_methods.Open();
@@ -135,6 +135,11 @@ namespace LVS_Library
             }
 
             return units;
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }
