@@ -25,7 +25,8 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Load_all_for_element();
             Load_lbx_cat_all();
-            ((Control)pBx_elements_image).AllowDrop = true;
+            ( ( Control ) pBx_elements_image ).AllowDrop = true;
+            pBx_elements_image.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
         #region items / elements
@@ -173,6 +174,8 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_categories.Visible = false;
             panel_storage.Visible = false;
             panel_user.Visible = false;
+            panel_properties.Visible = false;
+            panel_dashboard.Visible = false;
         }
 
         private void btn_cat_Click(object sender, EventArgs e)
@@ -186,6 +189,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Disable_all_Panels();
             panel_storage.Top = 64;
+            panel_storage.Left = 205;
             panel_storage.Visible = true;
         }
 
@@ -505,7 +509,30 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Disable_all_Panels();
             panel_user.Left = 205;
+            panel_user.Top = 64;
             panel_user.Visible = true;
+        }
+
+        private void btn_prop_Click(object sender, EventArgs e)
+        {
+            Disable_all_Panels();
+            panel_properties.Left = 205;
+            panel_properties.Top = 64;
+            panel_properties.Visible = true;
+        }
+
+        private void btn_dash_Click(object sender, EventArgs e)
+        {
+            Disable_all_Panels();
+            panel_dashboard.Left = 205;
+            panel_dashboard.Top = 64;
+            panel_dashboard.Visible = true;
+        }
+
+        private void btn_settings_Click(object sender, EventArgs e)
+        {
+            Form form_set = new Form_Parameter();
+            form_set.Show();
         }
     }
 }

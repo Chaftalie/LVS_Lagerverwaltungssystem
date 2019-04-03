@@ -19,6 +19,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             InitializeComponent();
             Fill_Database_tBx_thingys();
+            
         }
 
         private void Fill_Database_tBx_thingys()
@@ -66,6 +67,11 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             {
                 MessageBox.Show("Something did not work\nSome informatione (I hope it can help):" + exception.Message, "Warnung", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btn_par_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
