@@ -25,7 +25,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Load_all_for_element();
             Load_lbx_cat_all();
-            ( ( Control ) pBx_elements_image ).AllowDrop = true;
+            ((Control)pBx_elements_image).AllowDrop = true;
             pBx_elements_image.SizeMode = PictureBoxSizeMode.Zoom;
         }
 
@@ -62,7 +62,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             lbx_cat_all.Items.AddRange(Category.All_Categories().ToArray());
         }
 
-        //TODO add method to check if element is already 
+
         private void btn_save_Click(object sender, EventArgs e)
         {
             if (!Elements_misses_parts_get_num(out float w, out float l, out float h))
@@ -82,8 +82,14 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                 {
                     imagebase64 = ImageStuff.GetStringFromImage(pBx_elements_image.Image);
                 }
+                Item item = new Item(txt_element_name.Text, rtx_elements_desc.Text, w, l, h, unit, category, properties, imagebase64, txt_articel_number.Text);
 
-                Item.Save(new Item(txt_element_name.Text, rtx_elements_desc.Text, w, l, h, unit, category, properties, imagebase64, txt_articel_number.Text));
+                if (Item.Exists_in_DB(item))
+                {
+                    MessageBox.Show("Dieses Item ist in der Datenbank schon vorhanden");
+                }
+
+                Item.Save(item);
             }
             else
             {
