@@ -633,7 +633,6 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             form_set.Show();
         }
 
-
         private void cbx_dash_storage_SelectedIndexChanged(object sender, EventArgs e)
         {
             
