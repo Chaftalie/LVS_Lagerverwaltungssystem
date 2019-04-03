@@ -26,6 +26,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void Form_Main_Load(object sender, EventArgs e)
         {
             Load_all_for_element();
+            Load_all_for_storage();
             Load_lbx_cat_all();
             ((Control)pBx_elements_image).AllowDrop = true;
             pBx_elements_image.SizeMode = PictureBoxSizeMode.Zoom;
@@ -40,7 +41,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             cbx_elements_unit.Items.AddRange(Unit.All_Units().ToArray());
         }
 
-        private void btn_elements_cat_add_Click(object sender, EventArgs e)
+        private void btn_elements_prop_add_Click(object sender, EventArgs e)
         {
             if (lbx_elements_all_prop.SelectedItem != null)
             {
@@ -51,7 +52,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
-        private void btn_elements_cat_del_Click(object sender, EventArgs e)
+        private void btn_elements_prop_del_Click(object sender, EventArgs e)
         {
             if (lbx_elements_used_prop.SelectedItem != null)
             {
@@ -65,7 +66,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         }
 
 
-        private void btn_save_Click(object sender, EventArgs e)
+        private void btn_element_save_Click(object sender, EventArgs e)
         {
             if (!Elements_misses_parts_get_num(out float w, out float l, out float h))
             {
@@ -136,6 +137,91 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        #endregion
+
+        #region storage
+
+        private void Load_all_for_storage()
+        {
+            lbx_storage_all_prop.Items.AddRange(Property.All_Properties().ToArray());
+            cbx_storage_cat.Items.AddRange(Category.All_Categories().ToArray());
+            cbx_storage_unit.Items.AddRange(Unit.All_Units().ToArray());
+        }
+
+        private void Btn_storage_add_prop_Click(object sender, EventArgs e)
+        {
+            if (lbx_storage_all_prop.SelectedItem != null)
+            {
+                if (!lbx_storage_used_prop.Items.Contains(lbx_storage_all_prop.SelectedItem))
+                {
+                    lbx_storage_used_prop.Items.Add(lbx_storage_all_prop.SelectedItem);
+                }
+            }
+        }
+
+        private void Btn_storage_del_prop_Click(object sender, EventArgs e)
+        {
+            if (lbx_storage_used_prop.SelectedItem != null)
+            {
+                lbx_storage_used_prop.Items.Remove(lbx_storage_used_prop.SelectedItem);
+            }
+        }
+
+        private void Btn_storage_save_Click(object sender, EventArgs e)
+        {
+            if (!Storage_misses_parts_get_num(out float w, out float l, out float h))
+            {
+                List<Property> properties = new List<Property>();
+                foreach (Property property in lbx_storage_used_prop.Items)
+                {
+                    properties.Add(property);
+                }
+
+                Category category = (Category)cbx_storage_cat.SelectedItem;
+
+                Unit unit = (Unit)cbx_storage_unit.SelectedItem;
+
+                throw new NotImplementedException();
+
+                /*
+                Storage storage = new Storage()
+
+                    
+                Item item = new Item(txt_element_name.Text, rtx_elements_desc.Text, w, l, h, unit, category, properties, imagebase64, txt_articel_number.Text);
+                
+                if (Storage.Exists_in_DB(storage))
+                {
+                    MessageBox.Show("Diese Storage Einheit ist in der Datenbank schon vorhanden");
+                }
+
+                Item.Save(item);*/
+            }
+            else
+            {
+                MessageBox.Show("Bitte alle Felder ausfüllen\n we know that we have to add something more here");
+            }
+        }
+
+        private bool Storage_misses_parts_get_num(out float w, out float l, out float h)
+        {
+            List<bool> missing_parts_list = new List<bool>();
+            missing_parts_list.Add(float.TryParse(txt_storage_width.Text, out w));
+            missing_parts_list.Add(float.TryParse(txt_storage_length.Text, out l));
+            missing_parts_list.Add(float.TryParse(txt_storage_height.Text, out h));
+            missing_parts_list.Add(txt_storage_name.Text != "");
+            missing_parts_list.Add(rtx_storage_desc.Text != "");
+            missing_parts_list.Add(cbx_storage_unit.Text != "");
+            missing_parts_list.Add(cbx_storage_cat.Text != "");
+            missing_parts_list.Add(lbx_storage_used_prop.Items.Count > 0);
+
+            foreach (var _ in from bool result in missing_parts_list
+                              where !result
+                              select new { })
+            {
+                return true;
+            }
+            return false;
+        }
         #endregion
 
 
@@ -542,21 +628,6 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         {
             Form form_set = new Form_Parameter();
             form_set.Show();
-        }
-
-        private void Btn_storage_add_prop_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_storage_del_prop_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Btn_storage_save_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

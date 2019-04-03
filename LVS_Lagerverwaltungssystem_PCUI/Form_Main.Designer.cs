@@ -637,7 +637,7 @@
             this.btn_save.TabIndex = 30;
             this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = false;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.btn_save.Click += new System.EventHandler(this.btn_element_save_Click);
             // 
             // btn_elements_cat_del
             // 
@@ -650,7 +650,7 @@
             this.btn_elements_cat_del.TabIndex = 29;
             this.btn_elements_cat_del.Text = "<--";
             this.btn_elements_cat_del.UseVisualStyleBackColor = false;
-            this.btn_elements_cat_del.Click += new System.EventHandler(this.btn_elements_cat_del_Click);
+            this.btn_elements_cat_del.Click += new System.EventHandler(this.btn_elements_prop_del_Click);
             // 
             // btn_elements_cat_add
             // 
@@ -663,7 +663,7 @@
             this.btn_elements_cat_add.TabIndex = 28;
             this.btn_elements_cat_add.Text = "-->";
             this.btn_elements_cat_add.UseVisualStyleBackColor = false;
-            this.btn_elements_cat_add.Click += new System.EventHandler(this.btn_elements_cat_add_Click);
+            this.btn_elements_cat_add.Click += new System.EventHandler(this.btn_elements_prop_add_Click);
             // 
             // lbl_length
             // 
