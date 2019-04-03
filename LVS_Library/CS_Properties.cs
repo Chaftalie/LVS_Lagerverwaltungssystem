@@ -113,6 +113,11 @@ namespace LVS_Library
 
             return sNtopN;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 
     public class NtoN
