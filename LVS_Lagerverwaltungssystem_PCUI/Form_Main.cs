@@ -536,6 +536,9 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_dashboard.Left = 205;
             panel_dashboard.Top = 64;
             panel_dashboard.Visible = true;
+
+
+
         }
 
         private void btn_settings_Click(object sender, EventArgs e)
@@ -555,6 +558,11 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         }
 
         private void Btn_storage_save_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbx_dash_storage_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
