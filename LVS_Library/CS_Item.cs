@@ -164,7 +164,8 @@ namespace LVS_Library
                 "AND element_size_l = '{4}' " +
                 "AND element_size_w = '{5}' " +
                 "AND element_size_h = '{6}' " +
-                "AND element_image = '{7}'", item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image);
+                //"AND element_image = '{7}' " +
+                "AND element_dataID = '{8}'", item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, /*item.Image,*/ item.Artikelnummer);
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             SQL_methods.Open();
             OdbcDataReader sqlReader = cmd.ExecuteReader();
