@@ -13,14 +13,13 @@
             <main>
                 <center>
                     <button class="camButton">
-                        <img src="/content/cam.png" />
-                        <br />
                         Camera
                     </button>
                     <br />
-                    <button class="menuButton">Storage</button>
-                    <button class="menuButton">Items</button>
-                    <button class="menuButton">Settings</button>
+                    <a href="/dashboard.php"><button class="menuButton">Dashboard</button></a>
+                    <a href="/storage.php"><button class="menuButton">Storage</button></a>
+                    <a href="/items.php"><button class="menuButton">Items</button></a>
+                    <a href="/settings.php"><button class="menuButton">Settings</button></a>
                 </center>
             </main>
         </body>

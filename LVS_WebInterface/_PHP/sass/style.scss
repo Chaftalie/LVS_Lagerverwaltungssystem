@@ -1,6 +1,6 @@
 *{
     font-size: 50pt;
-    font-family: Calibri;
+    font-family: Calibri, Arial, Helvetica, sans-serif;
     font-weight: lighter;
 }
 
@@ -18,10 +18,20 @@ header {
     border-bottom: solid 10px #00a1ff;
 }
 
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
 h1, h1 span{
     font-size: 100pt;
     margin: 0;
     color: white;
+}
+
+h2{
+    color: white;
+    margin: 20px 0;
 }
 
 
@@ -46,9 +56,23 @@ button:active {
 button.camButton{
     width: 80%;
     height: 500px;
+
+    background-image: url(../content/apertureStatic.gif);
+
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button.camButton:hover{
+    background-image: url(../content/aperture1.gif);
+
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 button.camButton img {
+
+
     transform: rotate(0deg);
     width: 40%;
 
@@ -65,5 +89,74 @@ button.camButton:hover img, button.camButton:active img {
 
 button.menuButton {
     width: 80%;
-    height: 200px;
+    height: 150px;
 }
+
+table.dataTable{
+    color: #FFFFFF;
+    margin: 0px;
+    background: #666666;
+    width: 90%;
+
+    tr{
+        td{
+            padding: 10px 0;
+            em{
+                font-size: 40pt;
+                color: #66B2FF;
+                font-style: normal;
+            }
+
+            blockquote{
+                margin: 10px 10px;
+                padding-left: 10px;
+                font-size: 40pt;
+                color: #DDDDDD;
+                border-left: 8px solid #1E90FF;
+            }
+
+        }
+
+    }
+
+    tr:nth-child(odd){
+        background: #777777;
+    }
+
+
+    tr:hover{
+        background: #CCCCCC;
+    }
+
+
+}
+
+table.infoTable{
+    color: #FFFFFF;
+    margin: 0px;
+    background: #666666;
+    width: 90%;
+
+    tr{
+        td{
+            padding: 10px 0;
+        }
+    }
+
+    tr:nth-child(odd){
+        background: #E3E3E3;
+
+        td{
+            padding-left: 50px;
+            color: #1E90FF
+        }
+
+    }
+
+    tr:nth-child(even){
+        background: #555555;
+    }
+
+}
+
+
