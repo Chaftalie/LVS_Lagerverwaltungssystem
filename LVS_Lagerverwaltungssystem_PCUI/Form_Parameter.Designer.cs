@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_DB = new System.Windows.Forms.TabPage();
+            this.btn_check_connection = new System.Windows.Forms.Button();
             this.btn_resett = new System.Windows.Forms.Button();
             this.btn_save_DB = new System.Windows.Forms.Button();
             this.tBx_Login_Password = new System.Windows.Forms.TextBox();
@@ -43,9 +44,12 @@
             this.tBx_IP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btn_check_connection = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_par_close = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage_DB.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -55,14 +59,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage_DB);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-1, 0);
+            this.tabControl1.Location = new System.Drawing.Point(0, 45);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(807, 457);
+            this.tabControl1.Size = new System.Drawing.Size(800, 445);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage_DB
             // 
+            this.tabPage_DB.BackColor = System.Drawing.Color.LightSlateGray;
             this.tabPage_DB.Controls.Add(this.btn_check_connection);
             this.tabPage_DB.Controls.Add(this.btn_resett);
             this.tabPage_DB.Controls.Add(this.btn_save_DB);
@@ -79,10 +84,19 @@
             this.tabPage_DB.Location = new System.Drawing.Point(4, 22);
             this.tabPage_DB.Name = "tabPage_DB";
             this.tabPage_DB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_DB.Size = new System.Drawing.Size(799, 431);
+            this.tabPage_DB.Size = new System.Drawing.Size(792, 419);
             this.tabPage_DB.TabIndex = 0;
             this.tabPage_DB.Text = "Datenbank";
-            this.tabPage_DB.UseVisualStyleBackColor = true;
+            // 
+            // btn_check_connection
+            // 
+            this.btn_check_connection.Location = new System.Drawing.Point(13, 393);
+            this.btn_check_connection.Name = "btn_check_connection";
+            this.btn_check_connection.Size = new System.Drawing.Size(136, 23);
+            this.btn_check_connection.TabIndex = 12;
+            this.btn_check_connection.Text = "Verbindung prüfen";
+            this.btn_check_connection.UseVisualStyleBackColor = true;
+            this.btn_check_connection.Click += new System.EventHandler(this.btn_check_connection_Click);
             // 
             // btn_resett
             // 
@@ -186,35 +200,61 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.LightSlateGray;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(799, 431);
+            this.tabPage2.Size = new System.Drawing.Size(792, 419);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // btn_check_connection
+            // panel1
             // 
-            this.btn_check_connection.Location = new System.Drawing.Point(13, 393);
-            this.btn_check_connection.Name = "btn_check_connection";
-            this.btn_check_connection.Size = new System.Drawing.Size(136, 23);
-            this.btn_check_connection.TabIndex = 12;
-            this.btn_check_connection.Text = "Verbindung prüfen";
-            this.btn_check_connection.UseVisualStyleBackColor = true;
-            this.btn_check_connection.Click += new System.EventHandler(this.btn_check_connection_Click);
+            this.panel1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.btn_par_close);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(800, 23);
+            this.panel1.TabIndex = 1;
+            // 
+            // btn_par_close
+            // 
+            this.btn_par_close.FlatAppearance.BorderSize = 0;
+            this.btn_par_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_par_close.Location = new System.Drawing.Point(768, 0);
+            this.btn_par_close.Name = "btn_par_close";
+            this.btn_par_close.Size = new System.Drawing.Size(32, 23);
+            this.btn_par_close.TabIndex = 2;
+            this.btn_par_close.Text = "X";
+            this.btn_par_close.UseVisualStyleBackColor = true;
+            this.btn_par_close.Click += new System.EventHandler(this.btn_par_close_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(346, 5);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(104, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Settings: Parameters";
             // 
             // Form_Parameter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.LightSlateGray;
+            this.ClientSize = new System.Drawing.Size(800, 490);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form_Parameter";
             this.Text = "Parameter";
             this.tabControl1.ResumeLayout(false);
             this.tabPage_DB.ResumeLayout(false);
             this.tabPage_DB.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -237,5 +277,8 @@
         private System.Windows.Forms.TextBox tBx_IP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_check_connection;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btn_par_close;
+        private System.Windows.Forms.Label label6;
     }
 }

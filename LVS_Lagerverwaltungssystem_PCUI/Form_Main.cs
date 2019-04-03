@@ -499,5 +499,11 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             panel_dashboard.Top = 64;
             panel_dashboard.Visible = true;
         }
+
+        private void btn_settings_Click(object sender, EventArgs e)
+        {
+            Form form_set = new Form_Parameter();
+            form_set.Show();
+        }
     }
 }
