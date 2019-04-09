@@ -8,21 +8,14 @@
             <a href="/">
                 <header>
                     <center>
-                        <h1>LVS <span style="color: #00a1ff">| Dashboard</span></h1>
+                        <h1>LVS <span style="color: #00a1ff">| Scan</span></h1>
                     </center>
                 </header>
             </a>
             <main>
-   ';
+                <center>
 
-   $outputs = array();
-
-   exec('test.exe testandsoom', $outputs);
-
-   foreach($outputs as $o) echo $o;
-
-   echo '
-
+                </center>
             </main>
         </body>
 

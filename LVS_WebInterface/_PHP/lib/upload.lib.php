@@ -1,5 +1,14 @@
 <?php
 
+abstract class FileUploaderOutput
+{
+    const FilenameOnly = '@FUO_FILENAMEONLY';
+    const FilenamePlusExtension = '@FUO_FILENAMEPLUSEXTENSION';
+    const ExtensionOnly = '@FUO_EXTENSIONONLY';
+    const FilepathPlusFilename = '@FUO_FILEPATHPLUSNAME';
+    const FilepathOnly = '@FUO_FILEPATHONLY';
+}
+
 class FileUploader
 {
 ##########################################################################################
@@ -31,18 +40,22 @@ class FileUploader
         $this->fileAspectRatio = "";
         $this->fileTargetResolutionX = "";
         $this->fileScaleFactor = "";
+        $this->fileOverride = false;
         $this->fileMaxSize = 99999999;
 
     }
 
     public static function init()
     {
-        require("upload.lib.config.php");
 
-        self::$sqlConnectionLink = mysqli_connect($uploadConfigDatabaseHost,$uploadConfigDatabaseUser,$uploadConfigDatabasePass,$uploadConfigDatabaseName) OR die("<br><br><b>Error in upload.lib.php :</b> Could not connect to Database (Code 1)<br><br>");
     }
 
 ##########################################################################################
+
+    public static function SetSQLLink($link)
+    {
+        self::$sqlConnectionLink = $link;
+    }
 
     private function SaveReplace($string)
     {
@@ -163,7 +176,6 @@ class FileUploader
 
         // Upload Files to Server
         $count=0;
-        $imgUploadCtr = 1;
 
         foreach ($this->SaveReplace($_FILES[$this->fileFormElementName]['name']) AS $file => $name)
         {
@@ -193,7 +205,7 @@ class FileUploader
 
                     $fileName = $this->fileUploadDirectory.$name;
 
-                    if($this->fileCustomName != "") $fileName = $this->fileUploadDirectory.str_replace('{#i}',$imgUploadCtr,str_replace('{#u}',uniqid(),$this->fileCustomName)).'.'.$fileExtension;
+                    if($this->fileCustomName != "") $fileName = $this->fileUploadDirectory.$this->fileCustomName.'.'.$fileExtension;
 
                     if(!$this->fileOverride)
                     {
@@ -201,7 +213,7 @@ class FileUploader
                         $dupFilename = $fileName;
                         while(file_exists($dupFilename))
                         {
-                            $dupFilename = $this->fileUploadDirectory.str_replace('{#i}',$imgUploadCtr,str_replace('{#u}',uniqid(),$this->fileCustomName)).'('.$i++.').'.$fileExtension;
+                            $dupFilename = $this->fileUploadDirectory.$this->fileCustomName.'('.$i++.').'.$fileExtension;
                         }
                         $fileName = $dupFilename;
                     }
@@ -261,12 +273,8 @@ class FileUploader
                         {
                             list($width, $height, $type, $attr) = getimagesize($fileName);
 
-
-
-
                             if($width > $height) $scalingFactor = $this->fileTargetResolutionX / $width;
                             if($width <= $height) $scalingFactor = $this->fileTargetResolutionY / $height;
-
 
                             $newWidth = $width * $scalingFactor;
                             $newHeight = $height * $scalingFactor;
@@ -340,18 +348,20 @@ class FileUploader
                             }
                         }
 
-                        if($this->fileSQLEntry != "")
-                        {
-                            $fileSQLStatement = $this->fileSQLEntry;
-
-                            $fileSQLStatement = str_replace("@FILENAME",str_replace($this->fileUploadDirectory,'',$fileName),$fileSQLStatement);
-                            $fileSQLStatement = str_replace("@FILEEXTENSION",pathinfo($this->fileUploadDirectory.$fileName, PATHINFO_EXTENSION),$fileSQLStatement);
-
-                            self::MySQLNonQuery($fileSQLStatement);
-                        }
 
                         $count++;
-                        $imgUploadCtr++;
+                    }
+                    if($this->fileSQLEntry != "")
+                    {
+                        $fileSQLStatement = $this->fileSQLEntry;
+
+                        $fileSQLStatement = str_replace(FileUploaderOutput::FilenameOnly,str_replace(pathinfo($fileName, PATHINFO_EXTENSION).'.','',$fileName),$fileSQLStatement);
+                        $fileSQLStatement = str_replace(FileUploaderOutput::FilenamePlusExtension,str_replace($this->fileUploadDirectory,'',$fileName),$fileSQLStatement);
+                        $fileSQLStatement = str_replace(FileUploaderOutput::ExtensionOnly,pathinfo($fileName, PATHINFO_EXTENSION),$fileSQLStatement);
+                        $fileSQLStatement = str_replace(FileUploaderOutput::FilepathPlusFilename,$this->fileUploadDirectory.$fileName,$fileSQLStatement);
+                        $fileSQLStatement = str_replace(FileUploaderOutput::FilepathOnly,$this->fileUploadDirectory,$fileSQLStatement);
+
+                        self::MySQLNonQuery($fileSQLStatement);
                     }
                 }
             }
