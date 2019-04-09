@@ -13,16 +13,17 @@
                 </header>
             </a>
             <main>
-   ';
+                <br><br>
+                <center>
+                    <div class="customMeter">
 
-   $outputs = array();
+                        <div class="needle" id="meterNeedle"></div>
 
-   exec('decoder\LVS_Webtools.exe decoder\test.png', $outputs);
+                    </div>
 
-   foreach($outputs as $o) echo $o;
-
-   echo '
-
+                    <br>
+                    <input type="range" min="0" max="100" id="meterValue" oninput="UpdateMeter(this)"/>
+                </center>
             </main>
         </body>
 
@@ -32,5 +33,30 @@
 
 ?>
 
+<script type="text/javascript">
+
+    function UpdateMeter(e)
+    {
+        var sliderValue = e.value;
+
+        var physMin = -130;
+        var physMax = 130;
+
+        var physStep = (physMax-physMin)/100;
+        var physRotation = sliderValue * physStep - physMax;
+
+        var hueMin = 0;
+        var hueMax = 220;
+
+        var hueStep = (hueMax-hueMin)/100;
+        var hueRotation = sliderValue * hueStep;
+
+        document.getElementById("meterNeedle").style.transform = "rotate(" + physRotation + "deg)";
+
+        document.getElementById("meterNeedle").style.filter = "drop-shadow(0px 0px 2px black) hue-rotate(" + (hueMax-hueRotation) + "deg)";
+    }
+
+
+</script>
 
 
