@@ -4,15 +4,29 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST')
     {
 
+        $imgName = "camUpload".uniqid();
+
         $fileUploader = new FileUploader();
         $fileUploader->SetFileElement("camImg");
         $fileUploader->SetPath("uploads/");
-        #$fileUploader->SetSQLEntry("");
-        $fileUploader->SetName("camUpload".uniqid());
+        $fileUploader->SetSQLEntry("");
+        $fileUploader->SetName($imgName);
         $fileUploader->OverrideDuplicates(false);
         $fileUploader->Upload();
 
-        Page::Redirect(Page::This());
+        $outputs = array();
+        $path = "decoder\\LVS_Webtools.exe uploads\\$imgName.png";
+        exec($path, $outputs);
+        $codeData = $outputs[0];
+
+        if($codeData != 'Error')
+        {
+            $itemID = MySQL::Scalar("SELECT id FROM storage_elements WHERE element_dataID = ?",'s',$codeData);
+            Page::Redirect("/items.php?item=".$itemID);
+        }
+        else Page::Redirect(Page::This());
+
+
         die();
     }
 

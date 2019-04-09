@@ -17,7 +17,7 @@
 
    $outputs = array();
 
-   exec('test.exe testandsoom', $outputs);
+   exec('decoder\LVS_Webtools.exe decoder\test.png', $outputs);
 
    foreach($outputs as $o) echo $o;
 
