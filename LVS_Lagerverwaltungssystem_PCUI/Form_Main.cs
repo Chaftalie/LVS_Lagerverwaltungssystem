@@ -30,6 +30,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             Load_lbx_cat_all();
             ((Control)pBx_elements_image).AllowDrop = true;
             pBx_elements_image.SizeMode = PictureBoxSizeMode.Zoom;
+            Activate_Dash();
         }
 
         #region items / elements
@@ -618,13 +619,18 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void btn_dash_Click(object sender, EventArgs e)
         {
+            Activate_Dash();
+
+
+
+        }
+
+        private void Activate_Dash()
+        {
             Disable_all_Panels();
             panel_dashboard.Left = 205;
             panel_dashboard.Top = 64;
             panel_dashboard.Visible = true;
-
-
-
         }
 
         private void btn_settings_Click(object sender, EventArgs e)
