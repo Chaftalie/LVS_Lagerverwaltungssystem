@@ -57,11 +57,11 @@ namespace LVS_Library
             }
             else
             {
-                SQL_methods.SQL_exec("INSERT INTO element_location (element_id, storage_id) VALUES ("+item.ID+", "+ID);
+                SQL_methods.SQL_exec("INSERT INTO element_location (element_id, storage_id) VALUES (" + item.ID + ", " + ID);
                 SQL_methods.SQL_exec("UPDATE storage_elements SET storage_element_count = " + count + "WHERE id = " + ID);
             }
-                //SQL_methods.SQL_exec(String.Format("INSERT INTO storage_location (storage_location.parent_id,storage_location.storage_name,storage_location.storage_description,storage_location.storage_size_l,storage_location.storage_size_w,storage_location.storage_size_h,storage_location.storage_unit_id,storage_location.storage_element_count)" +
-                 //   "VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7})", Parent.Id,Name,Description,Length,Width,Height,Unit.ID,))
+            //SQL_methods.SQL_exec(String.Format("INSERT INTO storage_location (storage_location.parent_id,storage_location.storage_name,storage_location.storage_description,storage_location.storage_size_l,storage_location.storage_size_w,storage_location.storage_size_h,storage_location.storage_unit_id,storage_location.storage_element_count)" +
+            //   "VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7})", Parent.Id,Name,Description,Length,Width,Height,Unit.ID,))
         }
 
         public void Remove(Item item, float count)
@@ -74,7 +74,7 @@ namespace LVS_Library
         /// <summary>
         /// IS BAD DO NOT USE UNLESS IT REALLY NEEDED!!
         /// </summary>
-        public void Truncate( )
+        public void Truncate()
         {
             SQL_methods.SQL_exec("TRUNCATE TABLE storage_location");
         }
@@ -105,7 +105,7 @@ namespace LVS_Library
                 "(parent_id,storage_name,storage_description,storage_size_l,storage_size_w,storage_size_h,storage_unit_id,storage_max_elements,storage_dataID) " +
                 "VALUES " +
                 "({0}, '{1}', '{2}', {3}, {4}, {5}, {6}, {7}, '{8}')",
-                storage.Parent.ID,storage.Name,storage.Description,storage.Length,storage.Width,storage.Height,storage.Unit.ID,storage.Max_count,storage.Storage_dataID));
+                storage.Parent.ID, storage.Name, storage.Description, storage.Length, storage.Width, storage.Height, storage.Unit.ID, storage.Max_count, storage.Storage_dataID));
         }
 
         public static bool Is_active(Storage storage)
@@ -140,27 +140,36 @@ namespace LVS_Library
             return (long)sqlReader[0] != 0;
         }
 
+        public static void Add_Property_Range(Storage storage, List<Property> properties)
+        {
+            int storage_DB_ID = Get_DB_ID(storage);
+
+            foreach (var result in properties)
+            {
+                String sql = "INSERT INTO storage_properties (storage_id,property_id) VALUES (" +
+                                storage.ID + "," + result.ID + ")";
+                SQL_methods.SQL_exec(sql);
+            }
+        }
+
         public static int Get_DB_ID(Storage storage)
         {
-            throw new NotImplementedException();
-            /*
             string sql = string.Format("" +
-                "SELECT ID " +
-                "FROM storage_elements WHERE " +
-                "element_name = '{0}' " +
-                "AND element_description = '{1}' " +
-                "AND element_unit_id = '{2}' " +
-                "AND element_category_id = '{3}' " +
-                "AND element_size_l = '{4}' " +
-                "AND element_size_w = '{5}' " +
-                "AND element_size_h = '{6}' " +
-                "AND element_image = '{7}'",
-                item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image);
-
+                            "SELECT ID " +
+                            "FROM storage_location WHERE " +
+                            "element_name = '{0}' " +
+                            "AND element_description = '{1}' " +
+                            "AND element_unit_id = '{2}' " +
+                            "AND element_size_l = '{3}' " +
+                            "AND element_size_w = '{4}' " +
+                            "AND element_size_h = '{5}' " +
+                            "AND element_dataID = '{6}'", storage.Name, storage.Description, storage.Unit.ID, storage.Length, storage.Width, storage.Height, storage.Storage_dataID);
             OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
             SQL_methods.Open();
             OdbcDataReader sqlReader = cmd.ExecuteReader();
-            return (int)sqlReader[0];*/
+            sqlReader.Read();
+
+            return (int)sqlReader[0];
         }
 
     }

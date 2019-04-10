@@ -203,6 +203,8 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                 }
 
                 Storage.Save(storage);
+
+                Storage.Add_Property_Range(storage,properties);
             }
             else
             {

@@ -52,6 +52,10 @@
             this.btn_storage = new System.Windows.Forms.Button();
             this.btn_dash = new System.Windows.Forms.Button();
             this.panel_items = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.txt_element_search = new System.Windows.Forms.TextBox();
+            this.btn_elements_edit = new System.Windows.Forms.Button();
+            this.btn_elements_del = new System.Windows.Forms.Button();
             this.lbx_elements_search = new System.Windows.Forms.ListBox();
             this.btn_image_upload = new System.Windows.Forms.Button();
             this.pBx_elements_image = new System.Windows.Forms.PictureBox();
@@ -84,6 +88,13 @@
             this.btn_cat_add = new System.Windows.Forms.Button();
             this.lbx_cat_all = new System.Windows.Forms.ListBox();
             this.panel_storage = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.txt_storage_search = new System.Windows.Forms.TextBox();
+            this.btn_storage_edit = new System.Windows.Forms.Button();
+            this.btn_storage_del = new System.Windows.Forms.Button();
+            this.lbx_storage_Search = new System.Windows.Forms.ListBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.cbx_storage_parent = new System.Windows.Forms.ComboBox();
             this.txt_storage_max_cap = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.btn_storage_save = new System.Windows.Forms.Button();
@@ -123,6 +134,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.oFD_element_Image = new System.Windows.Forms.OpenFileDialog();
             this.panel_dashboard = new System.Windows.Forms.Panel();
+            this.label25 = new System.Windows.Forms.Label();
             this.cbx_dash_storage = new System.Windows.Forms.ComboBox();
             this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
             this.label24 = new System.Windows.Forms.Label();
@@ -135,18 +147,6 @@
             this.btn_add_prop = new System.Windows.Forms.Button();
             this.lbx_prop = new System.Windows.Forms.ListBox();
             this.panel_settings = new System.Windows.Forms.Panel();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.cbx_storage_parent = new System.Windows.Forms.ComboBox();
-            this.btn_elements_del = new System.Windows.Forms.Button();
-            this.btn_elements_edit = new System.Windows.Forms.Button();
-            this.txt_element_search = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.txt_storage_search = new System.Windows.Forms.TextBox();
-            this.btn_storage_edit = new System.Windows.Forms.Button();
-            this.btn_storage_del = new System.Windows.Forms.Button();
-            this.lbx_storage_Search = new System.Windows.Forms.ListBox();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
@@ -535,6 +535,52 @@
             this.panel_items.TabIndex = 2;
             this.panel_items.Visible = false;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(474, 26);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(54, 16);
+            this.label27.TabIndex = 43;
+            this.label27.Text = "Search:";
+            // 
+            // txt_element_search
+            // 
+            this.txt_element_search.Location = new System.Drawing.Point(477, 45);
+            this.txt_element_search.Name = "txt_element_search";
+            this.txt_element_search.Size = new System.Drawing.Size(179, 20);
+            this.txt_element_search.TabIndex = 42;
+            // 
+            // btn_elements_edit
+            // 
+            this.btn_elements_edit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_elements_edit.FlatAppearance.BorderSize = 0;
+            this.btn_elements_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_elements_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_elements_edit.ForeColor = System.Drawing.Color.White;
+            this.btn_elements_edit.Location = new System.Drawing.Point(477, 360);
+            this.btn_elements_edit.Name = "btn_elements_edit";
+            this.btn_elements_edit.Size = new System.Drawing.Size(179, 23);
+            this.btn_elements_edit.TabIndex = 41;
+            this.btn_elements_edit.Text = "Edit";
+            this.btn_elements_edit.UseVisualStyleBackColor = false;
+            // 
+            // btn_elements_del
+            // 
+            this.btn_elements_del.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_elements_del.FlatAppearance.BorderSize = 0;
+            this.btn_elements_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_elements_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_elements_del.ForeColor = System.Drawing.Color.White;
+            this.btn_elements_del.Location = new System.Drawing.Point(477, 396);
+            this.btn_elements_del.Name = "btn_elements_del";
+            this.btn_elements_del.Size = new System.Drawing.Size(179, 23);
+            this.btn_elements_del.TabIndex = 40;
+            this.btn_elements_del.Text = "Delete";
+            this.btn_elements_del.UseVisualStyleBackColor = false;
+            // 
             // lbx_elements_search
             // 
             this.lbx_elements_search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -914,6 +960,81 @@
             this.panel_storage.TabIndex = 6;
             this.panel_storage.Visible = false;
             // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.ForeColor = System.Drawing.Color.White;
+            this.label28.Location = new System.Drawing.Point(646, 38);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(54, 16);
+            this.label28.TabIndex = 58;
+            this.label28.Text = "Search:";
+            // 
+            // txt_storage_search
+            // 
+            this.txt_storage_search.Location = new System.Drawing.Point(649, 60);
+            this.txt_storage_search.Name = "txt_storage_search";
+            this.txt_storage_search.Size = new System.Drawing.Size(138, 20);
+            this.txt_storage_search.TabIndex = 57;
+            // 
+            // btn_storage_edit
+            // 
+            this.btn_storage_edit.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_storage_edit.FlatAppearance.BorderSize = 0;
+            this.btn_storage_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_storage_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_storage_edit.ForeColor = System.Drawing.Color.White;
+            this.btn_storage_edit.Location = new System.Drawing.Point(649, 297);
+            this.btn_storage_edit.Name = "btn_storage_edit";
+            this.btn_storage_edit.Size = new System.Drawing.Size(138, 23);
+            this.btn_storage_edit.TabIndex = 56;
+            this.btn_storage_edit.Text = "Edit";
+            this.btn_storage_edit.UseVisualStyleBackColor = false;
+            // 
+            // btn_storage_del
+            // 
+            this.btn_storage_del.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btn_storage_del.FlatAppearance.BorderSize = 0;
+            this.btn_storage_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_storage_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_storage_del.ForeColor = System.Drawing.Color.White;
+            this.btn_storage_del.Location = new System.Drawing.Point(649, 330);
+            this.btn_storage_del.Name = "btn_storage_del";
+            this.btn_storage_del.Size = new System.Drawing.Size(138, 23);
+            this.btn_storage_del.TabIndex = 55;
+            this.btn_storage_del.Text = "Delete";
+            this.btn_storage_del.UseVisualStyleBackColor = false;
+            // 
+            // lbx_storage_Search
+            // 
+            this.lbx_storage_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbx_storage_Search.FormattingEnabled = true;
+            this.lbx_storage_Search.ItemHeight = 16;
+            this.lbx_storage_Search.Location = new System.Drawing.Point(649, 95);
+            this.lbx_storage_Search.Name = "lbx_storage_Search";
+            this.lbx_storage_Search.Size = new System.Drawing.Size(138, 196);
+            this.lbx_storage_Search.TabIndex = 54;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.White;
+            this.label26.Location = new System.Drawing.Point(316, 242);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(101, 16);
+            this.label26.TabIndex = 53;
+            this.label26.Text = "Parent Sotrage:";
+            // 
+            // cbx_storage_parent
+            // 
+            this.cbx_storage_parent.FormattingEnabled = true;
+            this.cbx_storage_parent.Location = new System.Drawing.Point(319, 261);
+            this.cbx_storage_parent.Name = "cbx_storage_parent";
+            this.cbx_storage_parent.Size = new System.Drawing.Size(133, 21);
+            this.cbx_storage_parent.TabIndex = 52;
+            // 
             // txt_storage_max_cap
             // 
             this.txt_storage_max_cap.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -948,6 +1069,7 @@
             this.btn_storage_save.TabIndex = 51;
             this.btn_storage_save.Text = "Save";
             this.btn_storage_save.UseVisualStyleBackColor = false;
+            this.btn_storage_save.Click += new System.EventHandler(this.Btn_storage_save_Click);
             // 
             // label17
             // 
@@ -1311,6 +1433,15 @@
             this.panel_dashboard.Size = new System.Drawing.Size(739, 418);
             this.panel_dashboard.TabIndex = 7;
             // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(484, 313);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(49, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Storages";
+            // 
             // cbx_dash_storage
             // 
             this.cbx_dash_storage.FormattingEnabled = true;
@@ -1468,136 +1599,6 @@
             this.panel_settings.Name = "panel_settings";
             this.panel_settings.Size = new System.Drawing.Size(387, 271);
             this.panel_settings.TabIndex = 9;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(484, 313);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(49, 13);
-            this.label25.TabIndex = 6;
-            this.label25.Text = "Storages";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(316, 242);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(101, 16);
-            this.label26.TabIndex = 53;
-            this.label26.Text = "Parent Sotrage:";
-            // 
-            // cbx_storage_parent
-            // 
-            this.cbx_storage_parent.FormattingEnabled = true;
-            this.cbx_storage_parent.Location = new System.Drawing.Point(319, 261);
-            this.cbx_storage_parent.Name = "cbx_storage_parent";
-            this.cbx_storage_parent.Size = new System.Drawing.Size(133, 21);
-            this.cbx_storage_parent.TabIndex = 52;
-            // 
-            // btn_elements_del
-            // 
-            this.btn_elements_del.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_elements_del.FlatAppearance.BorderSize = 0;
-            this.btn_elements_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_elements_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_elements_del.ForeColor = System.Drawing.Color.White;
-            this.btn_elements_del.Location = new System.Drawing.Point(477, 396);
-            this.btn_elements_del.Name = "btn_elements_del";
-            this.btn_elements_del.Size = new System.Drawing.Size(179, 23);
-            this.btn_elements_del.TabIndex = 40;
-            this.btn_elements_del.Text = "Delete";
-            this.btn_elements_del.UseVisualStyleBackColor = false;
-            // 
-            // btn_elements_edit
-            // 
-            this.btn_elements_edit.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_elements_edit.FlatAppearance.BorderSize = 0;
-            this.btn_elements_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_elements_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_elements_edit.ForeColor = System.Drawing.Color.White;
-            this.btn_elements_edit.Location = new System.Drawing.Point(477, 360);
-            this.btn_elements_edit.Name = "btn_elements_edit";
-            this.btn_elements_edit.Size = new System.Drawing.Size(179, 23);
-            this.btn_elements_edit.TabIndex = 41;
-            this.btn_elements_edit.Text = "Edit";
-            this.btn_elements_edit.UseVisualStyleBackColor = false;
-            // 
-            // txt_element_search
-            // 
-            this.txt_element_search.Location = new System.Drawing.Point(477, 45);
-            this.txt_element_search.Name = "txt_element_search";
-            this.txt_element_search.Size = new System.Drawing.Size(179, 20);
-            this.txt_element_search.TabIndex = 42;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(474, 26);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(54, 16);
-            this.label27.TabIndex = 43;
-            this.label27.Text = "Search:";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(646, 38);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(54, 16);
-            this.label28.TabIndex = 58;
-            this.label28.Text = "Search:";
-            // 
-            // txt_storage_search
-            // 
-            this.txt_storage_search.Location = new System.Drawing.Point(649, 60);
-            this.txt_storage_search.Name = "txt_storage_search";
-            this.txt_storage_search.Size = new System.Drawing.Size(138, 20);
-            this.txt_storage_search.TabIndex = 57;
-            // 
-            // btn_storage_edit
-            // 
-            this.btn_storage_edit.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_storage_edit.FlatAppearance.BorderSize = 0;
-            this.btn_storage_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_storage_edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_storage_edit.ForeColor = System.Drawing.Color.White;
-            this.btn_storage_edit.Location = new System.Drawing.Point(649, 297);
-            this.btn_storage_edit.Name = "btn_storage_edit";
-            this.btn_storage_edit.Size = new System.Drawing.Size(138, 23);
-            this.btn_storage_edit.TabIndex = 56;
-            this.btn_storage_edit.Text = "Edit";
-            this.btn_storage_edit.UseVisualStyleBackColor = false;
-            // 
-            // btn_storage_del
-            // 
-            this.btn_storage_del.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.btn_storage_del.FlatAppearance.BorderSize = 0;
-            this.btn_storage_del.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_storage_del.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_storage_del.ForeColor = System.Drawing.Color.White;
-            this.btn_storage_del.Location = new System.Drawing.Point(649, 330);
-            this.btn_storage_del.Name = "btn_storage_del";
-            this.btn_storage_del.Size = new System.Drawing.Size(138, 23);
-            this.btn_storage_del.TabIndex = 55;
-            this.btn_storage_del.Text = "Delete";
-            this.btn_storage_del.UseVisualStyleBackColor = false;
-            // 
-            // lbx_storage_Search
-            // 
-            this.lbx_storage_Search.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbx_storage_Search.FormattingEnabled = true;
-            this.lbx_storage_Search.ItemHeight = 16;
-            this.lbx_storage_Search.Location = new System.Drawing.Point(649, 95);
-            this.lbx_storage_Search.Name = "lbx_storage_Search";
-            this.lbx_storage_Search.Size = new System.Drawing.Size(138, 196);
-            this.lbx_storage_Search.TabIndex = 54;
             // 
             // Form_Main
             // 
