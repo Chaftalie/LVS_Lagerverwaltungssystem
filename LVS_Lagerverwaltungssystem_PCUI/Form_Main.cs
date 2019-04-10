@@ -181,20 +181,28 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
                 Unit unit = (Unit)cbx_storage_unit.SelectedItem;
 
-                throw new NotImplementedException();
-
-                /*
-                Storage storage = new Storage()
-
-                    
-                Item item = new Item(txt_element_name.Text, rtx_elements_desc.Text, w, l, h, unit, category, properties, imagebase64, txt_articel_number.Text);
+                int.TryParse(txt_storage_max_cap.Text, out int max_count);
+                float.TryParse(txt_storage_width.Text,out float width);
+                float.TryParse(txt_storage_length.Text,out float length);
+                float.TryParse(txt_storage_height.Text,out float height);
+                
+                Storage storage = new Storage(
+                    width,
+                    length,
+                    height,
+                    txt_storage_name.Text,
+                    rtx_storage_desc.Text,
+                    unit,
+                    cbx_storage_parent.SelectedValue as Storage,
+                    txt_storage_id.Text,
+                    max_count);
                 
                 if (Storage.Exists_in_DB(storage))
                 {
                     MessageBox.Show("Diese Storage Einheit ist in der Datenbank schon vorhanden");
                 }
 
-                Item.Save(item);*/
+                Storage.Save(storage);
             }
             else
             {
