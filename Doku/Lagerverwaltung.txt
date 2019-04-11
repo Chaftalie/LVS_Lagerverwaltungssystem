@@ -1,0 +1,11 @@
+Lerchner
+Weißböck
+Hattinger
+
+Lagerverwaltung
+
+Mehrdimensionale Lagererstellung (Schrank -> Regal -> Schachtel -> ...)
+Barcode-Scanner unterstützung (1D + 2D)
+Grafische Lageransicht (zweitrangig)
+Webanwendung, Formsanwendung
+Formsanwendung online & offline nutzbar (Sync)(zweitrangig)
