@@ -43,9 +43,9 @@
             this.panel_register = new System.Windows.Forms.Panel();
             this.btn_mv_back = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_reg_fullname = new System.Windows.Forms.TextBox();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_reg_email = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txt_reg_name = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -248,23 +248,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel7.BackColor = System.Drawing.Color.White;
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.textBox3);
+            this.panel7.Controls.Add(this.txt_reg_fullname);
             this.panel7.ForeColor = System.Drawing.SystemColors.GrayText;
             this.panel7.Location = new System.Drawing.Point(125, 30);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(310, 61);
             this.panel7.TabIndex = 7;
             // 
-            // textBox3
+            // txt_reg_fullname
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Silver;
-            this.textBox3.Location = new System.Drawing.Point(16, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(277, 15);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "Full Name";
+            this.txt_reg_fullname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_reg_fullname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reg_fullname.ForeColor = System.Drawing.Color.Silver;
+            this.txt_reg_fullname.Location = new System.Drawing.Point(16, 19);
+            this.txt_reg_fullname.Name = "txt_reg_fullname";
+            this.txt_reg_fullname.Size = new System.Drawing.Size(277, 15);
+            this.txt_reg_fullname.TabIndex = 2;
+            this.txt_reg_fullname.Text = "Full Name";
             // 
             // panel8
             // 
@@ -273,23 +273,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.textBox4);
+            this.panel8.Controls.Add(this.txt_reg_email);
             this.panel8.ForeColor = System.Drawing.SystemColors.GrayText;
             this.panel8.Location = new System.Drawing.Point(125, 90);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(310, 61);
             this.panel8.TabIndex = 8;
             // 
-            // textBox4
+            // txt_reg_email
             // 
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Silver;
-            this.textBox4.Location = new System.Drawing.Point(16, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(277, 15);
-            this.textBox4.TabIndex = 2;
-            this.textBox4.Text = "E-Mail";
+            this.txt_reg_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_reg_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_reg_email.ForeColor = System.Drawing.Color.Silver;
+            this.txt_reg_email.Location = new System.Drawing.Point(16, 19);
+            this.txt_reg_email.Name = "txt_reg_email";
+            this.txt_reg_email.Size = new System.Drawing.Size(277, 15);
+            this.txt_reg_email.TabIndex = 2;
+            this.txt_reg_email.Text = "E-Mail";
             // 
             // panel5
             // 
@@ -427,9 +427,9 @@
         private System.Windows.Forms.Panel panel_login;
         private System.Windows.Forms.Panel panel_register;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_reg_fullname;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_reg_email;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txt_reg_name;
         private System.Windows.Forms.Panel panel6;

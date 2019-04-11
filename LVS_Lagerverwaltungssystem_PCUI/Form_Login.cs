@@ -163,7 +163,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
             hash = SHA256(txt_reg_password.Text);
 
-            SQL_methods.SQL_exec("INSERT INTO users (user, password) VALUES ('"+txt_reg_name.Text+"', '"+hash+"')");
+            SQL_methods.SQL_exec("INSERT INTO users (user, email, password, fullname) VALUES ('"+txt_reg_name.Text+"', '"+txt_reg_email.Text+"', '"+hash+"', '"+txt_reg_fullname.Text+"')");
             
         }
 
