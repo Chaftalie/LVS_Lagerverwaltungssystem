@@ -664,6 +664,21 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             form_set.Show();
         }
 
+        private void Btn_dash_icon_Click(object sender, EventArgs e)
+        {
+            btn_dash_Click(sender, e);
+        }
+
+        private void Btn_icon_setting_Click(object sender, EventArgs e)
+        {
+            btn_settings_Click(sender, e);
+        }
+
+        private void Btn_prop_icon_Click(object sender, EventArgs e)
+        {
+            btn_prop_Click(sender, e);
+        }
+
         private void cbx_dash_storage_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -685,25 +700,12 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void Set_Capacity_OnLoad()
         {
             cpr_capacity.Maximum = Convert.ToInt32(Storage.Get_max_capacity());
-            cpr_capacity.Value = Convert.ToInt32(Storage.Get_max_capacity());
+            cpr_capacity.Value = 50;
+            lbl_act_storage_cap.Text = "50";
+            lbl_max_storage_cap.Text = Convert.ToString(Storage.Get_max_capacity());
         }
 
 
         #endregion
-
-        private void Btn_dash_icon_Click(object sender, EventArgs e)
-        {
-            btn_dash_Click(sender, e);
-        }
-
-        private void Btn_icon_setting_Click(object sender, EventArgs e)
-        {
-            btn_settings_Click(sender, e);
-        }
-
-        private void Btn_prop_icon_Click(object sender, EventArgs e)
-        {
-            btn_prop_Click(sender, e);
-        }
     }
 }
