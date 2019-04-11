@@ -97,9 +97,12 @@ namespace LVS_Library
         /// </summary>
         static public void Open( )
         {
-            Connection.Close(); //TODO add Exception thingy
-            //TODO Connection.State
-            Connection.Open();
+            if (Connection.State == ConnectionState.Closed)
+            {
+                //TODO remove this methode open close all connections manually, because with that methode thers a max of 1 sqlreader...
+                //Connection.Close(); //TODO add Exception thingy                                       //TODO Connection.State
+                Connection.Open();
+            }
         }
     }
 }

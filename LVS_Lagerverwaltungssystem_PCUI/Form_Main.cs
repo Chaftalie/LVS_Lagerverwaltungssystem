@@ -28,6 +28,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             Load_all_for_element();
             Load_all_for_storage();
             Load_lbx_cat_all();
+            Load_all_for_dashboard();
             ((Control)pBx_elements_image).AllowDrop = true;
             pBx_elements_image.SizeMode = PictureBoxSizeMode.Zoom;
             Activate_Dash();
@@ -149,8 +150,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
           
             cbx_storage_unit.Items.AddRange(Unit.All_Units().ToArray());
 
-            //TODO implement load of parents
-            //cbx_storage_parent.Items.AddRange()
+            cbx_storage_parent.Items.AddRange(Storage.All_Storages().ToArray());
         }
 
         private void Btn_storage_add_prop_Click(object sender, EventArgs e)
@@ -197,10 +197,10 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                     height,
                     txt_storage_name.Text,
                     rtx_storage_desc.Text,
-                    unit,
                     (cbx_storage_parent.SelectedValue as Storage).ID,
                     txt_storage_id.Text,
-                    max_count);
+                    max_count,
+                    unit);
 
                 if (Storage.Exists_in_DB(storage))
                 {
@@ -239,6 +239,13 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                 return true;
             }
             return false;
+        }
+        #endregion
+
+        #region dashboard
+        private void Load_all_for_dashboard()
+        {
+            cbx_dash_storage.Items.AddRange(Storage.All_Storages().ToArray());
         }
         #endregion
 

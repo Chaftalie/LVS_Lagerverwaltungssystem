@@ -99,7 +99,7 @@ namespace LVS_Library
         }
 
 
-        public static List<Unit> All_Units( )
+        public static List<Unit> All_Units()
         {
             string sql = "SELECT id as id, unit_si as si, unit_name as name, unit_description as description FROM units";
 
@@ -111,10 +111,24 @@ namespace LVS_Library
 
             while (sqlReader.Read())
             {
-                units.Add(new Unit(( string ) sqlReader["si"], ( string ) sqlReader["name"], (string)sqlReader["description"], (int)sqlReader["id"]));
+                units.Add(new Unit((string)sqlReader["si"], (string)sqlReader["name"], (string)sqlReader["description"], (int)sqlReader["id"]));
             }
 
             return units;
+        }
+
+        public static Unit Get_from_ID(int id)
+        {
+            string sql = "SELECT id as id, unit_si as si, unit_name as name, unit_description as description FROM units";
+
+            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
+            SQL_methods.Open();
+            OdbcDataReader sqlReader = cmd.ExecuteReader();
+            sqlReader.Read();
+
+            Unit unit = (new Unit((string)sqlReader["si"], (string)sqlReader["name"], (string)sqlReader["description"], (int)sqlReader["id"]));
+
+            return unit;
         }
 
         public override string ToString()
