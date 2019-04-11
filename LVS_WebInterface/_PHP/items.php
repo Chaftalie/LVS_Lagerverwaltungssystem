@@ -80,9 +80,9 @@
                             <img id="codeImg2" src="/lib/barcode.lib.php?s=qr&d='.$data.'&cs=1E90FF&sf=4&cm=333333&bc=1E90FF" class="itemCodeVar1 itemCodeVars"/>
                             <img id="codeImg3" src="/lib/barcode.lib.php?s=code-128 &d='.$data.'&cs=1E90FF&sf=4&cm=333333&bc=1E90FF" class="itemCodeVar2 itemCodeVars"/>
 
-                            <img id="codeImg4" src="/files/sample.jpg" class="itemCodeVar3 itemCodeVars"/>
+                            <img id="codeImg4" src="data:image/jpeg;base64,'.$item['element_image'].'" class="itemCodeVar3 itemCodeVars"/>
 
-                            <img id="productImg" src="/files/sample.jpg" alt="" class="itemProductImage"/>
+                            <img id="productImg" src="data:image/jpeg;base64,'.$item['element_image'].'" alt="" class="itemProductImage"/>
                         </div>
                         <br>
                         <table class="infoTable">
@@ -98,7 +98,7 @@
                 }
                 else
                 {
-                    $items = MySQL::Cluster("SELECT * FROM storage_elements ORDER BY element_name ASC");
+                    $items = MySQL::Cluster("SELECT * FROM storage_elements ORDER BY element_name ASC LIMIT 0,50");
 
                     echo '<h2>Items</h2>';
 
