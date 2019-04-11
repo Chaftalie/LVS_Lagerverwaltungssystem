@@ -12,6 +12,7 @@ using ZXing;
 
 namespace LVS_WebInterface
 {
+    // NOTE: The ASP.Net-Version has been deprecated. Use the PHP-Version found in LVS/LVS_Websinterface_New 
     public partial class index : System.Web.UI.Page
     {
     

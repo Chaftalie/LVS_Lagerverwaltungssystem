@@ -13,7 +13,7 @@ namespace LVS_WebInterface
 {
     public partial class frame_camCapture : System.Web.UI.Page
     {
-
+        // NOTE: The ASP.Net-Version has been deprecated. Use the PHP-Version found in LVS/LVS_Websinterface_New 
         // Hattinger Tobias
         protected void Page_Load(object sender, EventArgs e)
         {
