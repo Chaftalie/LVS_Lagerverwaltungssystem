@@ -1034,13 +1034,12 @@
             // txt_storage_max_cap
             // 
             this.txt_storage_max_cap.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_storage_max_cap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_storage_max_cap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.txt_storage_max_cap.Location = new System.Drawing.Point(127, 173);
             this.txt_storage_max_cap.Multiline = true;
             this.txt_storage_max_cap.Name = "txt_storage_max_cap";
-            this.txt_storage_max_cap.Size = new System.Drawing.Size(133, 23);
+            this.txt_storage_max_cap.Size = new System.Drawing.Size(133, 20);
             this.txt_storage_max_cap.TabIndex = 41;
-            this.txt_storage_max_cap.Text = "Name";
             // 
             // label23
             // 
