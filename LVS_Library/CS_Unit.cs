@@ -20,7 +20,8 @@ namespace LVS_Library
         /// <param name="SI Unit"></param>
         /// <param name="Description"></param>
         /// <param name="Name"></param>
-        public Unit(string _si_unit, string _name, string _description, int _id)
+        /// 
+        public Unit(string _si_unit, string _name, string _description, int _id) //WEIM
         {
             SI_Unit = _si_unit;
             Description = _description;
@@ -28,6 +29,7 @@ namespace LVS_Library
             ID = _id;
         }
 
+        //WEIM
         public int ID
         {
             get
@@ -40,6 +42,7 @@ namespace LVS_Library
             }
         }
 
+        //WEIM
         public string SI_Unit
         {
             get
@@ -52,6 +55,7 @@ namespace LVS_Library
             }
         }
 
+        //WEIM
         public string Description
         {
             get
@@ -64,6 +68,7 @@ namespace LVS_Library
             }
         }
 
+        //WEIM
         public string Name
         {
             get
@@ -77,7 +82,7 @@ namespace LVS_Library
         }
 
         /// <summary>
-        /// Error by Weidlböck der Seidlcöck
+        /// Error by Lerchner der Beichtner
         /// </summary>
         /// <param name="unit"></param>
         public static void Save(Unit unit)

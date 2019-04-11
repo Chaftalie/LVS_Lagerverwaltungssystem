@@ -26,36 +26,42 @@ namespace LVS_Library
         private Category category;
         private List<Property> properties;
 
+        //WEIM
         public int ID
         {
             get { return id; }
             set { id = value; }
         }
 
+        //WEIM
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
 
+        //WEIM
         public string Description
         {
             get { return description; }
             set { description = value; }
         }
 
+        //WEIM
         public float Width
         {
             get { return width; }
             set { width = value; }
         }
 
+        //WEIM
         public float Height
         {
             get { return height; }
             set { height = value; }
         }
 
+        //WEIM
         public float Length
         {
             get { return length; }

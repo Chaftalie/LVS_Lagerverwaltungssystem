@@ -13,7 +13,7 @@ namespace LVS_Library
         private string name;
         private string descpription;
 
-
+        //WEIM
         /// <summary>
         /// 
         /// </summary>
@@ -27,6 +27,7 @@ namespace LVS_Library
             Description = _descritpion;
         }
 
+        //WEIM
         public int ID
         {
             get
@@ -39,6 +40,7 @@ namespace LVS_Library
             }
         }
 
+        //WEIM
         public string Name
         {
             get
@@ -51,6 +53,7 @@ namespace LVS_Library
             }
         }
 
+        //WEIM
         public string Description
         {
             get

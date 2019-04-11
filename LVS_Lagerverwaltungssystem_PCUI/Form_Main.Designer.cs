@@ -1599,7 +1599,7 @@
             // lbl_of
             // 
             this.lbl_of.AutoSize = true;
-            this.lbl_of.Location = new System.Drawing.Point(534, 306);
+            this.lbl_of.Location = new System.Drawing.Point(536, 306);
             this.lbl_of.Name = "lbl_of";
             this.lbl_of.Size = new System.Drawing.Size(16, 13);
             this.lbl_of.TabIndex = 8;
@@ -1608,7 +1608,7 @@
             // lbl_max_storage_cap
             // 
             this.lbl_max_storage_cap.AutoSize = true;
-            this.lbl_max_storage_cap.Location = new System.Drawing.Point(567, 306);
+            this.lbl_max_storage_cap.Location = new System.Drawing.Point(594, 306);
             this.lbl_max_storage_cap.Name = "lbl_max_storage_cap";
             this.lbl_max_storage_cap.Size = new System.Drawing.Size(41, 13);
             this.lbl_max_storage_cap.TabIndex = 9;
