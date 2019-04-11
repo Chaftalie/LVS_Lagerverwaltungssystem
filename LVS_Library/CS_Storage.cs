@@ -248,7 +248,7 @@ namespace LVS_Library
         /// <returns></returns>
         public static double Get_max_capacity(Storage storage)
         {
-            return (int)SQL_methods.SQL_scalar("SELECT storage_max_elements FROM storage_location WHERE storage_dataID = '" + storage.Storage_dataID + "'");
+            return Convert.ToDouble((Decimal)SQL_methods.SQL_scalar("SELECT storage_max_elements FROM storage_location WHERE storage_dataID = '" + storage.Storage_dataID + "'"));
         }
 
         /// <summary>
@@ -257,7 +257,12 @@ namespace LVS_Library
         /// <returns></returns>
         public static double Get_max_capacity()
         {
-            return (int)SQL_methods.SQL_scalar("SELECT SUM(storage_max_elements) FROM storage_location");
+            return Convert.ToDouble((Decimal)SQL_methods.SQL_scalar("SELECT SUM(storage_max_elements) FROM storage_location"));
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }
