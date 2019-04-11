@@ -147,6 +147,9 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             lbx_storage_all_prop.Items.AddRange(Property.All_Properties().ToArray());
           
             cbx_storage_unit.Items.AddRange(Unit.All_Units().ToArray());
+
+            //TODO implement load of parents
+            //cbx_storage_parent.Items.AddRange()
         }
 
         private void Btn_storage_add_prop_Click(object sender, EventArgs e)
@@ -178,15 +181,15 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                     properties.Add(property);
                 }
 
-                
+
 
                 Unit unit = (Unit)cbx_storage_unit.SelectedItem;
 
                 int.TryParse(txt_storage_max_cap.Text, out int max_count);
-                float.TryParse(txt_storage_width.Text,out float width);
-                float.TryParse(txt_storage_length.Text,out float length);
-                float.TryParse(txt_storage_height.Text,out float height);
-                
+                float.TryParse(txt_storage_width.Text, out float width);
+                float.TryParse(txt_storage_length.Text, out float length);
+                float.TryParse(txt_storage_height.Text, out float height);
+
                 Storage storage = new Storage(
                     width,
                     length,
@@ -194,18 +197,21 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                     txt_storage_name.Text,
                     rtx_storage_desc.Text,
                     unit,
-                    cbx_storage_parent.SelectedValue as Storage,
+                    (cbx_storage_parent.SelectedValue as Storage).ID,
                     txt_storage_id.Text,
                     max_count);
-                
+
                 if (Storage.Exists_in_DB(storage))
                 {
                     MessageBox.Show("Diese Storage Einheit ist in der Datenbank schon vorhanden");
                 }
+                else
+                {
 
-                Storage.Save(storage);
+                    Storage.Save(storage);
 
-                Storage.Add_Property_Range(storage,properties);
+                    Storage.Add_Property_Range(storage, properties);
+                }
             }
             else
             {
