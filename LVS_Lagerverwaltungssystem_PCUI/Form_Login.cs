@@ -25,6 +25,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             InitializeComponent();
             
             this.Size = new Size(550, 545);
+            Check_Password();
 
         }
 
@@ -182,6 +183,32 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                 hash.Append(theByte.ToString("x2"));
             }
             return hash.ToString();
+        }
+
+        private void Check_Password()
+        {
+            if (txt_reg_password.Text.Equals(txt_password_retype.Text))
+            {
+                btn_reg.Enabled = true;
+                lbl_pw_match.ForeColor = Color.Green;
+                lbl_pw_match.Text = "Passwords match";
+            }
+            else
+            {
+                btn_reg.Enabled = false;
+                lbl_pw_match.ForeColor = Color.Red;
+                lbl_pw_match.Text = "Passwords dont match";
+            }
+        }
+
+        private void Txt_password_retype_TextChanged(object sender, EventArgs e)
+        {
+            Check_Password();
+        }
+
+        private void Txt_reg_password_TextChanged(object sender, EventArgs e)
+        {
+            Check_Password();
         }
     }
 }

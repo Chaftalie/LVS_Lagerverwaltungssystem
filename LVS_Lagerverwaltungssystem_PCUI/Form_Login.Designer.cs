@@ -54,6 +54,9 @@
             this.bunifuSeparator1 = new System.Windows.Forms.Panel();
             this.bunifuSeparator2 = new System.Windows.Forms.Panel();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txt_password_retype = new System.Windows.Forms.TextBox();
+            this.lbl_pw_match = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,6 +66,7 @@
             this.panel8.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -115,7 +119,7 @@
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.txt_login_name);
             this.panel3.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel3.Location = new System.Drawing.Point(121, 30);
+            this.panel3.Location = new System.Drawing.Point(123, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(308, 61);
             this.panel3.TabIndex = 5;
@@ -129,7 +133,7 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.txt_login_password);
             this.panel1.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel1.Location = new System.Drawing.Point(121, 90);
+            this.panel1.Location = new System.Drawing.Point(123, 64);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 61);
             this.panel1.TabIndex = 6;
@@ -152,7 +156,7 @@
             this.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_login.ForeColor = System.Drawing.Color.White;
-            this.btn_login.Location = new System.Drawing.Point(121, 305);
+            this.btn_login.Location = new System.Drawing.Point(123, 311);
             this.btn_login.Name = "btn_login";
             this.btn_login.Size = new System.Drawing.Size(310, 46);
             this.btn_login.TabIndex = 7;
@@ -204,7 +208,7 @@
             this.btn_mv_reg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mv_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mv_reg.ForeColor = System.Drawing.Color.White;
-            this.btn_mv_reg.Location = new System.Drawing.Point(121, 357);
+            this.btn_mv_reg.Location = new System.Drawing.Point(123, 363);
             this.btn_mv_reg.Name = "btn_mv_reg";
             this.btn_mv_reg.Size = new System.Drawing.Size(310, 46);
             this.btn_mv_reg.TabIndex = 9;
@@ -215,6 +219,8 @@
             // panel_register
             // 
             this.panel_register.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel_register.Controls.Add(this.lbl_pw_match);
+            this.panel_register.Controls.Add(this.panel2);
             this.panel_register.Controls.Add(this.btn_mv_back);
             this.panel_register.Controls.Add(this.panel7);
             this.panel_register.Controls.Add(this.panel8);
@@ -233,7 +239,7 @@
             this.btn_mv_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mv_back.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_mv_back.ForeColor = System.Drawing.Color.White;
-            this.btn_mv_back.Location = new System.Drawing.Point(125, 358);
+            this.btn_mv_back.Location = new System.Drawing.Point(125, 363);
             this.btn_mv_back.Name = "btn_mv_back";
             this.btn_mv_back.Size = new System.Drawing.Size(310, 46);
             this.btn_mv_back.TabIndex = 10;
@@ -250,7 +256,7 @@
             this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.txt_reg_fullname);
             this.panel7.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel7.Location = new System.Drawing.Point(125, 30);
+            this.panel7.Location = new System.Drawing.Point(125, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(310, 61);
             this.panel7.TabIndex = 7;
@@ -275,7 +281,7 @@
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel8.Controls.Add(this.txt_reg_email);
             this.panel8.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel8.Location = new System.Drawing.Point(125, 90);
+            this.panel8.Location = new System.Drawing.Point(125, 64);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(310, 61);
             this.panel8.TabIndex = 8;
@@ -300,7 +306,7 @@
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.txt_reg_name);
             this.panel5.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel5.Location = new System.Drawing.Point(125, 149);
+            this.panel5.Location = new System.Drawing.Point(125, 123);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(310, 61);
             this.panel5.TabIndex = 5;
@@ -325,7 +331,7 @@
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.txt_reg_password);
             this.panel6.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.panel6.Location = new System.Drawing.Point(125, 209);
+            this.panel6.Location = new System.Drawing.Point(125, 183);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(310, 61);
             this.panel6.TabIndex = 6;
@@ -341,6 +347,7 @@
             this.txt_reg_password.Size = new System.Drawing.Size(277, 15);
             this.txt_reg_password.TabIndex = 2;
             this.txt_reg_password.Text = "Password";
+            this.txt_reg_password.TextChanged += new System.EventHandler(this.Txt_reg_password_TextChanged);
             // 
             // btn_reg
             // 
@@ -349,7 +356,7 @@
             this.btn_reg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_reg.ForeColor = System.Drawing.Color.White;
-            this.btn_reg.Location = new System.Drawing.Point(125, 306);
+            this.btn_reg.Location = new System.Drawing.Point(125, 311);
             this.btn_reg.Name = "btn_reg";
             this.btn_reg.Size = new System.Drawing.Size(310, 46);
             this.btn_reg.TabIndex = 7;
@@ -372,6 +379,43 @@
             this.bunifuSeparator2.Name = "bunifuSeparator2";
             this.bunifuSeparator2.Size = new System.Drawing.Size(200, 2);
             this.bunifuSeparator2.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.txt_password_retype);
+            this.panel2.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.panel2.Location = new System.Drawing.Point(125, 243);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(310, 61);
+            this.panel2.TabIndex = 7;
+            // 
+            // txt_password_retype
+            // 
+            this.txt_password_retype.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_password_retype.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_password_retype.ForeColor = System.Drawing.Color.Silver;
+            this.txt_password_retype.Location = new System.Drawing.Point(16, 19);
+            this.txt_password_retype.Name = "txt_password_retype";
+            this.txt_password_retype.Size = new System.Drawing.Size(277, 15);
+            this.txt_password_retype.TabIndex = 2;
+            this.txt_password_retype.Text = "retype Password";
+            this.txt_password_retype.TextChanged += new System.EventHandler(this.Txt_password_retype_TextChanged);
+            // 
+            // lbl_pw_match
+            // 
+            this.lbl_pw_match.AutoSize = true;
+            this.lbl_pw_match.Font = new System.Drawing.Font("Arial Black", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pw_match.ForeColor = System.Drawing.Color.Red;
+            this.lbl_pw_match.Location = new System.Drawing.Point(7, 266);
+            this.lbl_pw_match.Name = "lbl_pw_match";
+            this.lbl_pw_match.Size = new System.Drawing.Size(112, 13);
+            this.lbl_pw_match.TabIndex = 11;
+            this.lbl_pw_match.Text = "Password dont match";
             // 
             // Form_Login
             // 
@@ -400,6 +444,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel_login.ResumeLayout(false);
             this.panel_register.ResumeLayout(false);
+            this.panel_register.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
@@ -408,6 +453,8 @@
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -440,5 +487,8 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btn_mv_reg;
         private System.Windows.Forms.Button btn_mv_back;
+        private System.Windows.Forms.Label lbl_pw_match;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txt_password_retype;
     }
 }

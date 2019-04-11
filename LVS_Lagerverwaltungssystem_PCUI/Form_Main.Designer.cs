@@ -145,6 +145,10 @@
             this.btn_add_prop = new System.Windows.Forms.Button();
             this.lbx_prop = new System.Windows.Forms.ListBox();
             this.panel_settings = new System.Windows.Forms.Panel();
+            this.lbl_act_storage_cap = new System.Windows.Forms.Label();
+            this.lbl_of = new System.Windows.Forms.Label();
+            this.lbl_max_storage_cap = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel_main_title.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel_items.SuspendLayout();
@@ -1401,6 +1405,10 @@
             // 
             // panel_dashboard
             // 
+            this.panel_dashboard.Controls.Add(this.label7);
+            this.panel_dashboard.Controls.Add(this.lbl_max_storage_cap);
+            this.panel_dashboard.Controls.Add(this.lbl_of);
+            this.panel_dashboard.Controls.Add(this.lbl_act_storage_cap);
             this.panel_dashboard.Controls.Add(this.label25);
             this.panel_dashboard.Controls.Add(this.cbx_dash_storage);
             this.panel_dashboard.Controls.Add(this.cpr_capacity);
@@ -1415,7 +1423,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(484, 313);
+            this.label25.Location = new System.Drawing.Point(484, 330);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(49, 13);
             this.label25.TabIndex = 6;
@@ -1424,7 +1432,7 @@
             // cbx_dash_storage
             // 
             this.cbx_dash_storage.FormattingEnabled = true;
-            this.cbx_dash_storage.Location = new System.Drawing.Point(542, 310);
+            this.cbx_dash_storage.Location = new System.Drawing.Point(542, 330);
             this.cbx_dash_storage.Name = "cbx_dash_storage";
             this.cbx_dash_storage.Size = new System.Drawing.Size(139, 21);
             this.cbx_dash_storage.TabIndex = 5;
@@ -1459,7 +1467,7 @@
             this.cpr_capacity.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
             this.cpr_capacity.SuperscriptText = "";
             this.cpr_capacity.TabIndex = 4;
-            this.cpr_capacity.Text = "Capacity";
+            this.cpr_capacity.Text = "Capacity ";
             this.cpr_capacity.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
             this.cpr_capacity.Value = 5;
             // 
@@ -1578,6 +1586,43 @@
             this.panel_settings.Name = "panel_settings";
             this.panel_settings.Size = new System.Drawing.Size(387, 271);
             this.panel_settings.TabIndex = 9;
+            // 
+            // lbl_act_storage_cap
+            // 
+            this.lbl_act_storage_cap.AutoSize = true;
+            this.lbl_act_storage_cap.Location = new System.Drawing.Point(484, 306);
+            this.lbl_act_storage_cap.Name = "lbl_act_storage_cap";
+            this.lbl_act_storage_cap.Size = new System.Drawing.Size(35, 13);
+            this.lbl_act_storage_cap.TabIndex = 7;
+            this.lbl_act_storage_cap.Text = "label7";
+            // 
+            // lbl_of
+            // 
+            this.lbl_of.AutoSize = true;
+            this.lbl_of.Location = new System.Drawing.Point(534, 306);
+            this.lbl_of.Name = "lbl_of";
+            this.lbl_of.Size = new System.Drawing.Size(16, 13);
+            this.lbl_of.TabIndex = 8;
+            this.lbl_of.Text = "of";
+            // 
+            // lbl_max_storage_cap
+            // 
+            this.lbl_max_storage_cap.AutoSize = true;
+            this.lbl_max_storage_cap.Location = new System.Drawing.Point(567, 306);
+            this.lbl_max_storage_cap.Name = "lbl_max_storage_cap";
+            this.lbl_max_storage_cap.Size = new System.Drawing.Size(41, 13);
+            this.lbl_max_storage_cap.TabIndex = 9;
+            this.lbl_max_storage_cap.Text = "label12";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(77, 160);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(215, 31);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Coming Soon...";
             // 
             // Form_Main
             // 
@@ -1736,5 +1781,9 @@
         private System.Windows.Forms.Button btn_storage_edit;
         private System.Windows.Forms.Button btn_storage_del;
         private System.Windows.Forms.ListBox lbx_storage_Search;
+        private System.Windows.Forms.Label lbl_max_storage_cap;
+        private System.Windows.Forms.Label lbl_of;
+        private System.Windows.Forms.Label lbl_act_storage_cap;
+        private System.Windows.Forms.Label label7;
     }
 }
