@@ -30,6 +30,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             Load_lbx_cat_all();
             ((Control)pBx_elements_image).AllowDrop = true;
             pBx_elements_image.SizeMode = PictureBoxSizeMode.Zoom;
+            Activate_Dash();
         }
 
         #region items / elements
@@ -144,7 +145,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         private void Load_all_for_storage()
         {
             lbx_storage_all_prop.Items.AddRange(Property.All_Properties().ToArray());
-            cbx_storage_cat.Items.AddRange(Category.All_Categories().ToArray());
+          
             cbx_storage_unit.Items.AddRange(Unit.All_Units().ToArray());
         }
 
@@ -177,7 +178,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                     properties.Add(property);
                 }
 
-                Category category = (Category)cbx_storage_cat.SelectedItem;
+                
 
                 Unit unit = (Unit)cbx_storage_unit.SelectedItem;
 
@@ -221,7 +222,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             missing_parts_list.Add(txt_storage_name.Text != "");
             missing_parts_list.Add(rtx_storage_desc.Text != "");
             missing_parts_list.Add(cbx_storage_unit.Text != "");
-            missing_parts_list.Add(cbx_storage_cat.Text != "");
+   
             missing_parts_list.Add(lbx_storage_used_prop.Items.Count > 0);
 
             foreach (var _ in from bool result in missing_parts_list
@@ -628,13 +629,18 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void btn_dash_Click(object sender, EventArgs e)
         {
+            Activate_Dash();
+
+
+
+        }
+
+        private void Activate_Dash()
+        {
             Disable_all_Panels();
             panel_dashboard.Left = 205;
             panel_dashboard.Top = 64;
             panel_dashboard.Visible = true;
-
-
-
         }
 
         private void btn_settings_Click(object sender, EventArgs e)

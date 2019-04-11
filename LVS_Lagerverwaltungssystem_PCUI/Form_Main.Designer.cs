@@ -104,10 +104,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.btn_storage_del_prop = new System.Windows.Forms.Button();
             this.txt_storage_width = new System.Windows.Forms.TextBox();
-            this.cbx_storage_cat = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_storage_add_prop = new System.Windows.Forms.Button();
             this.txt_storage_height = new System.Windows.Forms.TextBox();
@@ -939,10 +937,8 @@
             this.panel_storage.Controls.Add(this.label14);
             this.panel_storage.Controls.Add(this.label9);
             this.panel_storage.Controls.Add(this.label10);
-            this.panel_storage.Controls.Add(this.label7);
             this.panel_storage.Controls.Add(this.btn_storage_del_prop);
             this.panel_storage.Controls.Add(this.txt_storage_width);
-            this.panel_storage.Controls.Add(this.cbx_storage_cat);
             this.panel_storage.Controls.Add(this.label8);
             this.panel_storage.Controls.Add(this.btn_storage_add_prop);
             this.panel_storage.Controls.Add(this.txt_storage_height);
@@ -1137,17 +1133,6 @@
             this.label10.TabIndex = 45;
             this.label10.Text = "Storage Name:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(316, 198);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 16);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "Category:";
-            // 
             // btn_storage_del_prop
             // 
             this.btn_storage_del_prop.BackColor = System.Drawing.Color.DeepSkyBlue;
@@ -1167,20 +1152,12 @@
             this.txt_storage_width.Size = new System.Drawing.Size(133, 20);
             this.txt_storage_width.TabIndex = 5;
             // 
-            // cbx_storage_cat
-            // 
-            this.cbx_storage_cat.FormattingEnabled = true;
-            this.cbx_storage_cat.Location = new System.Drawing.Point(319, 217);
-            this.cbx_storage_cat.Name = "cbx_storage_cat";
-            this.cbx_storage_cat.Size = new System.Drawing.Size(133, 21);
-            this.cbx_storage_cat.TabIndex = 41;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(316, 155);
+            this.label8.Location = new System.Drawing.Point(316, 147);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(69, 16);
             this.label8.TabIndex = 40;
@@ -1209,7 +1186,7 @@
             // cbx_storage_unit
             // 
             this.cbx_storage_unit.FormattingEnabled = true;
-            this.cbx_storage_unit.Location = new System.Drawing.Point(319, 174);
+            this.cbx_storage_unit.Location = new System.Drawing.Point(319, 169);
             this.cbx_storage_unit.Name = "cbx_storage_unit";
             this.cbx_storage_unit.Size = new System.Drawing.Size(133, 21);
             this.cbx_storage_unit.TabIndex = 39;
@@ -1247,7 +1224,7 @@
             this.lbx_storage_all_prop.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbx_storage_all_prop.FormattingEnabled = true;
             this.lbx_storage_all_prop.ItemHeight = 16;
-            this.lbx_storage_all_prop.Location = new System.Drawing.Point(316, 60);
+            this.lbx_storage_all_prop.Location = new System.Drawing.Point(319, 60);
             this.lbx_storage_all_prop.Name = "lbx_storage_all_prop";
             this.lbx_storage_all_prop.Size = new System.Drawing.Size(133, 84);
             this.lbx_storage_all_prop.TabIndex = 39;
@@ -1697,10 +1674,8 @@
         private System.Windows.Forms.RichTextBox rtx_storage_desc;
         private System.Windows.Forms.TextBox txt_storage_name;
         private System.Windows.Forms.Button btn_image_upload;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_storage_del_prop;
         private System.Windows.Forms.TextBox txt_storage_width;
-        private System.Windows.Forms.ComboBox cbx_storage_cat;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btn_storage_add_prop;
         private System.Windows.Forms.TextBox txt_storage_height;
