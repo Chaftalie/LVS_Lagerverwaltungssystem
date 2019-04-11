@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace LVS_Library
 {
+    //Lerchner Felix & Manuel Weissböck 
     public static class DB
     {
         private static OdbcConnection connection = null;

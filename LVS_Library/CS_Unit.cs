@@ -99,6 +99,7 @@ namespace LVS_Library
         }
 
 
+        //Lerchner Felix
         public static List<Unit> All_Units()
         {
             string sql = "SELECT id as id, unit_si as si, unit_name as name, unit_description as description FROM units";
@@ -117,6 +118,8 @@ namespace LVS_Library
             return units;
         }
 
+
+        //Lerchner Felix
         public static Unit Get_from_ID(int id)
         {
             string sql = "SELECT id as id, unit_si as si, unit_name as name, unit_description as description FROM units";
@@ -131,6 +134,8 @@ namespace LVS_Library
             return unit;
         }
 
+
+        //Lerchner Felix
         public override string ToString()
         {
             return Name;

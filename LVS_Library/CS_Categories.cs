@@ -81,6 +81,7 @@ namespace LVS_Library
                 category.ID));
         }
 
+        //Lerchner Felix
         public static List<Category> All_Categories( )
         {
             string sql = "SELECT id as id, category_name as name, category_description as description FROM categories";
@@ -99,6 +100,7 @@ namespace LVS_Library
             return categories;
         }
 
+        //Lerchner Felix
         public override string ToString( )
         {
             return Name;

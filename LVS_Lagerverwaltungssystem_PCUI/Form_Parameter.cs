@@ -32,6 +32,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             
         }
 
+        //Lerchner Felix
         private void Fill_Database_tBx_thingys()
         {
             tBx_DB_Name.Text = Properties.Settings.Default.Database_Name;
@@ -41,6 +42,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             tBx_Login_Password.Text = Properties.Settings.Default.Database_Login_Password;
         }
 
+        //Lerchner Felix
         private void btn_save_DB_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.Database_Name = tBx_DB_Name.Text;
@@ -51,6 +53,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             Properties.Settings.Default.Save();
         }
 
+        //Lerchner Felix
         private void btn_resett_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Wüst du wiakle de Datenbank Daten wiakle zrucksetzen?", "Warnung", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -65,6 +68,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        //Lerchner Felix
         private void btn_check_connection_Click(object sender, EventArgs e)
         {
             DB.Give_login_Data_pls_thx(Properties.Settings.Default.Database_Name, Properties.Settings.Default.Database_IP, Properties.Settings.Default.Database_Port, Properties.Settings.Default.Database_Login_Name, Properties.Settings.Default.Database_Login_Password);
@@ -79,6 +83,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        //Manuel Weissböck
         private void btn_par_close_Click(object sender, EventArgs e)
         {
             this.Close();

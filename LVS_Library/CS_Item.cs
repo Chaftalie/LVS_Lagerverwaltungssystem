@@ -92,6 +92,7 @@ namespace LVS_Library
             set { properties = value; }
         }
 
+        //Lerchner Felix
         public Item(string _name, string _description, float _width, float _length, float _height, Unit _unit, Category _category, List<Property> _properties, string _image, string _artikelnummer)
         {
             Name = _name;
@@ -99,15 +100,14 @@ namespace LVS_Library
             Width = _width;
             Length = _length;
             Height = _height;
-
             Artikelnummer = _artikelnummer;
             Image = _image;
-
             Unit = _unit;
             Category = _category;
             Properties = _properties;
         }
 
+        //Lerchner Felix
         public static void Save(Item item)
         {
             SQL_methods.SQL_exec(string.Format(
@@ -118,6 +118,7 @@ namespace LVS_Library
                 item.Name, item.Description, item.Unit.ID, item.Category.ID, item.Length, item.Width, item.Height, item.Image, item.Artikelnummer));
         }
 
+        //Lerchner Felix
         public static bool Is_active(Item item)
         {
             string sql = "SELECT active FROM storage_elements WHERE id = " + item.ID;
@@ -126,11 +127,13 @@ namespace LVS_Library
             return (bool)cmd.ExecuteScalar();
         }
 
+        //Lerchner Felix
         public static void Deactivate(Item item)
         {
             SQL_methods.SQL_exec("UPDATE storage_elements SET active = false WHERE id = " + item.ID);
         }
 
+        //Lerchner Felix
         public static int Get_DB_ID(Item item)
         {
             string sql = string.Format("" +
@@ -152,6 +155,7 @@ namespace LVS_Library
             return (int)sqlReader[0];
         }
 
+        //Lerchner Felix
         public static bool Exists_in_DB(Item item)
         {
             string sql = string.Format("" +
@@ -172,12 +176,14 @@ namespace LVS_Library
             sqlReader.Read();
             return (long)sqlReader[0] != 0;
         }
-
+        
+        //Lerchner Felix
         public static bool Is_Allocated(Item item)
         {
             return Convert.ToBoolean(In_how_many_storage_spaces_is_this_item_located(item));
         }
 
+        //Lerchner Felix
         public static int In_how_many_storage_spaces_is_this_item_located(Item item)
         {
             if (Exists_in_DB(item))
@@ -200,6 +206,7 @@ namespace LVS_Library
         /// </summary>
         /// <param name="item"></param>
         /// <returns>returns List of IDs or if not exists null</returns>
+        //Lerchner Felix
         public static List<int> Where_is(Item item)
         {
             int id = Get_DB_ID(item);
@@ -230,6 +237,7 @@ namespace LVS_Library
         /// <param name="h1">h0 - h1 range</param>
         /// <param name="image"></param>
         /// <returns></returns>
+        //Lerchner Felix
         public static List<Item> Search(string name, string description, int unit, int category, int l0, int w0, int h0, int l1, int w1, int h1, string image)
         {
             List<Unit> units = Unit.All_Units();
@@ -290,11 +298,13 @@ namespace LVS_Library
 
         }
 
+        //Lerchner Felix
         public static List<Item> All_items()
         {
             return Search("", "", -1, -1, 0, 0, 0, int.MaxValue, int.MaxValue, int.MaxValue, "");
         }
 
+        //Lerchner Felix
         private static string Searching_Format(string name)
         {
             StringBuilder sb = new StringBuilder();

@@ -9,6 +9,7 @@ namespace LVS_Library
 {
     public class ImageStuff
     {
+        //Lerchner Felix
         public static Image GetImageFromString(string base64String)
         {
             byte[ ] buffer = Convert.FromBase64String(base64String);
@@ -24,6 +25,7 @@ namespace LVS_Library
             }
         }
 
+        //Lerchner Felix
         public static string GetStringFromImage(Image image)
         {
             if (image != null)

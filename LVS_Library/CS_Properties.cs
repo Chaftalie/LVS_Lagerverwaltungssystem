@@ -56,6 +56,7 @@ namespace LVS_Library
             }
         }
 
+        //Lerchner Felix
         public static void Save(Property property)
         {
             SQL_methods.SQL_exec(string.Format(
@@ -66,6 +67,7 @@ namespace LVS_Library
                 property.Name, property.Description));
         }
 
+        //Lerchner Felix
         public static void Remove(Property property)
         {
             SQL_methods.SQL_exec(string.Format(
@@ -74,6 +76,7 @@ namespace LVS_Library
                 property.ID));
         }
 
+        //Lerchner Felix
         public static List<Property> All_Properties( )
         {
             string sql = "SELECT id as id, property_name as name, property_description as description FROM properties";
@@ -96,6 +99,7 @@ namespace LVS_Library
         /// Loads all storage to property ids 
         /// </summary>
         /// <returns>List with all n to n connections</returns>
+        //Lerchner Felix
         public static List<NtoN> All_sn_to_pn( )
         {
             string sql = "SELECT storage_id, property_id FROM storage_properties";
@@ -114,17 +118,20 @@ namespace LVS_Library
             return sNtopN;
         }
 
+        //Lerchner Felix
         public override string ToString()
         {
             return Name;
         }
     }
 
+    //Lerchner Felix
     public class NtoN
     {
         public int storage =  0;
         public int property = 0;
 
+        //Lerchner Felix
         public NtoN(int storage, int property)
         {
             this.storage = storage;

@@ -8,6 +8,7 @@ using System.Data;
 
 namespace LVS_Library
 {
+    //Lerchner Felix
     public class Storage
     {
         private float width;
@@ -34,6 +35,7 @@ namespace LVS_Library
         public string Storage_dataID { get => storage_dataID; set => storage_dataID = value; }
         public int Max_count { get => max_count; set => max_count = value; }
 
+        //Lerchner Felix
         public Storage(float width, float length, float height, string name, string description, int parent_ID, string storage_dataID, int max_count, Unit unit)
         {
             Width = width;
@@ -48,6 +50,7 @@ namespace LVS_Library
         }
 
         #region Item / Element Move store and things like that
+        //Lerchner Felix
         public void Store(Item item, float count)
         {
             if (Item.Exists_in_DB(item))
@@ -64,6 +67,7 @@ namespace LVS_Library
             //   "VALUES({0}, {1}, {2}, {3}, {4}, {5}, {6}, {7})", Parent.Id,Name,Description,Length,Width,Height,Unit.ID,))
         }
 
+        //Lerchner Felix
         public void Remove(Item item, float count)
         {
 
@@ -74,11 +78,13 @@ namespace LVS_Library
         /// <summary>
         /// IS BAD DO NOT USE UNLESS IT REALLY NEEDED!!
         /// </summary>
+        //Lerchner Felix
         public void Truncate()
         {
             SQL_methods.SQL_exec("TRUNCATE TABLE storage_location");
         }
 
+        //Lerchner Felix
         static public void Move(Storage from, Storage to, Item item, float count)
         {
             using (IDbTransaction tran = DB.Connection.BeginTransaction())
@@ -98,6 +104,7 @@ namespace LVS_Library
         }
         #endregion
 
+        //Lerchner Felix
         public static void Save(Storage storage)
         {
             SQL_methods.SQL_exec(string.Format(
@@ -108,6 +115,7 @@ namespace LVS_Library
                 storage.Parent, storage.Name, storage.Description, storage.Length, storage.Width, storage.Height, storage.Unit.ID, storage.Max_count, storage.Storage_dataID));
         }
 
+        //Lerchner Felix
         public static bool Is_active(Storage storage)
         {
             string sql = "SELECT storage_active FROM storage_location WHERE id = " + storage.ID;
@@ -116,11 +124,13 @@ namespace LVS_Library
             return (bool)cmd.ExecuteScalar();
         }
 
+        //Lerchner Felix
         public static void Deactivate(Storage storage)
         {
             SQL_methods.SQL_exec("UPDATE storage_location SET storage_active = false WHERE id =" + storage.ID);
         }
 
+        //Lerchner Felix
         public static bool Exists_in_DB(Storage storage)
         {
             string sql = string.Format("" +
@@ -140,6 +150,7 @@ namespace LVS_Library
             return (long)sqlReader[0] != 0;
         }
 
+        //Lerchner Felix
         public static void Add_Property_Range(Storage storage, List<Property> properties)
         {
             int storage_DB_ID = Get_DB_ID(storage);
@@ -152,6 +163,7 @@ namespace LVS_Library
             }
         }
 
+        //Lerchner Felix
         public static int Get_DB_ID(Storage storage)
         {
             string sql = string.Format("" +
@@ -172,6 +184,7 @@ namespace LVS_Library
             return (int)sqlReader[0];
         }
 
+        //Lerchner Felix
         public static List<Storage> All_Storages()
         {
             string sql = "SELECT id FROM storage_location";
@@ -194,6 +207,7 @@ namespace LVS_Library
         /// </summary>
         /// <param name="db_ID">Primary key of DB</param>
         /// <returns></returns>
+        //Lerchner Felix
         public static Storage Get_from_ID(int id)
         {
             return Get_from_SQL("SELECT storage_size_w AS W,storage_size_l AS L,storage_size_h AS H,storage_name AS name,storage_description AS description,storage_unit_id AS unit_id,parent_id AS parent_id,storage_dataID AS dataID,storage_max_elements AS max_Elements FROM storage_location WHERE ID = " + id);
@@ -204,11 +218,13 @@ namespace LVS_Library
         /// </summary>
         /// <param name="data_ID">Secondary Key</param>
         /// <returns></returns>
+        //Lerchner Felix
         public static Storage Get_from_ID(string data_ID)
         {
             return Get_from_SQL("SELECT storage_size_w AS W,storage_size_l AS L,storage_size_h AS H,storage_name AS name,storage_description AS description,storage_unit_id AS unit_id,parent_id AS parent_id,storage_dataID AS dataID,storage_max_elements AS max_Elements FROM storage_location  WHERE storage_dataID = " + data_ID);
         }
 
+        //Lerchner Felix
         private static Storage Get_from_SQL(string sql)
         {
             //can be optimised with an caching function, so the methode caches things like Units or Properties for later use, 
@@ -246,6 +262,7 @@ namespace LVS_Library
         /// </summary>
         /// <param name="storage"></param>
         /// <returns></returns>
+        //Lerchner Felix
         public static double Get_max_capacity(Storage storage)
         {
             return Convert.ToDouble((Decimal)SQL_methods.SQL_scalar("SELECT storage_max_elements FROM storage_location WHERE storage_dataID = '" + storage.Storage_dataID + "'"));
@@ -255,11 +272,13 @@ namespace LVS_Library
         /// Sum of all Storages
         /// </summary>
         /// <returns></returns>
+        //Lerchner Felix
         public static double Get_max_capacity()
         {
             return Convert.ToDouble((Decimal)SQL_methods.SQL_scalar("SELECT SUM(storage_max_elements) FROM storage_location"));
         }
 
+        //Lerchner Felix
         public override string ToString()
         {
             return Name;

@@ -37,6 +37,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         #region items / elements
 
+        //Lerchner Felix
         private void Load_all_for_element()
         {
             lbx_elements_all_prop.Items.AddRange(Property.All_Properties().ToArray());
@@ -44,6 +45,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             cbx_elements_unit.Items.AddRange(Unit.All_Units().ToArray());
         }
 
+        //Lerchner Felix
         private void btn_elements_prop_add_Click(object sender, EventArgs e)
         {
             if (lbx_elements_all_prop.SelectedItem != null)
@@ -55,6 +57,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        //Lerchner Felix
         private void btn_elements_prop_del_Click(object sender, EventArgs e)
         {
             if (lbx_elements_used_prop.SelectedItem != null)
@@ -63,12 +66,14 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        //Lerchner Felix
         private void Load_lbx_cat_all()
         {
             lbx_cat_all.Items.AddRange(Category.All_Categories().ToArray());
         }
 
 
+        //Lerchner Felix
         private void btn_element_save_Click(object sender, EventArgs e)
         {
             if (!Elements_misses_parts_get_num(out float w, out float l, out float h))
@@ -103,6 +108,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        //Lerchner Felix
         private bool Elements_misses_parts_get_num(out float w, out float l, out float h)
         {
             List<bool> missing_parts_list = new List<bool>();
@@ -124,15 +130,8 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             return false;
         }
 
+        //Lerchner Felix
         private void btn_image_upload_Click(object sender, EventArgs e)
-        {
-            if (oFD_element_Image.ShowDialog() == DialogResult.OK)
-            {
-                pBx_elements_image.Image = Image.FromFile(oFD_element_Image.FileName);
-            }
-        }
-
-        private void openfiledialogtest()
         {
             if (oFD_element_Image.ShowDialog() == DialogResult.OK)
             {
@@ -144,6 +143,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         #region storage
 
+        //Lerchner Felix
         private void Load_all_for_storage()
         {
             lbx_storage_all_prop.Items.AddRange(Property.All_Properties().ToArray());
@@ -153,6 +153,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             cbx_storage_parent.Items.AddRange(Storage.All_Storages().ToArray());
         }
 
+        //Lerchner Felix
         private void Btn_storage_add_prop_Click(object sender, EventArgs e)
         {
             if (lbx_storage_all_prop.SelectedItem != null)
@@ -164,6 +165,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        //Lerchner Felix
         private void Btn_storage_del_prop_Click(object sender, EventArgs e)
         {
             if (lbx_storage_used_prop.SelectedItem != null)
@@ -172,6 +174,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        //Lerchner Felix
         private void Btn_storage_save_Click(object sender, EventArgs e)
         {
             if (!Storage_misses_parts_get_num(out float w, out float l, out float h))
@@ -220,6 +223,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        //Lerchner Felix
         private bool Storage_misses_parts_get_num(out float w, out float l, out float h)
         {
             List<bool> missing_parts_list = new List<bool>();
@@ -243,6 +247,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         #endregion
 
         #region dashboard
+        //Lerchner Felix
         private void Load_all_for_dashboard()
         {
             cbx_dash_storage.Items.AddRange(Storage.All_Storages().ToArray());
@@ -604,6 +609,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             btn_settings.BackColor = Color.LightSlateGray;
         }
 
+        //Lerchner Felix
         private void pBx_elements_image_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
@@ -616,6 +622,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        //Lerchner Felix
         private void pBx_elements_image_DragDrop(object sender, DragEventArgs e)
         {
             pBx_elements_image.Image = Image.FromFile(((string[])e.Data.GetData(DataFormats.FileDrop))[0]);
