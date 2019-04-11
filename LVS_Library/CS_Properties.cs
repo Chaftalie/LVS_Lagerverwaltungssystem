@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace LVS_Library
 {
+    //WEIM
     public class Property
     {
         private int id;
         private string name;
         private string description;
 
+        //WEIM
         public Property(int id_, string _name, string _description)
         {
             ID = id_;
@@ -20,6 +22,7 @@ namespace LVS_Library
             Description = _description;
         }
 
+        //WEIM
         public string Name
         {
             get
@@ -32,6 +35,8 @@ namespace LVS_Library
             }
         }
 
+        
+        //WEIM
         public string Description
         {
             get
@@ -44,6 +49,7 @@ namespace LVS_Library
             }
         }
 
+        //WEIM
         public int ID
         {
             get
