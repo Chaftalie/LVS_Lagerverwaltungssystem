@@ -1,0 +1,65 @@
+
+//=====================
+// Hattinger Tobias
+//=====================
+
+
+@mixin box-sizing($boxs)
+{
+    -webkit-box-sizing: $boxs;
+       -moz-box-sizing: $boxs;
+            box-sizing: $boxs;
+}
+
+@mixin ease($duration){
+    -webkit-transition: all $duration ease-in-out;
+       -moz-transition: all $duration ease-in-out;
+        -ms-transition: all $duration ease-in-out;
+         -o-transition: all $duration ease-in-out;
+            transition: all $duration ease-in-out;
+}
+
+@mixin custom-ease($type,$duration){
+    -webkit-transition: all $duration $type;
+       -moz-transition: all $duration $type;
+        -ms-transition: all $duration $type;
+         -o-transition: all $duration $type;
+            transition: all $duration $type;
+}
+
+@mixin elastic-ease($duration){
+    -webkit-transition: all $duration cubic-bezier(0.68, -0.55, 0.265, 1.55);;
+       -moz-transition: all $duration cubic-bezier(0.68, -0.55, 0.265, 1.55);;
+        -ms-transition: all $duration cubic-bezier(0.68, -0.55, 0.265, 1.55);;
+         -o-transition: all $duration cubic-bezier(0.68, -0.55, 0.265, 1.55);;
+            transition: all $duration cubic-bezier(0.68, -0.55, 0.265, 1.55);;
+}
+
+@mixin linear($duration){
+    -webkit-transition: all $duration linear;
+       -moz-transition: all $duration linear;
+        -ms-transition: all $duration linear;
+         -o-transition: all $duration linear;
+            transition: all $duration linear;
+}
+
+@mixin border-radius($radius){
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+}
+
+@mixin border-radiusPlus($tl,$tr,$br,$bl){
+    -webkit-border-radius: $tl $tr $br $bl;
+       -moz-border-radius: $tl $tr $br $bl;
+        -ms-border-radius: $tl $tr $br $bl;
+            border-radius: $tl $tr $br $bl;
+}
+
+@mixin animation($name,$duration,$iterations,$delay){
+    animation: $name;
+    animation-duration: $duration;
+    animation-iteration-count: $iterations;
+    animation-delay: $delay;
+}

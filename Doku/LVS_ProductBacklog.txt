@@ -1,0 +1,28 @@
+Hattinger
+Lerchner
+Weißböck
+
+Product Backlog LVS:
+
+• Erstellen einer Datenbank 
+	? ER-Modell erstellen
+	? DB in PHPMyAdmin erstellen
+	? Zugriff auf DB über windows-Forms und Web-Anwendung
+
+• Erstellen einer Modernen Benutzeroberfläche (ev. in UWP)
+	? Erstellen eines Splashscreens
+	? Login-Screen
+	? Lageransichts + Verwaltungsscreen
+	? Elementansicht + Verwaltungsscreen
+	? Management-Screen für Properties und Categories
+	? Settings-Screen für DB, etc.
+
+• Implementieren der Code128 / QR-Codes / DataMatrix / PDF417 Scanner Funktionen
+	? Erstellen von 2D / 3D Barcodes
+	? Lesen von Codes mit Kamera (Handykamera, Scanner)
+	? Verlinkung zwischen Barcodes und Lagerelementen herstellen
+
+• Erstellen einer Website (hauptsächlich für Mobilgeräte)
+	? Grundliegende Funktionen gleich wie Windows-Form
+	? Suport für alle gängigen Mobilgeräte
+	? Kamera-Scan für 2D/3D Codes implementieren
