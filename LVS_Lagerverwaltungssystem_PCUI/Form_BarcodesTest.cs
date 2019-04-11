@@ -16,11 +16,13 @@ namespace LVS_Lagerverwaltungssystem_PCUI
     {
         private string encodeText = "Datamatrix is the best code and YOU CAN'T ARGUE WITH THAT BITCH";
 
+        // Hattinger Tobias
         public Form_BarcodesTest()
         {
             InitializeComponent();
         }
 
+        // Hattinger Tobias
         private void pbxCodeOutputQR_Paint(object sender, PaintEventArgs e)
         {
             Image codeImage = XDCodes.CreateImage(encodeText, XDCodes.CodeTypes.QRCode);
@@ -36,6 +38,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             e.Graphics.DrawImage(codeImage, 1, 1);
         }
 
+        // Hattinger Tobias
         private void pbcCodeOutputDM_Paint(object sender, PaintEventArgs e)
         {
             Image codeImage = XDCodes.CreateImage(encodeText, XDCodes.CodeTypes.DataMatrix);
@@ -51,6 +54,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             e.Graphics.DrawImage(codeImage, 1, 1);
         }
 
+        // Hattinger Tobias
         private void pbxCodeOutputAztec_Paint(object sender, PaintEventArgs e)
         {
             Image codeImage = XDCodes.CreateImage(encodeText, XDCodes.CodeTypes.Aztec);
@@ -66,6 +70,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             e.Graphics.DrawImage(codeImage, 1, 1);
         }
 
+        // Hattinger Tobias
         private void pbxCodeOutputPDF417_Paint(object sender, PaintEventArgs e)
         {
             Image codeImage = XDCodes.CreateImage(encodeText, XDCodes.CodeTypes.PDF417);
@@ -81,6 +86,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             e.Graphics.DrawImage(codeImage, 1, 1);
         }
 
+        // Hattinger Tobias
         private void pbxCodeOutputC128_Paint(object sender, PaintEventArgs e)
         {
             if (encodeText.Length < 80)
@@ -106,6 +112,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             }
         }
 
+        // Hattinger Tobias
         private void txbCodeInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             encodeText = txbCodeInput.Text;

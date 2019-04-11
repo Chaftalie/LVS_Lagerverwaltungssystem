@@ -17,6 +17,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         VideoCapture capture = new VideoCapture();
         BarcodeReader barcodeReader = new BarcodeReader();
 
+        // Hattinger Tobias
         public Form_BarcodeReader()
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         }
 
+        // Hattinger Tobias
         private void tmr_16ms_Tick(object sender, EventArgs e)
         {
             try
@@ -66,6 +68,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         }
 
+        // Hattinger Tobias
         private void btnResetCapture_Click(object sender, EventArgs e)
         {
             tmr_16ms.Start();
