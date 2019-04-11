@@ -33,16 +33,22 @@
                 if(isset($_GET['item']))
                 {
                     $item = MySQL::Row("SELECT * FROM storage_elements INNER JOIN categories ON storage_elements.element_category_id = categories.id INNER JOIN units ON storage_elements.element_unit_id = units.id WHERE storage_elements.id = ?",'s',$_GET['item']);
+                    $propertyList = MySQL::Cluster("SELECT * FROM required_properties INNER JOIN properties ON required_properties.property_id = properties.id WHERE required_properties.element_id = ?",'s',$_GET['item']);
+
 
                     if(isset($_GET['fromStorage']))
                     {
                         $storageCountTitle = "In this storage:";
                         $itemCount = MySQL::Scalar("SELECT storage_count FROM element_location WHERE element_id = ? AND storage_id = ?",'@s',$_GET['item'],$_GET['fromStorage']);
+
+                        if($itemCount == null) $itemCount = 0; 
                     }
                     else
                     {
                         $storageCountTitle = "In store total:";
                         $itemCount = MySQL::Scalar("SELECT SUM(storage_count) FROM element_location WHERE element_id = ?",'@s',$_GET['item']);
+
+                        if($itemCount == null) $itemCount = 0;
                     }
 
                     echo '
@@ -116,6 +122,12 @@
                             <tr><td>'.$item['element_description'].'</td></tr>
                             <tr><td>Category:</td></tr>
                             <tr><td>'.$item['category_name'].'</td></tr>
+                            <tr><td>Properties:</td></tr>
+                            <tr><td>
+                            ';
+                                foreach($propertyList as $prop) echo $prop['property_name'].'<br>';
+                            echo '
+                            </td></tr>
                             <tr><td>Dimensions [mm]:</td></tr>
                             <tr><td>'.$item['element_size_l'].' x '.$item['element_size_w'].' x '.$item['element_size_h'].' (LxWxH)</td></tr>
                         </table>
@@ -167,9 +179,6 @@
                                 <br>
                                 <button type="button" class="menuButton">Move Elements</button>
                                 <button type="button" class="menuButton">Clear Elements</button>
-
-
-
 
                             </div>
                         </div>

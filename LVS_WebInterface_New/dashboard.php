@@ -1,6 +1,30 @@
 <?php
+
+//=====================
+// Hattinger Tobias
+//=====================
+
     include("_header.php");
 
+
+    function Meter($id,$value,$size)
+    {
+
+        return '
+            <div class="customMeter" style="width: '.$size.'px; height: '.$size.'px">
+                <div class="needle" id="meterNeedle'.$id.'"></div>
+                <input type="range" min="0" max="100" value="'.$value.'" id="meterValue'.$id.'" hidden/>
+            </div>
+        ';
+    }
+
+
+    $storedElementCountMax = MySQL::Scalar("SELECT SUM(storage_max_elements) FROM storage_location");
+
+    $storedElementCountIs = MySQL::Scalar("SELECT SUM(storage_count) FROM element_location");
+
+    if($storedElementCountMax != 0) $storedElementPercentage = $storedElementCountIs/($storedElementCountMax/100);
+    else $storedElementPercentage = 0;
 
     echo '
 
@@ -17,8 +41,10 @@
                 <center>
                     <div class="customMeter" style="width: 500px; height: 500px">
 
-                        <div class="needle" id="meterNeedle1"></div>
-                        <input type="range" min="0" max="100" value="40" id="meterValue1" hidden/>
+                        '.Meter(1,$storedElementPercentage,500).'
+                        <span style="color: #FFFFFF">Capacity: '.$storedElementCountIs.'/'.$storedElementCountMax.'</span>
+
+
                     </div>
 
                     <br>

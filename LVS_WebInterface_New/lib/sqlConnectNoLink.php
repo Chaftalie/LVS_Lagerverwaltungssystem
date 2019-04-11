@@ -1,5 +1,9 @@
 <?php
 
+//=====================
+// Hattinger Tobias
+//=====================
+
 //=================================
 // Connect to MySQL Database
 //=================================
@@ -16,9 +20,5 @@ $configDatabasePass = getenv("MYSQLDB_PASSWORD");
 $configDatabaseName = getenv("MYSQLDB_DBNAME");
 
 $sqlConLink = mysqli_connect($configDatabaseHost,$configDatabaseUser,$configDatabasePass,$configDatabaseName) OR die("<br><br><b>Error in sqlConnect.php :</b> Could not connect to Database (Code 1)<br><br>");
-
-
-MySQL::SetSQLLink($sqlConLink);
-FileUploader::SetSQLLink($sqlConLink);
 
 ?>

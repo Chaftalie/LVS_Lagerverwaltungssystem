@@ -1,4 +1,9 @@
 <?php
+
+//=====================
+// Hattinger Tobias
+//=====================
+
     session_start();
     require("_headerlinks.php");
     require("_headerincludes.php");

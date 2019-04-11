@@ -1,5 +1,9 @@
 <?php
 
+//=====================
+// Hattinger Tobias
+//=====================
+
     require("lib/_mysqlConDat.php");
 
     require("lib/barcode.lib.php");

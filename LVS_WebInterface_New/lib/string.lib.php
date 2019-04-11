@@ -1,5 +1,9 @@
 <?php
 
+//=====================
+// Hattinger Tobias
+//=====================
+
 class StringOp
 {
     public static function StringContains()
@@ -36,7 +40,7 @@ class StringOp
 
     public static function SReplace($string,$specialCharacters='')
     {
-        // Replacing "Ä,ä,Ö,ö,Ü,ü,ß" and "-" (HTML-Characters)
+        // Replacing "ï¿½,ï¿½,ï¿½,ï¿½,ï¿½,ï¿½,ï¿½" and "-" (HTML-Characters)
         $sstr = str_replace(' ','-',$string);
         $sstr = str_replace('&Auml;','AE',$sstr);
         $sstr = str_replace('&auml;','ae',$sstr);
@@ -46,7 +50,7 @@ class StringOp
         $sstr = str_replace('&uuml;','ue',$sstr);
         $sstr = str_replace('&szlig;','ss',$sstr);
 
-        // Replacing "Ä,ä,Ö,ö,Ü,ü,ß" (UTF-Characters/Database)
+        // Replacing "ï¿½,ï¿½,ï¿½,ï¿½,ï¿½,ï¿½,ï¿½" (UTF-Characters/Database)
         $sstr = str_replace('Ã„','AE',$sstr);
         $sstr = str_replace('Ã¤','ae',$sstr);
         $sstr = str_replace('Ã–','OE',$sstr);

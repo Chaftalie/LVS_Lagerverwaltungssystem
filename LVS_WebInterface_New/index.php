@@ -1,4 +1,9 @@
 <?php
+
+//=====================
+// Hattinger Tobias
+//=====================
+
     include("_header.php");
 
     if($_SERVER['REQUEST_METHOD'] == 'POST')
@@ -19,12 +24,12 @@
         exec($path, $outputs);
         $codeData = $outputs[0];
 
-        if($codeData != 'Error')
+        if($codeData != 'Error' AND $codeData != '')
         {
             $itemID = MySQL::Scalar("SELECT id FROM storage_elements WHERE element_dataID = ?",'s',$codeData);
             Page::Redirect("/items.php?item=".$itemID);
         }
-        else Page::Redirect(Page::This());
+        else Page::Redirect("scanError.php");
 
 
         die();

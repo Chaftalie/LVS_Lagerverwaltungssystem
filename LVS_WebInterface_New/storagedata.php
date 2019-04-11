@@ -1,4 +1,9 @@
 <?php
+
+//=====================
+// Hattinger Tobias
+//=====================
+
     include("_header.php");
 
 
@@ -17,7 +22,7 @@
             <main>
                 <center>
 
-                    <a href="/insights.php"><button type="button" class="menuButton">Insights</button></a>   
+                    <a href="/insights.php?storage='.$_GET['storage'].'"><button type="button" class="menuButton">Insights</button></a>
 
                 ';
 

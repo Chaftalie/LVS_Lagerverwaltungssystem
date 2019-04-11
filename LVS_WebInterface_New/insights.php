@@ -1,4 +1,9 @@
 <?php
+
+//=====================
+// Hattinger Tobias
+//=====================
+
     include("_header.php");
 
 
@@ -13,6 +18,15 @@
         ';
     }
 
+    $storageData = MySQL::Row("SELECT * FROM storage_location WHERE id = ?",'s',$_GET['storage']);
+
+    $storedElementCount = MySQL::Scalar("SELECT SUM(storage_count) FROM element_location WHERE storage_id = ?",'s',$_GET['storage']);
+
+    if($storedElementCount == null) $storedElementCount = 0;
+
+    if($storageData['storage_max_elements'] != 0) $storedElementPercentage = $storedElementCount/($storageData['storage_max_elements']/100);
+    else $storedElementPercentage = 0;
+
     echo '
 
         <body>
@@ -25,21 +39,13 @@
             </a>
             <main>
                 <center>
-                <br>
-                    <table style="width: 90%; color:#FFFFFF;">
-                        <tr>
-                            <td>'.Meter(1,10,400).'</td>
-                            <td>Capacity</td>
-                        </tr>
-                        <tr>
-                            <td>'.Meter(2,80,400).'</td>
-                            <td>Level 2</td>
-                        </tr>
-                        <tr>
-                            <td>'.Meter(3,55,400).'</td>
-                            <td>Level 3</td>
-                        </tr>
-                    </table>
+                    <br>
+                    '.Meter(1,$storedElementPercentage,500).'
+                    <span style="color: #FFFFFF">Capacity: '.$storedElementCount.'/'.$storageData['storage_max_elements'].'</span>
+
+
+                    <br><br>
+
                 </center>
             </main>
         </body>
@@ -53,10 +59,9 @@
 
 <script type="text/javascript">
 
-    $( document ).ready(function() {
+    $(window).ready(function () {
         UpdateMeter("meterValue1","meterNeedle1")
-        UpdateMeter("meterValue2","meterNeedle2")
-        UpdateMeter("meterValue3","meterNeedle3")
+
     });
 
     function UpdateMeter(elementID,meterNeedleID)
