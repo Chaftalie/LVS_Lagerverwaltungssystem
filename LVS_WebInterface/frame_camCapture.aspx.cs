@@ -14,7 +14,7 @@ namespace LVS_WebInterface
     public partial class frame_camCapture : System.Web.UI.Page
     {
 
-
+        // Hattinger Tobias
         protected void Page_Load(object sender, EventArgs e)
         {
             if(this.IsPostBack)

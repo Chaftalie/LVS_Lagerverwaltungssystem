@@ -13,6 +13,7 @@ namespace LVS_Library
 {
     public class XDCodes
     {
+        // Hattinger Tobias
         public enum CodeTypes
         {
             Code128,
@@ -21,6 +22,8 @@ namespace LVS_Library
             Aztec,
             PDF417
         }
+
+        // Hattinger Tobias
         public static Image CreateImage(string data, CodeTypes type)
         {
             Image codeImage = null;
