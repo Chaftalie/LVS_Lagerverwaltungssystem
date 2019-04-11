@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace LVS_Lagerverwaltungssystem_PCUI
 {
+    //This Form is from WEIM
+    //This Form is for a Loadscreen when the Files from the Database are loaded
+
     public partial class Form_Load : Form
     {
         private Timer time_load = new Timer();

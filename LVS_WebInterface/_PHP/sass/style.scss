@@ -149,7 +149,8 @@ table.infoTable{
         background: #E3E3E3;
 
         td{
-            padding-left: 50px;
+            padding-left: 20px;
+            font-size: 30pt;
             color: #1E90FF
         }
 
@@ -697,3 +698,7 @@ table.infoTable{
 #BRZ{ filter: drop-shadow(0px 3px 5px black) brightness(1.5) saturate(0.7) hue-rotate(35deg); }
 #CYA{ filter: drop-shadow(0px 3px 5px black) hue-rotate(180deg); }
 
+.codeImgLarge{
+    width: 100%;
+    image-rendering: pixelated;  
+}

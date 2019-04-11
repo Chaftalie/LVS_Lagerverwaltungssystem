@@ -5,7 +5,6 @@ class MySQL
 ##########################################################################################
 
     private static $sqlConnectionLink;
-    private static $mysqli;
 
     private static $databaseHost;
     private static $databaseUser;
@@ -14,30 +13,31 @@ class MySQL
 
     private static $databaseBackupPath;
 
+    private static $mysqli;
+
 ##########################################################################################
 
     public static function init()
     {
         require("mysql.lib.config.php");
 
-        self::$databaseHost = $sqlConfigDatabaseHost;
-        self::$databaseUser = $sqlConfigDatabaseUser;
-        self::$databasePass = $sqlConfigDatabasePass;
-        self::$databaseName = $sqlConfigDatabaseName;
-
         self::$databaseBackupPath = $sqlConfigBackupPath;
-
-        self::$sqlConnectionLink = mysqli_connect($sqlConfigDatabaseHost,$sqlConfigDatabaseUser,$sqlConfigDatabasePass,$sqlConfigDatabaseName) OR die("<br><br><b>Error in mysql.lib.php :</b> Could not connect to Database (Code 1)<br><br>");
-
-        self::$mysqli = new mysqli($sqlConfigDatabaseHost,$sqlConfigDatabaseUser,$sqlConfigDatabasePass,$sqlConfigDatabaseName) OR die("<br><br><b>Error in mysql.lib.php :</b> Could not connect to Database (Code 2)<br><br>");
-    }
-
-    public static function Close()
-    {
-        self::$mysqli->close();
     }
 
 ##########################################################################################
+
+    public static function SetSQLLink($link)
+    {
+        self::$sqlConnectionLink = $link;
+    }
+
+    public static function SetSQLConData($host,$user,$pass,$name)
+    {
+        self::$databaseHost = $host;
+        self::$databaseUser = $user;
+        self::$databasePass = $pass;
+        self::$databaseName = $name;
+    }
 
     private static function GetParamTypeList($paramTypeList,$paramAmt)
     {
@@ -58,6 +58,7 @@ class MySQL
     }
 
 ##########################################################################################
+
 
     public static function NonQuery($sqlStatement,$parameterTypes="", &...$sqlParameters)
     {
@@ -193,40 +194,6 @@ class MySQL
 
 ##########################################################################################
 
-    public static function Fetch($table,$getColumn,$whereColumn,$whereColumnValue)
-    {
-        $sqlStatement = "SELECT $getColumn FROM $table WHERE $whereColumn LIKE '$whereColumnValue'";
-
-        $result = self::$mysqli->query($sqlStatement);
-        $row = $result->fetch_assoc();
-
-
-
-        return $row[$getColumn];
-    }
-
-    public static function FetchCount($table,$whereColumn,$whereColumnValue)
-    {
-        $sqlStatement = "SELECT * FROM $table WHERE $whereColumn LIKE '$whereColumnValue'";
-
-        $result = self::$mysqli->query($sqlStatement);
-        $count = $result->num_rows;
-
-        return $count;
-    }
-
-    public static function FetchRow($table,$whereColumn,$whereColumnValue)
-    {
-        $sqlStatement = "SELECT * FROM $table WHERE $whereColumn LIKE '$whereColumnValue'";
-
-        $result = self::$mysqli->query($sqlStatement);
-        $row = $result->fetch_assoc();
-
-        return $row;
-    }
-
-##########################################################################################
-
     public static function Save($backUpName)
     {
         $host = self::$databaseHost;
@@ -238,13 +205,13 @@ class MySQL
 
         $tables = '*';
 
-        self::$mysqli->select_db($name);
+        self::$sqlConnectionLink->select_db($name);
 
         //get all of the tables
         if($tables == '*')
         {
             $tables = array();
-            $result = self::$mysqli->query('SHOW TABLES');
+            $result = self::$sqlConnectionLink->query('SHOW TABLES');
             while($row = $result->fetch_row())
             {
                 $tables[] = $row[0];
@@ -258,12 +225,12 @@ class MySQL
         //cycle through
         foreach($tables as $table)
         {
-            $result = self::$mysqli->query('SELECT * FROM '.$table);
+            $result = self::$sqlConnectionLink->query('SELECT * FROM '.$table);
             $num_fields = $result->field_count;
 
             $return.= 'DROP TABLE '.$table.';';
 
-            $rs2 = self::$mysqli->query('SHOW CREATE TABLE '.$table);
+            $rs2 = self::$sqlConnectionLink->query('SHOW CREATE TABLE '.$table);
             $row2 = $rs2->fetch_row();
 
             $return.= "\n\n".$row2[1].";\n\n";
@@ -312,5 +279,40 @@ class MySQL
 ##########################################################################################
 }
 MySQL::init();
+
+class DebugMySQL
+{
+    private static function GetParamTypeList($paramTypeList,$paramAmt)
+    {
+        if(substr($paramTypeList,0,1) == "@")
+        {
+            $broadcastType = str_replace("@","",$paramTypeList);
+            $mySQLParamTypes = '';
+
+            for($i=0;$i<$paramAmt;$i++) $mySQLParamTypes .= $broadcastType;
+        }
+        else
+        {
+            if($paramAmt == strlen($paramTypeList) OR ($paramTypeList == "" AND $paramAmt == -1)) $mySQLParamTypes = $paramTypeList;
+            else die("<b>Not enought parameters provided!</b> <br> <b>Provided: </b> ".strlen($paramTypeList)." <br><b>Required:</b> $paramAmt");
+        }
+
+        return $mySQLParamTypes;
+    }
+
+    public static function NonQuery($sqlStatement,$parameterTypes="", &...$sqlParameters)
+    {
+        // Parameter-Count
+        $parameterAmount = func_num_args() - 2;
+
+        // Get Parameter-Type list
+        $parameterTypeList = self::GetParamTypeList($parameterTypes,$parameterAmount);
+
+
+        foreach($sqlParameters as $param) $sqlStatement = preg_replace('/'.preg_quote('?', '/').'/', "'".$param."'", $sqlStatement, 1);
+
+        return $sqlStatement;
+    }
+}
 
 ?>

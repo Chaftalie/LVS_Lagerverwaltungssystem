@@ -4,15 +4,15 @@
 // Connect to MySQL Database
 //=================================
 // Database-Hostname
-$pagerConfigDatabaseHost = "81.10.155.134:1337";
+$pagerConfigDatabaseHost = "localhost";
 
 // Database-Username
 $pagerConfigDatabaseUser = "root";
 
 // Database-Password
-$pagerConfigDatabasePass = "cola0815";
+$pagerConfigDatabasePass = "";
 
 // Database-Name
-$pagerConfigDatabaseName = "lsv_lagerverwaltungssystem";
+$pagerConfigDatabaseName = "krokodeal_new";
 
 ?>
