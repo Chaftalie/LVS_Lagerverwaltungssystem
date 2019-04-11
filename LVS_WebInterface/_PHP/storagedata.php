@@ -22,7 +22,7 @@
                 ';
 
                 $storages = MySQL::Cluster("SELECT * FROM storage_location WHERE parent_id = ? ORDER BY storage_name ASC",'i',$_GET['storage']);
-                $items = MySQL::Cluster("SELECT * FROM storage_elements INNER JOIN element_location ON storage_elements.id = element_location.element_id WHERE element_location.storage_id = ? ORDER BY element_name ASC",'i',$_GET['storage']);
+                $items = MySQL::Cluster("SELECT *,storage_elements.id AS sID FROM storage_elements INNER JOIN element_location ON storage_elements.id = element_location.element_id WHERE element_location.storage_id = ? ORDER BY element_name ASC",'i',$_GET['storage']);
 
                 if(count($storages) != 0)
                 {
@@ -62,7 +62,7 @@
                         echo '
                             <tr>
                                 <td>
-                                    <a href="/items.php?item='.$item['id'].'">
+                                    <a href="/items.php?item='.$item['sID'].'&fromStorage='.$_GET['storage'].'">
                                         <em>'.$item['element_dataID'].'</em> '.$item['element_name'].'<br>
                                         <blockquote>'.$item['element_description'].'</blockquote>
                                     </a>
