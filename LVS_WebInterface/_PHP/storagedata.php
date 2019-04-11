@@ -16,6 +16,9 @@
             </a>
             <main>
                 <center>
+
+                    <a href="/insights.php"><button type="button" class="menuButton">Insights</button></a>   
+
                 ';
 
                 $storages = MySQL::Cluster("SELECT * FROM storage_location WHERE parent_id = ? ORDER BY storage_name ASC",'i',$_GET['storage']);

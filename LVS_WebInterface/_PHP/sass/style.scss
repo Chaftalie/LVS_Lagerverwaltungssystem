@@ -310,6 +310,7 @@ table.infoTable{
 
 .itemCodeVar1{
     top: 400px;
+    height: 150px;
 
     animation: codeMiniFadeIn1;
     animation-duration: 2s;
@@ -318,6 +319,7 @@ table.infoTable{
 
 .itemCodeVar2{
     top: 560px;
+    height: 150px;
 
     animation: codeMiniFadeIn2;
     animation-duration: 2s;
@@ -328,6 +330,7 @@ table.infoTable{
     top: 720px;
 
     line-height: 150px;
+    height: 150px;
 
     background: #1E90FF;
 
@@ -648,12 +651,11 @@ table.infoTable{
 
 .customMeter{
     position: relative;
-    width: 500px;
-    height: 500px;
 
-    background-image: url(../content/meterBow.png);
+
+    background-image: url(../content/meterBowColored.png);
     background-repeat: no-repeat;
-    background-size: 500px 500px;
+    background-size: 100% 100%;
 
     filter: drop-shadow(0px 0px 2px black);
 
@@ -669,7 +671,8 @@ table.infoTable{
         background-repeat: no-repeat;
         background-size: 100% 100%;
 
-        @include ease(1s);
+        @include elastic-ease(1s);
+
 
         //animation: needleMoveSample;
         //animation-duration: 2s;

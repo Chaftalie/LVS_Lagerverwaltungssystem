@@ -1,0 +1,43 @@
+###############################
+###############################
+##    Apache Server Config   ##
+##        KEEP ORDERED       ##
+###############################
+###############################
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+
+###############################
+#         URL Rewrites        #
+###############################
+
+# Ignore .php-Extension
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+###############################
+#    Forbidden Directories    #
+###############################
+RewriteRule (^|/)backup(/|$) - [F]
+RewriteRule (^|/)sass(/|$) - [F]
+
+# Comment this out whe using tools
+RewriteRule (^|/)tools(/|$) - [F]
+
+###############################
+#       Error Documents       #
+###############################
+# ERROR 400: Bad Request
+ErrorDocument 400 /400.php
+
+# ERROR 401: Unauthorised
+ErrorDocument 401 /401.php
+
+# ERROR 403: Forbidden
+ErrorDocument 403 /403.php
+
+# Error 404: Not Found
+ErrorDocument 404 /404.php
+
+# Error 500: Internal Server Error
+ErrorDocument 500 /500.php
