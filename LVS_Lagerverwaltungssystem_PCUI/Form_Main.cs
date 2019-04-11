@@ -254,7 +254,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         }
         #endregion
 
-        //FROM WEIM
+        //Nearly all From WEIM except marked ones
         #region btn_methods
         private void btn_main_close_Click(object sender, EventArgs e)
         {
@@ -688,7 +688,8 @@ namespace LVS_Lagerverwaltungssystem_PCUI
 
         private void cbx_dash_storage_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            //cpr_capacity.Maximum = Convert.ToInt32(Storage.Get_max_capacity(Storage.Get_from_ID(cbx_dash_storage.SelectedIndex))); 
+            //TODO Storage.Get_max_capacity needs fix for Storages from LERF -- written by WEIM
         }
         protected override CreateParams CreateParams
         {
