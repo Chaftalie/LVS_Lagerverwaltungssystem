@@ -18,7 +18,7 @@ namespace LVS_Library
         private float element_count; //Stückzahl, länge der items
         private int max_count;
         private Unit unit;
-        private Storage parent;
+        private int parent;
         private int id;
         private string storage_dataID;
 
@@ -29,12 +29,12 @@ namespace LVS_Library
         public string Description { get => description; set => description = value; }
         public float Element_count { get => element_count; set => element_count = value; }
         public Unit Unit { get => unit; set => unit = value; }
-        public Storage Parent { get => parent; set => parent = value; }
+        public int Parent { get => parent; set => parent = value; }
         public int ID { get => id; set => id = value; }
         public string Storage_dataID { get => storage_dataID; set => storage_dataID = value; }
         public int Max_count { get => max_count; set => max_count = value; }
 
-        public Storage(float width, float length, float height, string name, string description, Unit unit, int parent_ID, string storage_dataID, int max_count)
+        public Storage(float width, float length, float height, string name, string description, int parent_ID, string storage_dataID, int max_count, Unit unit)
         {
             Width = width;
             Length = length;
@@ -105,7 +105,7 @@ namespace LVS_Library
                 "(parent_id,storage_name,storage_description,storage_size_l,storage_size_w,storage_size_h,storage_unit_id,storage_max_elements,storage_dataID) " +
                 "VALUES " +
                 "({0}, '{1}', '{2}', {3}, {4}, {5}, {6}, {7}, '{8}')",
-                storage?.Parent?.ID == null ? "''" : storage.Parent.ID.ToString(), storage.Name, storage.Description, storage.Length, storage.Width, storage.Height, storage.Unit.ID, storage.Max_count, storage.Storage_dataID));
+                storage.Parent, storage.Name, storage.Description, storage.Length, storage.Width, storage.Height, storage.Unit.ID, storage.Max_count, storage.Storage_dataID));
         }
 
         public static bool Is_active(Storage storage)
@@ -196,7 +196,7 @@ namespace LVS_Library
         /// <returns></returns>
         public static Storage Get_from_ID(int id)
         {
-            return Get_from_SQL("SELECT * FROM storage_location WHERE ID = " + id);
+            return Get_from_SQL("SELECT storage_size_w AS W,storage_size_l AS L,storage_size_h AS H,storage_name AS name,storage_description AS description,storage_unit_id AS unit_id,parent_id AS parent_id,storage_dataID AS dataID,storage_max_elements AS max_Elements FROM storage_location WHERE ID = " + id);
         }
 
         /// <summary>        
@@ -206,7 +206,7 @@ namespace LVS_Library
         /// <returns></returns>
         public static Storage Get_from_ID(string data_ID)
         {
-            return Get_from_SQL("SELECT * FROM storage_location WHERE storage_dataID = " + data_ID);
+            return Get_from_SQL("SELECT storage_size_w AS W,storage_size_l AS L,storage_size_h AS H,storage_name AS name,storage_description AS description,storage_unit_id AS unit_id,parent_id AS parent_id,storage_dataID AS dataID,storage_max_elements AS max_Elements FROM storage_location  WHERE storage_dataID = " + data_ID);
         }
 
         private static Storage Get_from_SQL(string sql)
@@ -220,31 +220,24 @@ namespace LVS_Library
             OdbcDataReader sqlReader = cmd.ExecuteReader();
 
             sqlReader.Read();
+            Storage storage = null;
 
-            #region do that in Unit class (load Unit from ID)
-            //TODO code Methode in Units which is loading one exact unit.
-            sql = "SELECT * FROM units WHERE id =" + (Int64)sqlReader["storage_unit_id"];
-            cmd = new OdbcCommand(sql, DB.Connection);
-            OdbcDataReader sqlReader_unit = cmd.ExecuteReader();
+            if (sqlReader.HasRows)
+            {
+                storage = new Storage
+                (
+                     (float)sqlReader["W"],
+                     (float)sqlReader["L"],
+                     (float)sqlReader["H"],
+                     (string)sqlReader["name"],
+                     (string)sqlReader["description"],
+                     (int)sqlReader["parent_id"],
+                     (string)sqlReader["dataID"],
+                     (int)sqlReader["max_Elements"],
+                     Unit.Get_from_ID((int)sqlReader["unit_id"])
 
-            sqlReader_unit.Read();
-
-            Unit unit = new Unit((string)sqlReader_unit["unit_si"], (string)sqlReader_unit["unit_name"], (string)sqlReader_unit["unit_description"], (int)sqlReader_unit["id"]);
-            #endregion
-
-
-            Storage storage = new Storage(
-                (float)sqlReader["storage_size_w"],
-                (float)sqlReader["storage_size_l"],
-                (float)sqlReader["storage_size_h"],
-                (string)sqlReader["storage_name"],
-                (string)sqlReader["storage_description"],
-                unit,
-                (int)sqlReader["parent_id"],
-                (string)sqlReader["storage_dataID"],
-                (int)sqlReader["storage_max_elements"]
                 );
-
+            }
             return storage;
         }
 
@@ -255,7 +248,7 @@ namespace LVS_Library
         /// <returns></returns>
         public static double Get_max_capacity(Storage storage)
         {
-            return (float)SQL_methods.SQL_scalar("SELECT storage_max_elements FROM storage_location WHERE storage_dataID = '" + storage.Storage_dataID + "'");
+            return (int)SQL_methods.SQL_scalar("SELECT storage_max_elements FROM storage_location WHERE storage_dataID = '" + storage.Storage_dataID + "'");
         }
 
         /// <summary>
@@ -264,7 +257,7 @@ namespace LVS_Library
         /// <returns></returns>
         public static double Get_max_capacity()
         {
-            return (float)SQL_methods.SQL_scalar("SELECT SUM(storage_max_elements) FROM storage_location");
+            return (int)SQL_methods.SQL_scalar("SELECT SUM(storage_max_elements) FROM storage_location");
         }
     }
 }
