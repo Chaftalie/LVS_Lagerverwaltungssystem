@@ -11,7 +11,8 @@ using System.Windows.Forms;
 
 namespace LVS_Lagerverwaltungssystem_PCUI
 {
-
+    // Complet Form From WEIM
+    // This is the standard Login-Screen with Registration and Login
     
     public partial class Form_Login : Form
     {

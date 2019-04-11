@@ -134,7 +134,7 @@
             this.panel_dashboard = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.cbx_dash_storage = new System.Windows.Forms.ComboBox();
-            this.circularProgressBar1 = new CircularProgressBar.CircularProgressBar();
+            this.cpr_capacity = new CircularProgressBar.CircularProgressBar();
             this.label24 = new System.Windows.Forms.Label();
             this.lbl_usage = new System.Windows.Forms.Label();
             this.chart_use_all = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -254,6 +254,7 @@
             this.btn_icon_setting.Size = new System.Drawing.Size(34, 33);
             this.btn_icon_setting.TabIndex = 11;
             this.btn_icon_setting.UseVisualStyleBackColor = false;
+            this.btn_icon_setting.Click += new System.EventHandler(this.Btn_icon_setting_Click);
             this.btn_icon_setting.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_icon_setting_MouseDown);
             this.btn_icon_setting.MouseEnter += new System.EventHandler(this.btn_icon_setting_MouseEnter);
             this.btn_icon_setting.MouseLeave += new System.EventHandler(this.btn_icon_setting_MouseLeave);
@@ -289,6 +290,7 @@
             this.btn_prop_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_prop_icon.TabIndex = 9;
             this.btn_prop_icon.UseVisualStyleBackColor = false;
+            this.btn_prop_icon.Click += new System.EventHandler(this.Btn_prop_icon_Click);
             this.btn_prop_icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_prop_icon_MouseDown);
             this.btn_prop_icon.MouseEnter += new System.EventHandler(this.btn_prop_icon_MouseEnter);
             this.btn_prop_icon.MouseLeave += new System.EventHandler(this.btn_prop_icon_MouseLeave);
@@ -324,6 +326,7 @@
             this.btn_dash_icon.Size = new System.Drawing.Size(34, 33);
             this.btn_dash_icon.TabIndex = 7;
             this.btn_dash_icon.UseVisualStyleBackColor = false;
+            this.btn_dash_icon.Click += new System.EventHandler(this.Btn_dash_icon_Click);
             this.btn_dash_icon.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_dash_icon_MouseDown);
             this.btn_dash_icon.MouseEnter += new System.EventHandler(this.btn_dash_icon_MouseEnter);
             this.btn_dash_icon.MouseLeave += new System.EventHandler(this.btn_dash_icon_MouseLeave);
@@ -1400,7 +1403,7 @@
             // 
             this.panel_dashboard.Controls.Add(this.label25);
             this.panel_dashboard.Controls.Add(this.cbx_dash_storage);
-            this.panel_dashboard.Controls.Add(this.circularProgressBar1);
+            this.panel_dashboard.Controls.Add(this.cpr_capacity);
             this.panel_dashboard.Controls.Add(this.label24);
             this.panel_dashboard.Controls.Add(this.lbl_usage);
             this.panel_dashboard.Controls.Add(this.chart_use_all);
@@ -1427,38 +1430,38 @@
             this.cbx_dash_storage.TabIndex = 5;
             this.cbx_dash_storage.SelectedIndexChanged += new System.EventHandler(this.cbx_dash_storage_SelectedIndexChanged);
             // 
-            // circularProgressBar1
+            // cpr_capacity
             // 
-            this.circularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
-            this.circularProgressBar1.AnimationSpeed = 500;
-            this.circularProgressBar1.BackColor = System.Drawing.Color.Transparent;
-            this.circularProgressBar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.circularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.circularProgressBar1.InnerMargin = 2;
-            this.circularProgressBar1.InnerWidth = -1;
-            this.circularProgressBar1.Location = new System.Drawing.Point(403, 27);
-            this.circularProgressBar1.MarqueeAnimationSpeed = 2000;
-            this.circularProgressBar1.Maximum = 10;
-            this.circularProgressBar1.Name = "circularProgressBar1";
-            this.circularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.circularProgressBar1.OuterMargin = -25;
-            this.circularProgressBar1.OuterWidth = 26;
-            this.circularProgressBar1.ProgressColor = System.Drawing.Color.DeepSkyBlue;
-            this.circularProgressBar1.ProgressWidth = 25;
-            this.circularProgressBar1.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
-            this.circularProgressBar1.Size = new System.Drawing.Size(278, 272);
-            this.circularProgressBar1.StartAngle = 270;
-            this.circularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
-            this.circularProgressBar1.SubscriptText = "";
-            this.circularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.circularProgressBar1.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
-            this.circularProgressBar1.SuperscriptText = "";
-            this.circularProgressBar1.TabIndex = 4;
-            this.circularProgressBar1.Text = "Capacity";
-            this.circularProgressBar1.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.circularProgressBar1.Value = 5;
+            this.cpr_capacity.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner;
+            this.cpr_capacity.AnimationSpeed = 500;
+            this.cpr_capacity.BackColor = System.Drawing.Color.Transparent;
+            this.cpr_capacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 45F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cpr_capacity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cpr_capacity.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cpr_capacity.InnerMargin = 2;
+            this.cpr_capacity.InnerWidth = -1;
+            this.cpr_capacity.Location = new System.Drawing.Point(403, 27);
+            this.cpr_capacity.MarqueeAnimationSpeed = 2000;
+            this.cpr_capacity.Maximum = 10;
+            this.cpr_capacity.Name = "cpr_capacity";
+            this.cpr_capacity.OuterColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cpr_capacity.OuterMargin = -25;
+            this.cpr_capacity.OuterWidth = 26;
+            this.cpr_capacity.ProgressColor = System.Drawing.Color.DeepSkyBlue;
+            this.cpr_capacity.ProgressWidth = 25;
+            this.cpr_capacity.SecondaryFont = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.cpr_capacity.Size = new System.Drawing.Size(278, 272);
+            this.cpr_capacity.StartAngle = 270;
+            this.cpr_capacity.SubscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.cpr_capacity.SubscriptMargin = new System.Windows.Forms.Padding(10, -35, 0, 0);
+            this.cpr_capacity.SubscriptText = "";
+            this.cpr_capacity.SuperscriptColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.cpr_capacity.SuperscriptMargin = new System.Windows.Forms.Padding(10, 35, 0, 0);
+            this.cpr_capacity.SuperscriptText = "";
+            this.cpr_capacity.TabIndex = 4;
+            this.cpr_capacity.Text = "Capacity";
+            this.cpr_capacity.TextMargin = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.cpr_capacity.Value = 5;
             // 
             // label24
             // 
@@ -1719,7 +1722,7 @@
         private System.Windows.Forms.ListBox lbx_elements_search;
         private System.Windows.Forms.TextBox txt_storage_max_cap;
         private System.Windows.Forms.Label label23;
-        private CircularProgressBar.CircularProgressBar circularProgressBar1;
+        private CircularProgressBar.CircularProgressBar cpr_capacity;
         private System.Windows.Forms.ComboBox cbx_dash_storage;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;

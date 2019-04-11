@@ -31,6 +31,7 @@ namespace LVS_Lagerverwaltungssystem_PCUI
             ((Control)pBx_elements_image).AllowDrop = true;
             pBx_elements_image.SizeMode = PictureBoxSizeMode.Zoom;
             Activate_Dash();
+            Set_Capacity_OnLoad();
         }
 
         #region items / elements
@@ -241,7 +242,8 @@ namespace LVS_Lagerverwaltungssystem_PCUI
         }
         #endregion
 
-
+        //FROM WEIM
+        #region btn_methods
         private void btn_main_close_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -668,6 +670,33 @@ namespace LVS_Lagerverwaltungssystem_PCUI
                 cp.ClassStyle |= CS_DROPSHADOW;
                 return cp;
             }
+        }
+        #endregion 
+
+        //FROM WEIM
+        #region capacities
+        private void Set_Capacity_OnLoad()
+        {
+            cpr_capacity.Maximum = Convert.ToInt32(Storage.Get_max_capacity());
+            cpr_capacity.Value = Convert.ToInt32(Storage.Get_max_capacity());
+        }
+
+
+        #endregion
+
+        private void Btn_dash_icon_Click(object sender, EventArgs e)
+        {
+            btn_dash_Click(sender, e);
+        }
+
+        private void Btn_icon_setting_Click(object sender, EventArgs e)
+        {
+            btn_settings_Click(sender, e);
+        }
+
+        private void Btn_prop_icon_Click(object sender, EventArgs e)
+        {
+            btn_prop_Click(sender, e);
         }
     }
 }
