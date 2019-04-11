@@ -98,26 +98,6 @@ namespace LVS_Library
                 unit.ID));
         }
 
-        public static List<Unit> Load()
-        {
-            List<Unit> units = new List<Unit>();
-
-            string sql = "SELECT * FROM units";
-            OdbcCommand cmd = new OdbcCommand(sql, DB.Connection);
-            SQL_methods.Open();
-            OdbcDataReader sqlReader = cmd.ExecuteReader();
-
-            Unit loadedUnit;
-
-            while(sqlReader.Read())
-            {
-                loadedUnit = new Unit((string)sqlReader["unit_si"],(string)sqlReader["unit_name"],(string)sqlReader["unit_description"],(int)sqlReader["id"]);
-
-                units.Add(loadedUnit);
-            }
-
-            return units;
-        }
 
         public static List<Unit> All_Units( )
         {
