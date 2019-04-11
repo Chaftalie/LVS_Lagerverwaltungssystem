@@ -247,5 +247,24 @@ namespace LVS_Library
 
             return storage;
         }
+
+        /// <summary>
+        /// Max capacity of individual Storage
+        /// </summary>
+        /// <param name="storage"></param>
+        /// <returns></returns>
+        public static double Get_max_capacity(Storage storage)
+        {
+            return (float)SQL_methods.SQL_scalar("SELECT storage_max_elements FROM storage_location WHERE storage_dataID = '" + storage.Storage_dataID + "'");
+        }
+
+        /// <summary>
+        /// Sum of all Storages
+        /// </summary>
+        /// <returns></returns>
+        public static double Get_max_capacity()
+        {
+            return (float)SQL_methods.SQL_scalar("SELECT SUM(storage_max_elements) FROM storage_location");
+        }
     }
 }
