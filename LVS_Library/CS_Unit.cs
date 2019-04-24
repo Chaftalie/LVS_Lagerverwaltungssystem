@@ -81,10 +81,6 @@ namespace LVS_Library
             }
         }
 
-        /// <summary>
-        /// Error by Lerchner der Beichtner
-        /// </summary>
-        /// <param name="unit"></param>
         public static void Save(Unit unit)
         {
             SQL_methods.SQL_exec(string.Format(
